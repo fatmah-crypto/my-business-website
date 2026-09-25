@@ -1,1950 +1,2092 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Dr Suleiman | African Traditional Doctor</title>
-
-<meta name="description"
-content="Dr Suleiman is a Nairobi-based African traditional and spiritual practitioner.">
-
-<style>
-
-:root{
---green:#123d2b;
---green2:#1d563d;
---cream:#f7f1e3;
---gold:#c99b3b;
---brown:#3b2418;
---white:#fff;
---text:#2d2a25;
---shadow:0 12px 35px rgba(45,36,25,.14);
-}
-
-*{
-box-sizing:border-box;
-margin:0;
-padding:0;
-}
-
-html{
-scroll-behavior:smooth;
-}
-
-body{
-font-family:Arial,Helvetica,sans-serif;
-color:var(--text);
-background:var(--cream);
-line-height:1.7;
-}
-
-a{
-text-decoration:none;
-color:inherit;
-}
-
-.container{
-width:min(1120px,92%);
-margin:auto;
-}
-
-/* TOP BAR */
-
-.topbar{
-background:var(--brown);
-color:white;
-padding:9px 0;
-font-size:14px;
-}
-
-.topbar .container{
-display:flex;
-justify-content:space-between;
-gap:15px;
-flex-wrap:wrap;
-}
-
-/* LANGUAGE SWITCHER */
-
-.language{
-display:flex;
-gap:5px;
-align-items:center;
-}
-
-.language button{
-border:1px solid var(--gold);
-background:transparent;
-color:white;
-padding:5px 10px;
-border-radius:4px;
-cursor:pointer;
-font-size:12px;
-}
-
-.language button.active{
-background:var(--gold);
-color:var(--brown);
-}
-
-/* NAVIGATION */
-
-header{
-background:var(--green);
-position:sticky;
-top:0;
-z-index:1000;
-box-shadow:0 4px 15px rgba(0,0,0,.18);
-}
-
-.nav{
-min-height:76px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:25px;
-}
-
-.logo{
-color:white;
-font-family:Georgia,serif;
-font-size:25px;
-font-weight:bold;
-}
-
-.logo span{
-color:var(--gold);
-}
-
-.navlinks{
-display:flex;
-align-items:center;
-gap:20px;
-list-style:none;
-}
-
-.navlinks a{
-color:white;
-font-size:14px;
-}
-
-.navlinks a:hover{
-color:var(--gold);
-}
-
-.menu{
-display:none;
-color:white;
-font-size:28px;
-cursor:pointer;
-}
-
-/* BUTTONS */
-
-.btn{
-display:inline-block;
-padding:13px 23px;
-border-radius:4px;
-font-weight:bold;
-transition:.25s;
-border:2px solid var(--gold);
-cursor:pointer;
-}
-
-.btn-gold{
-background:var(--gold);
-color:var(--brown);
-}
-
-.btn-outline{
-color:white;
-background:transparent;
-}
-
-.btn:hover{
-transform:translateY(-2px);
-opacity:.92;
-}
-
-/* HERO */
-
-.hero{
-min-height:650px;
-display:flex;
-align-items:center;
-
-background:
-linear-gradient(
-90deg,
-rgba(10,40,27,.93),
-rgba(10,40,27,.70),
-rgba(10,40,27,.38)
-),
-
-url("https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=1800&q=85")
-center/cover;
-}
-
-.hero-content{
-max-width:720px;
-color:white;
-padding:90px 0;
-}
-
-.badge{
-display:inline-block;
-color:var(--gold);
-border:1px solid var(--gold);
-padding:6px 13px;
-border-radius:30px;
-margin-bottom:18px;
-text-transform:uppercase;
-font-size:12px;
-letter-spacing:1.5px;
-}
-
-.hero h1{
-font:700 clamp(42px,6vw,70px)/1.08 Georgia,serif;
-margin-bottom:22px;
-}
-
-.hero h1 span{
-color:var(--gold);
-}
-
-.hero p{
-font-size:18px;
-max-width:650px;
-margin-bottom:30px;
-color:#f7f3e9;
-}
-
-.actions{
-display:flex;
-gap:12px;
-flex-wrap:wrap;
-}
-
-/* SECTIONS */
-
-section{
-padding:85px 0;
-}
-
-.section-title{
-text-align:center;
-margin-bottom:48px;
-}
-
-.section-title small{
-color:var(--gold);
-text-transform:uppercase;
-letter-spacing:2px;
-font-weight:bold;
-}
-
-.section-title h2{
-color:var(--green);
-font:700 40px/1.2 Georgia,serif;
-margin:9px 0;
-}
-
-.section-title p{
-max-width:700px;
-margin:auto;
-}
-
-/* ABOUT */
-
-.about-grid{
-display:grid;
-grid-template-columns:1fr 1.15fr;
-gap:55px;
-align-items:center;
-}
-
-.about-image{
-min-height:470px;
-border-radius:8px;
-overflow:hidden;
-box-shadow:var(--shadow);
-
-background:
-url("https://images.unsplash.com/photo-1509099836639-18ba02c8b0d2?auto=format&fit=crop&w=1000&q=85")
-center/cover;
-}
-
-.about-text p{
-margin-bottom:17px;
-}
-
-.checks{
-margin:25px 0;
-list-style:none;
-}
-
-.checks li{
-margin:9px 0;
-}
-
-.checks li:before{
-content:"✓";
-color:var(--gold);
-font-weight:bold;
-margin-right:10px;
-}
-
-/* SERVICES */
-
-.services{
-background:#fffaf0;
-}
-
-.service-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:22px;
-}
-
-.card{
-background:white;
-border-top:4px solid var(--gold);
-padding:28px 24px;
-border-radius:5px;
-box-shadow:var(--shadow);
-transition:.25s;
-}
-
-.card:hover{
-transform:translateY(-5px);
-}
-
-.icon{
-width:48px;
-height:48px;
-border-radius:50%;
-background:var(--green);
-color:var(--gold);
-display:grid;
-place-items:center;
-font-size:21px;
-margin-bottom:18px;
-}
-
-.card h3{
-font:700 22px Georgia,serif;
-color:var(--green);
-margin-bottom:11px;
-}
-
-.card p{
-font-size:15px;
-color:#555;
-}
-
-/* CTA */
-
-.cta{
-background:var(--brown);
-color:white;
-text-align:center;
-padding:70px 0;
-}
-
-.cta h2{
-font:700 38px Georgia,serif;
-margin-bottom:13px;
-}
-
-.cta p{
-max-width:700px;
-margin:0 auto 25px;
-color:#eee;
-}
-
-/* GALLERY */
-
-.gallery-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:12px;
-}
-
-.gallery-grid div{
-height:220px;
-overflow:hidden;
-border-radius:5px;
-}
-
-.gallery-grid img{
-width:100%;
-height:100%;
-object-fit:cover;
-transition:.4s;
-}
-
-.gallery-grid img:hover{
-transform:scale(1.06);
-}
-
-/* FAQ */
-
-.faq{
-background:#fffaf0;
-}
-
-.faq-item{
-background:white;
-margin:12px auto;
-max-width:850px;
-border-left:4px solid var(--gold);
-padding:18px 22px;
-cursor:pointer;
-box-shadow:0 3px 12px rgba(0,0,0,.06);
-}
-
-.faq-q{
-font-weight:bold;
-color:var(--green);
-display:flex;
-justify-content:space-between;
-}
-
-.faq-a{
-display:none;
-padding-top:10px;
-color:#555;
-}
-
-.faq-item.open .faq-a{
-display:block;
-}
-
-/* CONTACT */
-
-.contact-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:35px;
-}
-
-.contact-box{
-background:white;
-padding:30px;
-border-radius:6px;
-box-shadow:var(--shadow);
-}
-
-.contact-box h3{
-font:700 27px Georgia,serif;
-color:var(--green);
-margin-bottom:18px;
-}
-
-.contact-list{
-list-style:none;
-}
-
-.contact-list li{
-margin:14px 0;
-}
-
-.contact-list strong{
-color:var(--green);
-}
-
-form input,
-form textarea{
-width:100%;
-padding:14px;
-margin-bottom:13px;
-border:1px solid #ddd;
-border-radius:4px;
-font:inherit;
-background:white;
-}
-
-form textarea{
-min-height:140px;
-resize:vertical;
-}
-
-.map{
-margin-top:25px;
-border-radius:5px;
-overflow:hidden;
-height:250px;
-background:#ddd;
-}
-
-.map iframe{
-width:100%;
-height:100%;
-border:0;
-}
-
-/* FOOTER */
-
-footer{
-background:var(--green);
-color:#eee;
-padding:55px 0 20px;
-}
-
-.footer-grid{
-display:grid;
-grid-template-columns:1.3fr 1fr 1fr;
-gap:35px;
-}
-
-footer h3{
-color:var(--gold);
-font-family:Georgia,serif;
-margin-bottom:15px;
-}
-
-footer ul{
-list-style:none;
-}
-
-footer li{
-margin:7px 0;
-}
-
-.socials{
-display:flex;
-gap:10px;
-margin-top:15px;
-}
-
-.socials a{
-width:38px;
-height:38px;
-border:1px solid var(--gold);
-display:grid;
-place-items:center;
-border-radius:50%;
-color:white;
-}
-
-.copy{
-text-align:center;
-border-top:1px solid rgba(255,255,255,.15);
-margin-top:35px;
-padding-top:20px;
-font-size:13px;
-}
-
-/* FLOATING BUTTONS */
-
-.floating{
-position:fixed;
-right:18px;
-bottom:18px;
-z-index:900;
-display:flex;
-flex-direction:column;
-gap:10px;
-}
-
-.float-btn{
-width:52px;
-height:52px;
-border-radius:50%;
-display:grid;
-place-items:center;
-color:white;
-font-weight:bold;
-box-shadow:0 5px 20px rgba(0,0,0,.25);
-}
-
-.whatsapp{
-background:#168c4a;
-}
-
-.call{
-background:var(--brown);
-}
-
-.email{
-background:var(--green2);
-}
-
-/* MOBILE */
-
-@media(max-width:850px){
-
-.navlinks{
-display:none;
-position:absolute;
-top:76px;
-left:0;
-right:0;
-background:var(--green);
-padding:20px;
-flex-direction:column;
-align-items:flex-start;
-}
-
-.navlinks.show{
-display:flex;
-}
-
-.menu{
-display:block;
-}
-
-.about-grid,
-.contact-grid{
-grid-template-columns:1fr;
-}
-
-.service-grid{
-grid-template-columns:1fr 1fr;
-}
-
-.gallery-grid{
-grid-template-columns:1fr 1fr;
-}
-
-.footer-grid{
-grid-template-columns:1fr;
-}
-
-}
-
-@media(max-width:560px){
-
-section{
-padding:65px 0;
-}
-
-.hero{
-min-height:600px;
-}
-
-.hero h1{
-font-size:43px;
-}
-
-.service-grid{
-grid-template-columns:1fr;
-}
-
-.gallery-grid{
-grid-template-columns:1fr;
-}
-
-.topbar .container{
-justify-content:center;
-text-align:center;
-}
-
-.about-image{
-min-height:350px;
-}
-
-.section-title h2{
-font-size:32px;
-}
-
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dr Suleiman Murisho | African Traditional & Spiritual Practitioner</title>
+
+    <meta name="description"
+        content="Dr Suleiman Murisho is a Nairobi-based African traditional and spiritual practitioner offering traditional guidance, relationship consultations and personal guidance.">
+
+    <style>
+
+        :root {
+            --dark-green: #123c2c;
+            --green: #1d5a42;
+            --cream: #f8f1df;
+            --off-white: #fffdf7;
+            --gold: #c9a227;
+            --dark-brown: #3a2418;
+            --brown: #6b4732;
+            --text: #292929;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--off-white);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section {
+            padding: 90px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: var(--gold);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+            color: var(--dark-green);
+            font-size: 38px;
+            margin-top: 8px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s ease;
+            margin: 5px;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--dark-brown);
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-brown);
+            color: var(--white);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--gold);
+            color: var(--gold);
+        }
+
+        .btn-outline:hover {
+            background: var(--gold);
+            color: var(--dark-brown);
+        }
+
+
+        /* =========================
+           TOP BAR
+        ========================== */
+
+        .top-bar {
+            background: var(--dark-brown);
+            color: var(--cream);
+            padding: 9px 0;
+            font-size: 14px;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar a {
+            margin-left: 18px;
+        }
+
+        .top-bar a:hover {
+            color: var(--gold);
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        nav {
+            background: var(--dark-green);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.15);
+        }
+
+        .nav-container {
+            min-height: 76px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: var(--gold);
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .logo small {
+            display: block;
+            color: var(--cream);
+            font-size: 11px;
+            letter-spacing: 1px;
+            font-weight: normal;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 28px;
+            color: var(--gold);
+            cursor: pointer;
+        }
+
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 86vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+
+            background:
+                linear-gradient(
+                    rgba(18,60,44,0.82),
+                    rgba(58,36,24,0.78)
+                ),
+                url("https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=1600&q=80")
+                center/cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .hero-small {
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            line-height: 1.15;
+            margin: 18px 0;
+        }
+
+        .hero h1 span {
+            color: var(--gold);
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: auto auto 25px;
+            font-size: 19px;
+            color: var(--cream);
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================== */
+
+        .about {
+            background: var(--cream);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image img {
+            height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .about-content span {
+            color: var(--gold);
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .about-content h2 {
+            color: var(--dark-green);
+            font-size: 40px;
+            margin: 10px 0 20px;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+        }
+
+        .about-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .about-list li {
+            margin-bottom: 9px;
+        }
+
+        .about-list li::before {
+            content: "✓";
+            color: var(--gold);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+
+        /* =========================
+           SERVICES
+        ========================== */
+
+        .services {
+            background: var(--off-white);
+        }
+
+        .services-note {
+            max-width: 800px;
+            margin: -20px auto 35px;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px 25px;
+            border-radius: 10px;
+            border-top: 4px solid var(--gold);
+            box-shadow: var(--shadow);
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .service-icon {
+            width: 58px;
+            height: 58px;
+            background: var(--dark-green);
+            color: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 23px;
+            margin-bottom: 18px;
+        }
+
+        .service-card h3 {
+            color: var(--dark-green);
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .service-card p {
+            color: #555;
+        }
+
+
+        /* =========================
+           TESTIMONIALS
+        ========================== */
+
+        .testimonials {
+            background: var(--cream);
+        }
+
+        .sample-note {
+            max-width: 800px;
+            margin: -20px auto 35px;
+            text-align: center;
+            color: #6b4732;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px 26px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            border-bottom: 4px solid var(--gold);
+        }
+
+        .quote {
+            color: var(--gold);
+            font-size: 55px;
+            line-height: 0.6;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-card p {
+            color: #555;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-card h4 {
+            color: var(--dark-green);
+            font-size: 18px;
+        }
+
+        .testimonial-card span {
+            color: var(--brown);
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           CTA
+        ========================== */
+
+        .cta {
+            background: var(--dark-green);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .cta h2 {
+            color: var(--gold);
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: var(--cream);
+            max-width: 700px;
+            margin: auto auto 25px;
+        }
+
+
+        /* =========================
+           GALLERY
+        ========================== */
+
+        .gallery {
+            background: var(--off-white);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .gallery-item {
+            height: 270px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .gallery-item img {
+            height: 100%;
+            object-fit: cover;
+            transition: 0.4s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+
+        /* =========================
+           FAQ
+        ========================== */
+
+        .faq {
+            background: var(--cream);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        details {
+            background: white;
+            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: 7px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: var(--dark-green);
+        }
+
+        details p {
+            margin-top: 12px;
+            color: #555;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================== */
+
+        .contact {
+            background: var(--off-white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            color: var(--dark-green);
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 22px;
+        }
+
+        .contact-icon {
+            min-width: 45px;
+            height: 45px;
+            background: var(--dark-green);
+            color: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-item h4 {
+            color: var(--dark-brown);
+        }
+
+        .contact-actions {
+            margin-top: 25px;
+        }
+
+        .contact-actions a {
+            display: inline-block;
+            background: var(--dark-green);
+            color: white;
+            padding: 11px 17px;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        .contact-actions a:hover {
+            background: var(--gold);
+            color: var(--dark-brown);
+        }
+
+
+        /* =========================
+           CONTACT FORM
+        ========================== */
+
+        .contact-form {
+            background: white;
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-form h3 {
+            color: var(--dark-green);
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 17px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            color: var(--dark-brown);
+            margin-bottom: 7px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--gold);
+        }
+
+        textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           MAP
+        ========================== */
+
+        .map-section {
+            background: var(--dark-brown);
+            color: white;
+            text-align: center;
+        }
+
+        .map-section h2 {
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .map-section p {
+            color: var(--cream);
+            margin-bottom: 20px;
+        }
+
+        .map-btn {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--dark-brown);
+            padding: 14px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background: #0c2a20;
+            color: var(--cream);
+            padding: 50px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 35px;
+        }
+
+        footer h3,
+        footer h4 {
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--gold);
+            color: var(--dark-brown);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .copyright {
+            border-top: 1px solid rgba(255,255,255,0.15);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           WHATSAPP
+        ========================== */
+
+        .whatsapp-float {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: #25D366;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 26px;
+            z-index: 999;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 950px) {
+
+            .services-grid,
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero h1 {
+                font-size: 46px;
+            }
+        }
+
+
+        @media (max-width: 700px) {
+
+            .top-bar-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 5px;
+            }
+
+            .top-bar a {
+                margin: 0 7px;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 76px;
+                left: 0;
+                width: 100%;
+                background: var(--dark-green);
+                flex-direction: column;
+                padding: 25px;
+                gap: 18px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero {
+                min-height: 75vh;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section {
+                padding: 65px 0;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .services-grid,
+            .testimonials-grid,
+            .gallery-grid,
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image img {
+                height: 350px;
+            }
+
+            .cta h2 {
+                font-size: 30px;
+            }
+        }
+
+    </style>
 </head>
+
 
 <body>
 
-<!-- TOP BAR -->
 
-<div class="topbar">
+<!-- =========================
+     TOP BAR
+========================== -->
 
-<div class="container">
+<div class="top-bar">
 
-<span id="locationText">
-📍 Nairobi, Kenya
-</span>
+    <div class="container top-bar-content">
 
-<span id="hoursText">
-Open 24 Hours •
-<a href="tel:0123456789">0123456789</a>
-</span>
+        <div>
+            📍 Nairobi, Kenya
+            &nbsp; | &nbsp;
+            🕐 Open 24 Hours
+        </div>
 
-<div class="language">
+        <div>
+            <a href="tel:0123456789">
+                📞 0123456789
+            </a>
 
-<button id="enBtn"
-class="active"
-onclick="setLanguage('en')">
-English
-</button>
+            <a href="mailto:daktarisuleiman@gmail.com">
+                ✉ Email
+            </a>
+        </div>
 
-<button id="swBtn"
-onclick="setLanguage('sw')">
-Kiswahili
-</button>
-
-</div>
+    </div>
 
 </div>
-</div>
 
 
-<!-- NAVIGATION -->
 
-<header>
+<!-- =========================
+     NAVIGATION
+========================== -->
 
-<nav class="container nav">
+<nav>
 
-<a class="logo" href="#home">
-DR <span>SULEIMAN</span>
-</a>
+    <div class="container nav-container">
 
-<div class="menu"
-onclick="toggleMenu()">
-☰
-</div>
+        <a href="#home" class="logo">
 
-<ul class="navlinks" id="navlinks">
+            DR SULEIMAN MURISHO
 
-<li>
-<a href="#home" data-en="Home" data-sw="Mwanzo">
-Home
-</a>
-</li>
+            <small>
+                African Traditional & Spiritual Practitioner
+            </small>
 
-<li>
-<a href="#about" data-en="About" data-sw="Kuhusu Sisi">
-About
-</a>
-</li>
+        </a>
 
-<li>
-<a href="#services" data-en="Services" data-sw="Huduma">
-Services
-</a>
-</li>
+        <div class="menu-btn" onclick="toggleMenu()">
+            ☰
+        </div>
 
-<li>
-<a href="#gallery" data-en="Gallery" data-sw="Picha">
-Gallery
-</a>
-</li>
+        <ul class="nav-links" id="navLinks">
 
-<li>
-<a href="#faq"
-data-en="FAQ"
-data-sw="Maswali">
-FAQ
-</a>
-</li>
+            <li><a href="#home">Home</a></li>
 
-<li>
-<a href="#contact"
-data-en="Contact"
-data-sw="Wasiliana Nasi">
-Contact
-</a>
-</li>
+            <li><a href="#about">About</a></li>
 
-<li>
+            <li><a href="#services">Services</a></li>
 
-<a class="btn btn-gold"
-href="#contact"
-data-en="Book a Consultation"
-data-sw="Weka Nafasi ya Ushauri">
-Book a Consultation
-</a>
+            <li><a href="#testimonials">Testimonials</a></li>
 
-</li>
+            <li><a href="#gallery">Gallery</a></li>
 
-</ul>
+            <li><a href="#faq">FAQ</a></li>
+
+            <li><a href="#contact">Contact</a></li>
+
+            <li>
+                <a href="#contact">
+                    Book a Consultation
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
 
 </nav>
-</header>
 
 
-<!-- HERO -->
+
+<!-- =========================
+     HERO
+========================== -->
 
 <section class="hero" id="home">
 
-<div class="container">
+    <div class="container hero-content">
 
-<div class="hero-content">
+        <div class="hero-small">
+            African Traditional & Spiritual Practitioner
+        </div>
 
-<span class="badge"
-data-en="African Traditional & Spiritual Practitioner"
-data-sw="Mtaalamu wa Tiba za Jadi na Masuala ya Kiroho">
+        <h1>
+            Dr Suleiman Murisho
+            <span>Traditional Guidance</span>
+        </h1>
 
-African Traditional & Spiritual Practitioner
+        <p>
+            Nairobi-based traditional and spiritual guidance
+            for personal, relationship and family concerns.
+        </p>
 
-</span>
+        <a href="#contact" class="btn btn-primary">
+            Book a Consultation
+        </a>
 
-<h1>
+        <a href="#contact" class="btn btn-outline">
+            Contact Us
+        </a>
 
-Dr Suleiman<br>
+    </div>
 
-<span
-data-en="Traditional Guidance"
-data-sw="Mwongozo wa Jadi">
-Traditional Guidance
-</span>
-
-</h1>
-
-<p
-data-en="A Nairobi-based traditional healer, diviner and herbalist offering traditional guidance, spiritual consultations and cultural support for people facing everyday personal and family challenges."
-data-sw="Daktari Suleiman ni mtaalamu wa tiba za jadi, mtabiri na mtaalamu wa dawa za asili aliye Nairobi, anayetoa mwongozo wa jadi, ushauri wa kiroho na msaada wa kitamaduni kwa watu wanaokabiliwa na changamoto za kibinafsi na kifamilia.">
-
-A Nairobi-based traditional healer, diviner and herbalist offering traditional guidance, spiritual consultations and cultural support for people facing everyday personal and family challenges.
-
-</p>
-
-<div class="actions">
-
-<a class="btn btn-gold"
-href="#contact"
-data-en="Book a Consultation"
-data-sw="Weka Nafasi ya Ushauri">
-Book a Consultation
-</a>
-
-<a class="btn btn-outline"
-href="#contact"
-data-en="Contact Us"
-data-sw="Wasiliana Nasi">
-Contact Us
-</a>
-
-</div>
-
-</div>
-</div>
 </section>
 
 
-<!-- ABOUT -->
 
-<section id="about">
+<!-- =========================
+     ABOUT
+========================== -->
 
-<div class="container">
+<section class="section about" id="about">
 
-<div class="about-grid">
+    <div class="container about-grid">
 
-<div class="about-image"></div>
+        <div class="about-image">
 
-<div class="about-text">
+            <img
+                src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=900&q=80"
+                alt="Dr Suleiman Murisho"
+            >
 
-<div class="section-title"
-style="text-align:left;margin-bottom:20px">
+        </div>
 
-<small
-data-en="About Dr Suleiman"
-data-sw="Kuhusu Daktari Suleiman">
-About Dr Suleiman
-</small>
 
-<h2
-data-en="Experienced African Doctor and Love Specialist"
-data-sw="Daktari wa Kiafrika Mwenye Uzoefu na Mtaalamu wa Masuala ya Mapenzi">
+        <div class="about-content">
 
-Experienced African Doctor and Love Specialist
+            <span>
+                About Dr Suleiman Murisho
+            </span>
 
-</h2>
+            <h2>
+                Experienced African Doctor
+                and Love Specialist
+            </h2>
 
-</div>
+            <p>
+                Dr Suleiman Murisho is a Nairobi-based African
+                traditional and spiritual practitioner offering
+                traditional guidance to people facing personal,
+                relationship and family challenges.
+            </p>
 
-<p
-data-en="Dr Suleiman is a Nairobi-based African traditional and spiritual practitioner who works with people facing day-to-day challenges."
-data-sw="Daktari Suleiman ni mtaalamu wa tiba za jadi na masuala ya kiroho aliye Nairobi, anayefanya kazi na watu wanaokabiliwa na changamoto mbalimbali za kila siku.">
+            <p>
+                His consultations focus on listening to clients,
+                understanding their concerns and providing
+                traditional, cultural and personal guidance.
+            </p>
 
-Dr Suleiman is a Nairobi-based African traditional and spiritual practitioner who works with people facing day-to-day challenges.
+            <ul class="about-list">
 
-</p>
+                <li>
+                    Traditional consultations
+                </li>
 
-<p
-data-en="Through traditional practices, spiritual guidance and cultural knowledge, Dr Suleiman helps people seek solutions and guidance for issues affecting their personal and family lives."
-data-sw="Kupitia mila na desturi za jadi, mwongozo wa kiroho na maarifa ya kitamaduni, Daktari Suleiman huwasaidia watu kutafuta mwongozo na suluhisho kuhusu masuala yanayoathiri maisha yao binafsi na ya kifamilia.">
+                <li>
+                    Spiritual and cultural guidance
+                </li>
 
-Through traditional practices, spiritual guidance and cultural knowledge, Dr Suleiman helps people seek solutions and guidance for issues affecting their personal and family lives.
+                <li>
+                    Private and respectful consultations
+                </li>
 
-</p>
+                <li>
+                    Personal and family guidance
+                </li>
 
-<ul class="checks">
+            </ul>
 
-<li
-data-en="Traditional consultation"
-data-sw="Ushauri wa tiba za jadi">
-Traditional consultation
-</li>
+            <a href="#services" class="btn btn-primary">
+                Learn More
+            </a>
 
-<li
-data-en="Spiritual and cultural guidance"
-data-sw="Mwongozo wa kiroho na kitamaduni">
-Spiritual and cultural guidance
-</li>
+        </div>
 
-<li
-data-en="Private and respectful consultations"
-data-sw="Ushauri wa faragha na heshima">
-Private and respectful consultations
-</li>
+    </div>
 
-<li
-data-en="Personal and family guidance"
-data-sw="Mwongozo wa kibinafsi na kifamilia">
-Personal and family guidance
-</li>
-
-</ul>
-
-<a class="btn btn-gold"
-href="#contact"
-data-en="Learn More"
-data-sw="Jifunze Zaidi">
-Learn More
-</a>
-
-</div>
-</div>
-</div>
 </section>
 
 
-<!-- SERVICES -->
 
-<section class="services" id="services">
+<!-- =========================
+     SERVICES
+========================== -->
 
-<div class="container">
+<section class="section services" id="services">
 
-<div class="section-title">
+    <div class="container">
 
-<small
-data-en="What We Offer"
-data-sw="Tunachotoa">
-What We Offer
-</small>
+        <div class="section-title">
 
-<h2
-data-en="Our Services"
-data-sw="Huduma Zetu">
-Our Services
-</h2>
+            <span>
+                What We Offer
+            </span>
 
-<p
-data-en="Consultations are intended to provide traditional, cultural and personal guidance. Results are not guaranteed."
-data-sw="Ushauri hutolewa kwa madhumuni ya kutoa mwongozo wa jadi, kitamaduni na kibinafsi. Matokeo hayawezi kuhakikishwa.">
+            <h2>
+                Our Services
+            </h2>
 
-Consultations are intended to provide traditional, cultural and personal guidance. Results are not guaranteed.
+        </div>
 
-</p>
+        <div class="services-note">
 
-</div>
+            Consultations provide traditional, cultural and
+            personal guidance. Results are not guaranteed.
 
+        </div>
 
-<div class="service-grid">
 
+        <div class="services-grid">
 
-<!-- 1 -->
 
-<article class="card">
+            <div class="service-card">
 
-<div class="icon">❤</div>
+                <div class="service-icon">
+                    ❤️
+                </div>
 
-<h3
-data-en="Love & Relationship Problems"
-data-sw="Matatizo ya Mapenzi na Mahusiano">
-Love & Relationship Problems
-</h3>
+                <h3>
+                    Love & Relationship Problems
+                </h3>
 
-<p
-data-en="Personalized guidance for love, relationships, communication and relationship challenges."
-data-sw="Mwongozo wa kibinafsi kuhusu mapenzi, mahusiano, mawasiliano na changamoto za kimahusiano.">
+                <p>
+                    Personalized guidance for love,
+                    relationships, communication and
+                    relationship challenges.
+                </p>
 
-Personalized guidance for love, relationships, communication and relationship challenges.
+            </div>
 
-</p>
 
-</article>
 
+            <div class="service-card">
 
-<!-- 2 -->
+                <div class="service-icon">
+                    ✦
+                </div>
 
-<article class="card">
+                <h3>
+                    Bad Luck
+                </h3>
 
-<div class="icon">✦</div>
+                <p>
+                    Traditional and cultural consultation
+                    for people experiencing repeated
+                    setbacks, obstacles or difficult periods.
+                </p>
 
-<h3
-data-en="Bad Luck"
-data-sw="Bahati Mbaya">
-Bad Luck
-</h3>
+            </div>
 
-<p
-data-en="Traditional and cultural consultation for people who feel they are experiencing repeated setbacks, obstacles or difficult periods in their lives."
-data-sw="Ushauri wa jadi na kitamaduni kwa watu wanaohisi wanakumbana na vikwazo, changamoto au vipindi vigumu vinavyojirudia katika maisha yao.">
 
-Traditional and cultural consultation for people who feel they are experiencing repeated setbacks, obstacles or difficult periods in their lives.
 
-</p>
+            <div class="service-card">
 
-</article>
+                <div class="service-icon">
+                    ☀
+                </div>
 
+                <h3>
+                    Spiritual Disturbances
+                </h3>
 
-<!-- 3 -->
+                <p>
+                    Private consultation and traditional
+                    spiritual guidance for people seeking
+                    cultural perspectives on difficult
+                    personal experiences.
+                </p>
 
-<article class="card">
+            </div>
 
-<div class="icon">☀</div>
 
-<h3
-data-en="Spiritual Disturbances"
-data-sw="Changamoto za Kiroho">
-Spiritual Disturbances
-</h3>
 
-<p
-data-en="Private consultation and traditional spiritual guidance for people seeking cultural perspectives on unusual or difficult personal experiences."
-data-sw="Ushauri wa faragha na mwongozo wa jadi wa kiroho kwa watu wanaotafuta mtazamo wa kitamaduni kuhusu uzoefu wa kibinafsi usio wa kawaida au mgumu.">
+            <div class="service-card">
 
-Private consultation and traditional spiritual guidance for people seeking cultural perspectives on unusual or difficult personal experiences.
+                <div class="service-icon">
+                    💼
+                </div>
 
-</p>
+                <h3>
+                    Unemployment
+                </h3>
 
-</article>
+                <p>
+                    Guidance and encouragement for people
+                    experiencing unemployment, career
+                    uncertainty and challenges while
+                    seeking new opportunities.
+                </p>
 
+            </div>
 
-<!-- 4 -->
 
-<article class="card">
 
-<div class="icon">⌕</div>
+            <div class="service-card">
 
-<h3
-data-en="Unemployment"
-data-sw="Ukosefu wa Ajira">
-Unemployment
-</h3>
+                <div class="service-icon">
+                    📈
+                </div>
 
-<p
-data-en="Guidance and encouragement for people experiencing unemployment, career uncertainty and challenges while seeking new opportunities."
-data-sw="Mwongozo na kutiwa moyo kwa watu wanaokabiliwa na ukosefu wa ajira, kutokuwa na uhakika wa kazi na changamoto wanapotafuta fursa mpya.">
+                <h3>
+                    Workplace & Career Difficulties
+                </h3>
 
-Guidance and encouragement for people experiencing unemployment, career uncertainty and challenges while seeking new opportunities.
+                <p>
+                    Traditional consultation and personal
+                    guidance for workplace concerns,
+                    career decisions and professional direction.
+                </p>
 
-</p>
+            </div>
 
-</article>
 
 
-<!-- 5 -->
+            <div class="service-card">
 
-<article class="card">
+                <div class="service-icon">
+                    KSh
+                </div>
 
-<div class="icon">◆</div>
+                <h3>
+                    Financial Difficulties & Debt
+                </h3>
 
-<h3
-data-en="Workplace & Career Difficulties"
-data-sw="Changamoto za Kazini na Kitaaluma">
-Workplace & Career Difficulties
-</h3>
+                <p>
+                    Supportive consultation for people dealing
+                    with financial pressure, debt and uncertainty,
+                    alongside practical financial planning.
+                </p>
 
-<p
-data-en="Traditional consultation and personal guidance for workplace concerns, career decisions, professional relationships and direction."
-data-sw="Ushauri wa jadi na mwongozo wa kibinafsi kuhusu changamoto za kazini, maamuzi ya taaluma, mahusiano ya kikazi na mwelekeo wa kazi.">
+            </div>
 
-Traditional consultation and personal guidance for workplace concerns, career decisions, professional relationships and direction.
 
-</p>
 
-</article>
+            <div class="service-card">
 
+                <div class="service-icon">
+                    ☮
+                </div>
 
-<!-- 6 -->
+                <h3>
+                    Personal Direction & Emotional Support
+                </h3>
 
-<article class="card">
+                <p>
+                    Private conversations and traditional
+                    guidance for people seeking clarity,
+                    peace, encouragement and direction.
+                </p>
 
-<div class="icon">KSh</div>
+            </div>
 
-<h3
-data-en="Financial Difficulties & Debt"
-data-sw="Changamoto za Kifedha na Madeni">
-Financial Difficulties & Debt
-</h3>
 
-<p
-data-en="Supportive consultation for people dealing with financial pressure, debt and uncertainty, alongside practical steps toward better financial planning."
-data-sw="Ushauri wa kusaidia watu wanaokabiliwa na shinikizo la kifedha, madeni na kutokuwa na uhakika, pamoja na hatua za vitendo za kupanga fedha vizuri.">
 
-Supportive consultation for people dealing with financial pressure, debt and uncertainty, alongside practical steps toward better financial planning.
+            <div class="service-card">
 
-</p>
+                <div class="service-icon">
+                    👨‍👩‍👧
+                </div>
 
-</article>
+                <h3>
+                    Children's Behavioural & School Challenges
+                </h3>
 
+                <p>
+                    Guidance for parents and families dealing
+                    with children's behavioural, educational
+                    or school-related concerns.
+                </p>
 
-<!-- 7 -->
+            </div>
 
-<article class="card">
 
-<div class="icon">☮</div>
 
-<h3
-data-en="Personal Direction, Peace & Emotional Support"
-data-sw="Mwelekeo Binafsi, Amani na Msaada wa Kihisia">
-Personal Direction, Peace & Emotional Support
-</h3>
+            <div class="service-card">
 
-<p
-data-en="Private conversations and traditional guidance for people seeking clarity, peace, encouragement and a sense of direction during difficult periods."
-data-sw="Mazungumzo ya faragha na mwongozo wa jadi kwa watu wanaotafuta uwazi, amani, kutiwa moyo na mwelekeo wakati wa vipindi vigumu.">
+                <div class="service-icon">
+                    ♡
+                </div>
 
-Private conversations and traditional guidance for people seeking clarity, peace, encouragement and a sense of direction during difficult periods.
+                <h3>
+                    Conceiving & Family Planning Concerns
+                </h3>
 
-</p>
+                <p>
+                    Traditional and cultural consultation for
+                    family-planning concerns. Medical fertility
+                    and reproductive-health questions should
+                    also be discussed with a qualified
+                    healthcare professional.
+                </p>
 
-</article>
+            </div>
 
 
-<!-- 8 -->
+        </div>
 
-<article class="card">
+    </div>
 
-<div class="icon">⌂</div>
-
-<h3
-data-en="Children's Behavioural & School Challenges"
-data-sw="Changamoto za Tabia na Masomo kwa Watoto">
-Children's Behavioural & School Challenges
-</h3>
-
-<p
-data-en="Guidance for parents and families dealing with children's behavioural, educational or school-related concerns, with practical support and referral when appropriate."
-data-sw="Mwongozo kwa wazazi na familia zinazokabiliwa na changamoto za kitabia, kielimu au zinazohusiana na shule za watoto, pamoja na msaada wa vitendo inapofaa.">
-
-Guidance for parents and families dealing with children's behavioural, educational or school-related concerns, with practical support and referral when appropriate.
-
-</p>
-
-</article>
-
-
-<!-- 9 -->
-
-<article class="card">
-
-<div class="icon">♡</div>
-
-<h3
-data-en="Conceiving & Family Planning Concerns"
-data-sw="Changamoto za Kupata Mimba na Mipango ya Familia">
-Conceiving & Family Planning Concerns
-</h3>
-
-<p
-data-en="Traditional and cultural consultation for people with family-planning concerns. Medical fertility or reproductive-health questions should also be discussed with a qualified healthcare professional."
-data-sw="Ushauri wa jadi na kitamaduni kwa watu wenye changamoto kuhusu mipango ya familia. Masuala ya uzazi na afya ya mfumo wa uzazi yanapaswa pia kujadiliwa na mtaalamu wa afya aliyehitimu.">
-
-Traditional and cultural consultation for people with family-planning concerns. Medical fertility or reproductive-health questions should also be discussed with a qualified healthcare professional.
-
-</p>
-
-</article>
-
-</div>
-</div>
 </section>
 
 
-<!-- CTA -->
+
+<!-- =========================
+     TESTIMONIALS
+========================== -->
+
+<section class="section testimonials" id="testimonials">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>
+                Sample Client Experiences
+            </span>
+
+            <h2>
+                Client Experiences
+            </h2>
+
+        </div>
+
+        <div class="sample-note">
+            The testimonials below are sample website content
+            and should be replaced with verified client feedback
+            before being presented as actual reviews.
+        </div>
+
+
+        <div class="testimonials-grid">
+
+
+            <!-- MERCY -->
+
+            <div class="testimonial-card">
+
+                <div class="quote">
+                    “
+                </div>
+
+                <p>
+                    I was going through a difficult time in my
+                    relationship and felt overwhelmed. Dr. Suleiman
+                    Murisho listened with care and offered guidance
+                    that helped me reflect and communicate more openly.
+                    I’m grateful for his support.
+                </p>
+
+                <h4>
+                    Mercy
+                </h4>
+
+                <span>
+                    Nairobi
+                </span>
+
+            </div>
+
+
+
+            <!-- DAVID -->
+
+            <div class="testimonial-card">
+
+                <div class="quote">
+                    “
+                </div>
+
+                <p>
+                    I was going through a very difficult financial
+                    period, with debts piling up and constant pressure
+                    about how I would meet my obligations. After
+                    speaking with Dr. Suleiman Murisho, I received
+                    guidance that helped me regain hope and work
+                    through my financial challenges.
+                </p>
+
+                <h4>
+                    David
+                </h4>
+
+                <span>
+                    Kisumu
+                </span>
+
+            </div>
+
+
+
+            <!-- GRACE -->
+
+            <div class="testimonial-card">
+
+                <div class="quote">
+                    “
+                </div>
+
+                <p>
+                    My family had been under a lot of stress. Our
+                    daughter had been struggling with behavioural and
+                    school challenges, and we had lost hope. After
+                    finding Dr. Suleiman Murisho, we received guidance
+                    that helped our family approach the situation
+                    differently. We are very thankful for his support.
+                </p>
+
+                <h4>
+                    Grace
+                </h4>
+
+                <span>
+                    Kibra
+                </span>
+
+            </div>
+
+
+
+            <!-- SAUMU -->
+
+            <div class="testimonial-card">
+
+                <div class="quote">
+                    “
+                </div>
+
+                <p>
+                    My boyfriend had broken up with me earlier and
+                    dated my best friend. I was frustrated and hurt
+                    for a long time. I met Dr. Suleiman Murisho, who
+                    helped me with my situation and gave me guidance
+                    during a difficult period. We are now working
+                    toward our future together.
+                </p>
+
+                <h4>
+                    Saumu
+                </h4>
+
+                <span>
+                    Mombasa
+                </span>
+
+            </div>
+
+
+
+            <!-- JAMES -->
+
+            <div class="testimonial-card">
+
+                <div class="quote">
+                    “
+                </div>
+
+                <p>
+                    Dr. Suleiman Murisho was the solution to my problem
+                    after all. After struggling with my documents and
+                    being rejected by companies I approached for years,
+                    I finally got a job. I am grateful for the guidance
+                    and encouragement I received.
+                </p>
+
+                <h4>
+                    James
+                </h4>
+
+                <span>
+                    Thika
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CTA
+========================== -->
 
 <section class="cta">
 
-<div class="container">
+    <div class="container">
 
-<h2
-data-en="Looking for Guidance?"
-data-sw="Unatafuta Mwongozo?">
-Looking for Guidance?
-</h2>
+        <h2>
+            Looking for Guidance?
+        </h2>
 
-<p
-data-en="Book a private consultation with Dr Suleiman in Nairobi."
-data-sw="Weka nafasi ya ushauri wa faragha na Daktari Suleiman huko Nairobi.">
-Book a private consultation with Dr Suleiman in Nairobi.
-</p>
+        <p>
+            Book a private consultation with
+            Dr Suleiman Murisho in Nairobi.
+        </p>
 
-<a class="btn btn-gold"
-href="#contact"
-data-en="Book a Consultation"
-data-sw="Weka Nafasi ya Ushauri">
-Book a Consultation
-</a>
+        <a href="#contact" class="btn btn-primary">
+            Book a Consultation
+        </a>
 
-</div>
+        <a href="tel:0123456789" class="btn btn-outline">
+            Call Now
+        </a>
+
+    </div>
+
 </section>
 
 
-<!-- GALLERY -->
 
-<section id="gallery">
+<!-- =========================
+     GALLERY
+========================== -->
 
-<div class="container">
+<section class="section gallery" id="gallery">
 
-<div class="section-title">
+    <div class="container">
 
-<small
-data-en="Gallery"
-data-sw="Picha">
-Gallery
-</small>
+        <div class="section-title">
 
-<h2
-data-en="Our Gallery"
-data-sw="Picha Zetu">
-Our Gallery
-</h2>
+            <span>
+                Gallery
+            </span>
 
-<p
-data-en="Images can be replaced with your own professional photos."
-data-sw="Picha hizi zinaweza kubadilishwa na picha zako halisi za kitaalamu.">
+            <h2>
+                Our Gallery
+            </h2>
 
-Images can be replaced with your own professional photos.
+        </div>
 
-</p>
+        <div class="gallery-grid">
 
-</div>
 
-<div class="gallery-grid">
+            <div class="gallery-item">
+                <img
+                    src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=900&q=80"
+                    alt="African landscape"
+                >
+            </div>
 
-<div>
-<img
-src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=800&q=80"
-alt="African landscape">
-</div>
 
-<div>
-<img
-src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=800&q=80"
-alt="African nature">
-</div>
+            <div class="gallery-item">
+                <img
+                    src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80"
+                    alt="African nature"
+                >
+            </div>
 
-<div>
-<img
-src="https://images.unsplash.com/photo-1533130061792-64b345e4a833?auto=format&fit=crop&w=800&q=80"
-alt="Nature">
-</div>
 
-<div>
-<img
-src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=80"
-alt="Landscape">
-</div>
+            <div class="gallery-item">
+                <img
+                    src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=80"
+                    alt="Nature"
+                >
+            </div>
 
-</div>
-</div>
+
+            <div class="gallery-item">
+                <img
+                    src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=900&q=80"
+                    alt="African landscape"
+                >
+            </div>
+
+
+        </div>
+
+    </div>
+
 </section>
 
 
-<!-- FAQ -->
 
-<section class="faq" id="faq">
+<!-- =========================
+     FAQ
+========================== -->
 
-<div class="container">
+<section class="section faq" id="faq">
 
-<div class="section-title">
+    <div class="container">
 
-<small
-data-en="Frequently Asked Questions"
-data-sw="Maswali Yanayoulizwa Mara kwa Mara">
-Frequently Asked Questions
-</small>
+        <div class="section-title">
 
-<h2
-data-en="FAQ"
-data-sw="Maswali">
-FAQ
-</h2>
+            <span>
+                Frequently Asked Questions
+            </span>
 
-</div>
+            <h2>
+                FAQ
+            </h2>
 
-
-<div class="faq-item">
-
-<div class="faq-q">
-
-<span
-data-en="Where is Dr Suleiman located?"
-data-sw="Daktari Suleiman yuko wapi?">
-Where is Dr Suleiman located?
-</span>
-
-<span>+</span>
-
-</div>
-
-<div class="faq-a"
-data-en="Dr Suleiman is based in Nairobi, Kenya. Contact us before visiting for consultation and location details."
-data-sw="Daktari Suleiman yuko Nairobi, Kenya. Wasiliana nasi kabla ya kutembelea ili kupata maelezo ya ushauri na eneo.">
-
-Dr Suleiman is based in Nairobi, Kenya. Contact us before visiting for consultation and location details.
-
-</div>
-
-</div>
+        </div>
 
 
-<div class="faq-item">
-
-<div class="faq-q">
-
-<span
-data-en="How do I book a consultation?"
-data-sw="Ninawezaje kuweka nafasi ya ushauri?">
-How do I book a consultation?
-</span>
-
-<span>+</span>
-
-</div>
-
-<div class="faq-a"
-data-en="Use the phone, WhatsApp, email or contact form on this website to request a consultation."
-data-sw="Tumia simu, WhatsApp, barua pepe au fomu ya mawasiliano kwenye tovuti hii kuomba ushauri.">
-
-Use the phone, WhatsApp, email or contact form on this website to request a consultation.
-
-</div>
-
-</div>
+        <div class="faq-container">
 
 
-<div class="faq-item">
+            <details>
 
-<div class="faq-q">
+                <summary>
+                    Where is Dr Suleiman Murisho located?
+                </summary>
 
-<span
-data-en="Are consultations private?"
-data-sw="Je, ushauri ni wa faragha?">
-Are consultations private?
-</span>
+                <p>
+                    Dr Suleiman Murisho is based in Nairobi, Kenya.
+                    Please contact us before visiting for consultation
+                    and location details.
+                </p>
 
-<span>+</span>
-
-</div>
-
-<div class="faq-a"
-data-en="Consultations are intended to be respectful and private. Please avoid sharing highly sensitive information through public channels."
-data-sw="Ushauri unalenga kuwa wa heshima na wa faragha. Epuka kushiriki taarifa nyeti sana kupitia njia za umma.">
-
-Consultations are intended to be respectful and private. Please avoid sharing highly sensitive information through public channels.
-
-</div>
-
-</div>
+            </details>
 
 
-<div class="faq-item">
+            <details>
 
-<div class="faq-q">
+                <summary>
+                    How do I book a consultation?
+                </summary>
 
-<span
-data-en="Are results guaranteed?"
-data-sw="Je, matokeo yanahakikishwa?">
-Are results guaranteed?
-</span>
+                <p>
+                    You can request a consultation through phone,
+                    WhatsApp, email or the contact form on this website.
+                </p>
 
-<span>+</span>
-
-</div>
-
-<div class="faq-a"
-data-en="No. Traditional or spiritual consultations cannot guarantee a particular outcome."
-data-sw="Hapana. Ushauri wa jadi au wa kiroho hauwezi kuhakikisha matokeo fulani.">
-
-No. Traditional or spiritual consultations cannot guarantee a particular outcome.
-
-</div>
-
-</div>
+            </details>
 
 
-<div class="faq-item">
+            <details>
 
-<div class="faq-q">
+                <summary>
+                    Are consultations private?
+                </summary>
 
-<span
-data-en="Can traditional consultation replace medical care?"
-data-sw="Je, ushauri wa jadi unaweza kuchukua nafasi ya huduma za afya?">
-Can traditional consultation replace medical care?
-</span>
+                <p>
+                    Consultations are intended to be respectful
+                    and private. Avoid sharing highly sensitive
+                    information through public channels.
+                </p>
 
-<span>+</span>
+            </details>
 
-</div>
 
-<div class="faq-a"
-data-en="No. For medical, pregnancy, fertility or other health concerns, consult a qualified healthcare professional."
-data-sw="Hapana. Kwa masuala ya afya, ujauzito, uzazi au changamoto nyingine za kiafya, wasiliana na mtaalamu wa afya aliyehitimu.">
+            <details>
 
-No. For medical, pregnancy, fertility or other health concerns, consult a qualified healthcare professional.
+                <summary>
+                    Are results guaranteed?
+                </summary>
 
-</div>
+                <p>
+                    No. Traditional or spiritual consultations
+                    cannot guarantee a particular outcome.
+                </p>
 
-</div>
+            </details>
 
-</div>
+
+            <details>
+
+                <summary>
+                    Can traditional consultation replace medical care?
+                </summary>
+
+                <p>
+                    No. Medical, pregnancy, fertility and other
+                    health concerns should also be discussed with
+                    a qualified healthcare professional.
+                </p>
+
+            </details>
+
+
+        </div>
+
+    </div>
+
 </section>
 
 
-<!-- CONTACT -->
 
-<section id="contact">
+<!-- =========================
+     CONTACT
+========================== -->
 
-<div class="container">
+<section class="section contact" id="contact">
 
-<div class="section-title">
+    <div class="container">
 
-<small
-data-en="Get In Touch"
-data-sw="Wasiliana Nasi">
-Get In Touch
-</small>
+        <div class="section-title">
 
-<h2
-data-en="Contact Dr Suleiman"
-data-sw="Wasiliana na Daktari Suleiman">
-Contact Dr Suleiman
-</h2>
+            <span>
+                Get In Touch
+            </span>
 
-<p
-data-en="Reach us by phone, WhatsApp, email or the contact form below."
-data-sw="Wasiliana nasi kupitia simu, WhatsApp, barua pepe au fomu ya mawasiliano hapa chini.">
+            <h2>
+                Contact Dr Suleiman Murisho
+            </h2>
 
-Reach us by phone, WhatsApp, email or the contact form below.
+        </div>
 
-</p>
 
-</div>
+        <div class="contact-grid">
 
 
-<div class="contact-grid">
+            <div class="contact-info">
 
+                <h3>
+                    Contact Information
+                </h3>
 
-<div class="contact-box">
 
-<h3
-data-en="Contact Information"
-data-sw="Taarifa za Mawasiliano">
-Contact Information
-</h3>
+                <div class="contact-item">
 
-<ul class="contact-list">
+                    <div class="contact-icon">
+                        📞
+                    </div>
 
-<li>
-📞 <strong
-data-en="Phone:"
-data-sw="Simu:">
-Phone:
-</strong>
+                    <div>
 
-<a href="tel:0123456789">
-0123456789
-</a>
-</li>
+                        <h4>
+                            Phone
+                        </h4>
 
+                        <p>
+                            0123456789
+                        </p>
 
-<li>
-💬 <strong
-data-en="WhatsApp:"
-data-sw="WhatsApp:">
-WhatsApp:
-</strong>
+                    </div>
 
-<a href="https://wa.me/254123456789">
-0123456789
-</a>
-</li>
+                </div>
 
 
-<li>
-✉ <strong
-data-en="Email:"
-data-sw="Barua pepe:">
-Email:
-</strong>
+                <div class="contact-item">
 
-<a href="mailto:daktarisuleiman@gmail.com">
-daktarisuleiman@gmail.com
-</a>
-</li>
+                    <div class="contact-icon">
+                        💬
+                    </div>
 
+                    <div>
 
-<li>
-🕐 <strong
-data-en="Opening Hours:"
-data-sw="Saa za Kufungua:">
-Opening Hours:
-</strong>
+                        <h4>
+                            WhatsApp
+                        </h4>
 
-<span
-data-en="24 Hours"
-data-sw="Saa 24">
-24 Hours
-</span>
+                        <p>
+                            0123456789
+                        </p>
 
-</li>
+                    </div>
 
+                </div>
 
-<li>
-📍 <strong
-data-en="Location:"
-data-sw="Mahali:">
-Location:
-</strong>
 
-Nairobi, Kenya
-</li>
+                <div class="contact-item">
 
-</ul>
+                    <div class="contact-icon">
+                        ✉
+                    </div>
 
+                    <div>
 
-<div class="actions"
-style="margin-top:22px">
+                        <h4>
+                            Email
+                        </h4>
 
-<a class="btn btn-gold"
-href="tel:0123456789"
-data-en="Call Now"
-data-sw="Piga Simu Sasa">
-Call Now
-</a>
+                        <p>
+                            daktarisuleiman@gmail.com
+                        </p>
 
-<a class="btn"
-style="background:#168c4a;color:white;border-color:#168c4a"
-href="https://wa.me/254123456789"
-data-en="WhatsApp"
-data-sw="WhatsApp">
-WhatsApp
-</a>
+                    </div>
 
-</div>
+                </div>
 
 
-<div class="map">
+                <div class="contact-item">
 
-<iframe
-src="https://www.google.com/maps?q=Nairobi%2C%20Kenya&output=embed"
-loading="lazy">
-</iframe>
+                    <div class="contact-icon">
+                        🕐
+                    </div>
 
-</div>
+                    <div>
 
-</div>
+                        <h4>
+                            Opening Hours
+                        </h4>
 
+                        <p>
+                            Open 24 Hours
+                        </p>
 
-<!-- CONTACT FORM -->
+                    </div>
 
-<div class="contact-box">
+                </div>
 
-<h3
-data-en="Send a Message"
-data-sw="Tuma Ujumbe">
-Send a Message
-</h3>
 
-<form onsubmit="sendMessage(event)">
+                <div class="contact-item">
 
-<input
-id="name"
-type="text"
-placeholder="Your name"
-data-placeholder-en="Your name"
-data-placeholder-sw="Jina lako"
-required>
+                    <div class="contact-icon">
+                        📍
+                    </div>
 
+                    <div>
 
-<input
-id="email"
-type="email"
-placeholder="Your email"
-data-placeholder-en="Your email"
-data-placeholder-sw="Barua pepe yako"
-required>
+                        <h4>
+                            Location
+                        </h4>
 
+                        <p>
+                            Nairobi, Kenya
+                        </p>
 
-<input
-id="phone"
-type="tel"
-placeholder="Your phone number"
-data-placeholder-en="Your phone number"
-data-placeholder-sw="Nambari yako ya simu">
+                    </div>
 
+                </div>
 
-<textarea
-id="message"
-placeholder="How can we help you?"
-data-placeholder-en="How can we help you?"
-data-placeholder-sw="Tunaweza kukusaidia vipi?"
-required></textarea>
 
+                <div class="contact-actions">
 
-<button
-class="btn btn-gold"
-type="submit"
-data-en="Send Message"
-data-sw="Tuma Ujumbe">
-Send Message
-</button>
+                    <a href="tel:0123456789">
+                        📞 Call
+                    </a>
 
-</form>
+                    <a
+                        href="https://wa.me/254123456789"
+                        target="_blank"
+                    >
+                        💬 WhatsApp
+                    </a>
 
+                    <a href="mailto:daktarisuleiman@gmail.com">
+                        ✉ Email
+                    </a>
 
-<div style="margin-top:25px">
+                </div>
 
-<p
-data-en="Social Media"
-data-sw="Mitandao ya Kijamii">
-<strong>Social Media</strong>
-</p>
+            </div>
 
-<div class="socials">
 
-<a href="#"
-aria-label="Facebook">
-f
-</a>
 
-<a href="#"
-aria-label="Instagram">
-◎
-</a>
+            <!-- CONTACT FORM -->
 
-</div>
+            <div class="contact-form">
 
-</div>
+                <h3>
+                    Send a Message
+                </h3>
 
-</div>
+                <form onsubmit="submitForm(event)">
 
-</div>
-</div>
+                    <div class="form-group">
+
+                        <label>
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            placeholder="Your name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Your Email
+                        </label>
+
+                        <input
+                            type="email"
+                            placeholder="Your email"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            placeholder="Your phone number"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Message
+                        </label>
+
+                        <textarea
+                            placeholder="How can we help you?"
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary submit-btn"
+                    >
+                        Send Message
+                    </button>
+
+                </form>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
 </section>
 
 
-<!-- FOOTER -->
+
+<!-- =========================
+     GOOGLE MAPS
+========================== -->
+
+<section class="section map-section">
+
+    <div class="container">
+
+        <h2>
+            Find Us in Nairobi
+        </h2>
+
+        <p>
+            Contact us for consultation and location details.
+        </p>
+
+        <a
+            href="https://www.google.com/maps/search/?api=1&query=Nairobi%2C%20Kenya"
+            target="_blank"
+            class="map-btn"
+        >
+            📍 Open Google Maps
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================== -->
 
 <footer>
 
-<div class="container">
-
-<div class="footer-grid">
-
-<div>
-
-<h3>
-Dr Suleiman
-</h3>
-
-<p
-data-en="A Nairobi-based African traditional and spiritual practitioner offering traditional guidance and cultural consultations."
-data-sw="Mtaalamu wa tiba za jadi na masuala ya kiroho aliye Nairobi anayetoa mwongozo wa jadi na ushauri wa kitamaduni.">
-
-A Nairobi-based African traditional and spiritual practitioner offering traditional guidance and cultural consultations.
-
-</p>
-
-</div>
+    <div class="container footer-grid">
 
 
-<div>
+        <div>
 
-<h3
-data-en="Quick Links"
-data-sw="Viungo vya Haraka">
-Quick Links
-</h3>
+            <h3>
+                DR SULEIMAN MURISHO
+            </h3>
 
-<ul>
+            <p>
+                African traditional and spiritual practitioner
+                based in Nairobi, Kenya.
+            </p>
 
-<li>
-<a href="#about"
-data-en="About"
-data-sw="Kuhusu Sisi">
-About
-</a>
-</li>
+            <div class="social-links">
 
-<li>
-<a href="#services"
-data-en="Services"
-data-sw="Huduma">
-Services
-</a>
-</li>
+                <!-- Replace # with the real Facebook URL -->
+                <a href="#" title="Facebook">
+                    f
+                </a>
 
-<li>
-<a href="#gallery"
-data-en="Gallery"
-data-sw="Picha">
-Gallery
-</a>
-</li>
+                <!-- Replace # with the real Instagram URL -->
+                <a href="#" title="Instagram">
+                    ◎
+                </a>
 
-<li>
-<a href="#faq"
-data-en="FAQ"
-data-sw="Maswali">
-FAQ
-</a>
-</li>
+            </div>
 
-<li>
-<a href="#contact"
-data-en="Contact"
-data-sw="Wasiliana Nasi">
-Contact
-</a>
-</li>
-
-</ul>
-
-</div>
+        </div>
 
 
-<div>
+        <div>
 
-<h3
-data-en="Contact"
-data-sw="Mawasiliano">
-Contact
-</h3>
+            <h4>
+                Quick Links
+            </h4>
 
-<p>Nairobi, Kenya</p>
+            <ul class="footer-links">
 
-<p>0123456789</p>
+                <li>
+                    <a href="#home">Home</a>
+                </li>
 
-<p>daktarisuleiman@gmail.com</p>
+                <li>
+                    <a href="#about">About</a>
+                </li>
 
-<p
-data-en="Open 24 Hours"
-data-sw="Tuko Wazi Saa 24">
-Open 24 Hours
-</p>
+                <li>
+                    <a href="#services">Services</a>
+                </li>
 
-</div>
+                <li>
+                    <a href="#testimonials">
+                        Testimonials
+                    </a>
+                </li>
 
-</div>
+                <li>
+                    <a href="#gallery">Gallery</a>
+                </li>
+
+                <li>
+                    <a href="#faq">FAQ</a>
+                </li>
+
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
+
+            </ul>
+
+        </div>
 
 
-<div class="copy">
+        <div>
 
-© 2026 Dr Suleiman.
-<span
-data-en="All Rights Reserved."
-data-sw="Haki Zote Zimehifadhiwa.">
-All Rights Reserved.
-</span>
+            <h4>
+                Contact
+            </h4>
 
-</div>
+            <p>
+                📍 Nairobi, Kenya
+            </p>
 
-</div>
+            <p>
+                📞 0123456789
+            </p>
+
+            <p>
+                ✉ daktarisuleiman@gmail.com
+            </p>
+
+            <p>
+                🕐 Open 24 Hours
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="container copyright">
+
+        © 2026 Dr Suleiman Murisho.
+        All Rights Reserved.
+
+    </div>
+
 </footer>
 
 
-<!-- FLOATING BUTTONS -->
 
-<div class="floating">
-
-<a
-class="float-btn whatsapp"
-href="https://wa.me/254123456789"
-title="WhatsApp">
-W
-</a>
+<!-- =========================
+     FLOATING WHATSAPP
+========================== -->
 
 <a
-class="float-btn call"
-href="tel:0123456789"
-title="Call">
-☎
+    href="https://wa.me/254123456789"
+    target="_blank"
+    class="whatsapp-float"
+    title="Chat on WhatsApp"
+>
+    💬
 </a>
 
-<a
-class="float-btn email"
-href="mailto:daktarisuleiman@gmail.com"
-title="Email">
-✉
-</a>
-
-</div>
 
 
 <script>
 
-/* MOBILE MENU */
+    /* =========================
+       MOBILE MENU
+    ========================== */
 
-function toggleMenu(){
+    function toggleMenu() {
 
-document
-.getElementById("navlinks")
-.classList
-.toggle("show");
+        document
+            .getElementById("navLinks")
+            .classList
+            .toggle("active");
 
-}
-
-
-/* FAQ */
-
-document
-.querySelectorAll(".faq-item")
-.forEach(item=>{
-
-item.addEventListener("click",()=>{
-
-item.classList.toggle("open");
-
-});
-
-});
+    }
 
 
-/* LANGUAGE SWITCHER */
+    /* CLOSE MENU WHEN LINK IS CLICKED */
 
-function setLanguage(language){
+    document
+        .querySelectorAll(".nav-links a")
+        .forEach(function(link) {
 
-const elements =
-document.querySelectorAll("[data-en][data-sw]");
+            link.addEventListener("click", function() {
 
-elements.forEach(element=>{
+                document
+                    .getElementById("navLinks")
+                    .classList
+                    .remove("active");
 
-element.textContent =
-element.getAttribute("data-" + language);
+            });
 
-});
-
-
-/* PLACEHOLDERS */
-
-const inputs =
-document.querySelectorAll("[data-placeholder-en]");
-
-inputs.forEach(input=>{
-
-input.placeholder =
-input.getAttribute(
-"data-placeholder-" + language
-);
-
-});
+        });
 
 
-/* TOP BAR */
+    /* =========================
+       CONTACT FORM
+    ========================== */
 
-const locationText =
-document.getElementById("locationText");
+    function submitForm(event) {
 
-const hoursText =
-document.getElementById("hoursText");
+        event.preventDefault();
 
-if(language === "sw"){
+        alert(
+            "Thank you for contacting Dr Suleiman Murisho. " +
+            "Your message has been received."
+        );
 
-locationText.innerHTML =
-"📍 Nairobi, Kenya";
-
-hoursText.innerHTML =
-"Uko Wazi Saa 24 • " +
-'<a href="tel:0123456789">0123456789</a>';
-
-document.documentElement.lang="sw";
-
-}else{
-
-locationText.innerHTML =
-"📍 Nairobi, Kenya";
-
-hoursText.innerHTML =
-"Open 24 Hours • " +
-'<a href="tel:0123456789">0123456789</a>';
-
-document.documentElement.lang="en";
-
-}
-
-
-/* BUTTON STYLE */
-
-document
-.getElementById("enBtn")
-.classList
-.toggle("active",language==="en");
-
-document
-.getElementById("swBtn")
-.classList
-.toggle("active",language==="sw");
-
-
-/* SAVE LANGUAGE */
-
-localStorage.setItem(
-"drSuleimanLanguage",
-language
-);
-
-}
-
-
-/* CONTACT FORM */
-
-function sendMessage(event){
-
-event.preventDefault();
-
-const name =
-document.getElementById("name").value;
-
-const email =
-document.getElementById("email").value;
-
-const phone =
-document.getElementById("phone").value;
-
-const message =
-document.getElementById("message").value;
-
-const subject =
-encodeURIComponent(
-"Website consultation request from " + name
-);
-
-const body =
-encodeURIComponent(
-"Name: " + name +
-"\nEmail: " + email +
-"\nPhone: " + phone +
-"\n\nMessage:\n" + message
-);
-
-window.location.href =
-"mailto:daktarisuleiman@gmail.com?subject=" +
-subject +
-"&body=" +
-body;
-
-}
-
-
-/* LOAD SAVED LANGUAGE */
-
-const savedLanguage =
-localStorage.getItem("drSuleimanLanguage");
-
-if(savedLanguage){
-
-setLanguage(savedLanguage);
-
-}
+    }
 
 </script>
+
 
 </body>
 </html>
