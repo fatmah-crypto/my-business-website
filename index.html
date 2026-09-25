@@ -1,1567 +1,1443 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>Doctor Suleiman|African Doctor | Professional Services</title>
-
-    <meta name="description"
-          content="Welcome to Daktari Suleiman kutoka Tanga. Discover our services and contact us today.">
-
-    <style>
-
-        /* =========================================
-           BASIC RESET
-        ========================================= */
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            color: #222;
-            background: #fff;
-            line-height: 1.6;
-        }
-
-        img {
-            width: 100%;
-            display: block;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-
-        /* =========================================
-           TOP BAR
-        ========================================= */
-
-        .top-bar {
-            background: #111;
-            color: white;
-            padding: 10px 20px;
-            font-size: 13px;
-        }
-
-        .top-bar-content {
-            max-width: 1200px;
-            margin: auto;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            gap: 20px;
-        }
-
-
-        /* =========================================
-           NAVIGATION
-        ========================================= */
-
-        .navbar {
-            background: white;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: auto;
-
-            padding: 18px 20px;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            opacity: 0.5;
-        }
-
-        .menu-button {
-            display: none;
-
-            border: none;
-            background: transparent;
-
-            font-size: 28px;
-            cursor: pointer;
-        }
-
-
-        /* =========================================
-           HERO
-        ========================================= */
-
-        .hero {
-
-            min-height: 680px;
-
-            background:
-                linear-gradient(
-                    rgba(0,0,0,0.55),
-                    rgba(0,0,0,0.55)
-                ),
-
-                url("https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1800&q=80");
-
-            background-size: cover;
-            background-position: center;
-
-            display: flex;
-            align-items: center;
-
-            color: white;
-        }
-
-        .hero-content {
-
-            max-width: 1200px;
-            width: 100%;
-
-            margin: auto;
-            padding: 60px 20px;
-        }
-
-        .hero-small {
-
-            font-size: 13px;
-            letter-spacing: 4px;
-            font-weight: bold;
-
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-
-            font-size: clamp(45px, 7vw, 85px);
-
-            line-height: 1.02;
-
-            max-width: 850px;
-
-            margin-bottom: 25px;
-        }
-
-        .hero p {
-
-            max-width: 650px;
-
-            font-size: 19px;
-
-            margin-bottom: 35px;
-        }
-
-        .buttons {
-
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .button {
-
-            display: inline-block;
-
-            padding: 14px 30px;
-
-            font-weight: bold;
-
-            transition: 0.3s;
-        }
-
-        .button-dark {
-
-            background: #111;
-            color: white;
-        }
-
-        .button-dark:hover {
-            background: #444;
-        }
-
-        .button-light {
-
-            border: 2px solid white;
-            color: white;
-        }
-
-        .button-light:hover {
-
-            background: white;
-            color: #111;
-        }
-
-
-        /* =========================================
-           GENERAL SECTIONS
-        ========================================= */
-
-        .section {
-
-            padding: 100px 20px;
-        }
-
-        .container {
-
-            max-width: 1200px;
-            margin: auto;
-        }
-
-        .section-heading {
-
-            text-align: center;
-
-            max-width: 750px;
-
-            margin: 0 auto 60px;
-        }
-
-        .section-label {
-
-            font-size: 13px;
-
-            font-weight: bold;
-
-            letter-spacing: 3px;
-
-            margin-bottom: 15px;
-        }
-
-        .section-heading h2,
-        .about-text h2,
-        .contact-text h2 {
-
-            font-size: clamp(35px, 5vw, 58px);
-
-            line-height: 1.1;
-
-            margin-bottom: 20px;
-        }
-
-
-        /* =========================================
-           ABOUT
-        ========================================= */
-
-        .about-grid {
-
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 70px;
-
-            align-items: center;
-        }
-
-        .about-image {
-
-            height: 550px;
-
-            background:
-
-                url("https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1000&q=80");
-
-            background-size: cover;
-
-            background-position: center;
-        }
-
-        .about-text p {
-
-            margin-bottom: 20px;
-        }
-
-
-        /* =========================================
-           SERVICES
-        ========================================= */
-
-        .services {
-
-            background: #f5f5f5;
-        }
-
-        .services-grid {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 25px;
-        }
-
-        .service-card {
-
-            background: white;
-
-            overflow: hidden;
-
-            transition: 0.3s;
-        }
-
-        .service-card:hover {
-
-            transform: translateY(-8px);
-
-            box-shadow:
-                0 15px 35px
-                rgba(0,0,0,0.12);
-        }
-
-        .service-image {
-
-            height: 250px;
-
-            background-size: cover;
-
-            background-position: center;
-        }
-
-        .service-1 {
-            background-image:
-                url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=900&q=80");
-        }
-
-        .service-2 {
-            background-image:
-                url("https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=900&q=80");
-        }
-
-        .service-3 {
-            background-image:
-                url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80");
-        }
-
-        .service-4 {
-            background-image:
-                url("https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=900&q=80");
-        }
-
-        .service-5 {
-            background-image:
-                url("https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=80");
-        }
-
-        .service-6 {
-            background-image:
-                url("https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=900&q=80");
-        }
-
-        .service-content {
-
-            padding: 30px;
-        }
-
-        .service-number {
-
-            font-size: 13px;
-
-            font-weight: bold;
-        }
-
-        .service-content h3 {
-
-            font-size: 26px;
-
-            margin: 10px 0;
-        }
-
-        .service-content p {
-
-            margin-bottom: 20px;
-
-            color: #555;
-        }
-
-        .service-link {
-
-            font-weight: bold;
-        }
-
-
-        /* =========================================
-           LARGE CTA
-        ========================================= */
-
-        .cta {
-
-            padding: 110px 20px;
-
-            text-align: center;
-
-            color: white;
-
-            background:
-
-                linear-gradient(
-                    rgba(0,0,0,0.7),
-                    rgba(0,0,0,0.7)
-                ),
-
-                url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=80");
-
-            background-size: cover;
-
-            background-position: center;
-        }
-
-        .cta h2 {
-
-            font-size: clamp(35px, 5vw, 60px);
-
-            margin-bottom: 30px;
-        }
-
-
-        /* =========================================
-           TESTIMONIALS
-        ========================================= */
-
-        .reviews-grid {
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 25px;
-        }
-
-        .review {
-
-            background: #f5f5f5;
-
-            padding: 35px;
-        }
-
-        .stars {
-
-            font-size: 20px;
-
-            margin-bottom: 20px;
-        }
-
-        .review p {
-
-            font-style: italic;
-
-            margin-bottom: 20px;
-        }
-
-        .review h4 {
-
-            font-size: 16px;
-        }
-
-
-        /* =========================================
-           CONTACT
-        ========================================= */
-
-        .contact {
-
-            background: #f5f5f5;
-        }
-
-        .contact-grid {
-
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            gap: 70px;
-
-            align-items: start;
-        }
-
-        .contact-details {
-
-            margin-top: 30px;
-        }
-
-        .contact-details p {
-
-            margin: 15px 0;
-        }
-
-        .contact-form {
-
-            background: white;
-
-            padding: 40px;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-
-            width: 100%;
-
-            padding: 15px;
-
-            margin-bottom: 15px;
-
-            border: 1px solid #ddd;
-
-            font-family: inherit;
-
-            font-size: 15px;
-        }
-
-        .contact-form textarea {
-
-            resize: vertical;
-        }
-
-        .contact-form button {
-
-            border: none;
-
-            cursor: pointer;
-        }
-
-
-        /* =========================================
-           FOOTER
-        ========================================= */
-
-        footer {
-
-            background: #111;
-
-            color: white;
-        }
-
-        .footer-grid {
-
-            max-width: 1200px;
-
-            margin: auto;
-
-            padding: 70px 20px;
-
-            display: grid;
-
-            grid-template-columns:
-                2fr 1fr 1fr;
-
-            gap: 50px;
-        }
-
-        .footer-grid h3,
-        .footer-grid h4 {
-
-            margin-bottom: 15px;
-        }
-
-        .footer-grid a {
-
-            display: block;
-
-            margin: 8px 0;
-        }
-
-        .copyright {
-
-            border-top:
-                1px solid #333;
-
-            padding: 20px;
-
-            text-align: center;
-
-            font-size: 13px;
-        }
-
-
-        /* =========================================
-           WHATSAPP FLOATING BUTTON
-        ========================================= */
-
-        .whatsapp {
-
-            position: fixed;
-
-            right: 25px;
-
-            bottom: 25px;
-
-            width: 60px;
-
-            height: 60px;
-
-            border-radius: 50%;
-
-            background: #25D366;
-
-            color: white;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            font-size: 28px;
-
-            box-shadow:
-                0 5px 20px
-                rgba(0,0,0,0.25);
-
-            z-index: 2000;
-        }
-
-
-        /* =========================================
-           MOBILE
-        ========================================= */
-
-        @media (max-width: 850px) {
-
-            .top-bar-content {
-
-                flex-direction: column;
-
-                text-align: center;
-            }
-
-            .nav-links {
-
-                display: none;
-
-                position: absolute;
-
-                top: 70px;
-
-                left: 0;
-
-                width: 100%;
-
-                background: white;
-
-                flex-direction: column;
-
-                gap: 0;
-
-                box-shadow:
-                    0 5px 10px
-                    rgba(0,0,0,0.1);
-            }
-
-            .nav-links.active {
-
-                display: flex;
-            }
-
-            .nav-links a {
-
-                width: 100%;
-
-                padding: 15px 20px;
-
-                border-bottom:
-                    1px solid #eee;
-            }
-
-            .menu-button {
-
-                display: block;
-            }
-
-            .about-grid,
-            .contact-grid {
-
-                grid-template-columns: 1fr;
-            }
-
-            .services-grid,
-            .reviews-grid {
-
-                grid-template-columns: 1fr;
-            }
-
-            .footer-grid {
-
-                grid-template-columns: 1fr;
-            }
-
-            .about-image {
-
-                height: 400px;
-            }
-
-            .hero {
-
-                min-height: 600px;
-            }
-        }
-
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dr Suleiman | African Traditional & Spiritual Practitioner</title>
+
+<meta name="description" content="Dr Suleiman is a Nairobi-based African traditional and spiritual practitioner offering traditional guidance, consultations and cultural support.">
+
+<style>
+:root{
+  --green:#123d2b;
+  --green2:#1d563d;
+  --cream:#f7f1e3;
+  --gold:#c99b3b;
+  --brown:#3b2418;
+  --white:#fff;
+  --text:#2d2a25;
+  --shadow:0 12px 35px rgba(45,36,25,.14);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--text);
+  background:var(--cream);
+  line-height:1.7;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+.container{
+  width:min(1120px,92%);
+  margin:auto;
+}
+
+/* TOP BAR */
+.topbar{
+  background:var(--brown);
+  color:#fff;
+  padding:9px 0;
+  font-size:14px;
+}
+
+.topbar .container{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+/* NAVIGATION */
+header{
+  background:var(--green);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 4px 15px rgba(0,0,0,.18);
+}
+
+.nav{
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+}
+
+.logo{
+  color:#fff;
+  font-family:Georgia,serif;
+  font-size:25px;
+  font-weight:bold;
+}
+
+.logo span{
+  color:var(--gold);
+}
+
+.navlinks{
+  display:flex;
+  align-items:center;
+  gap:23px;
+  list-style:none;
+}
+
+.navlinks a{
+  color:#fff;
+  font-size:15px;
+}
+
+.navlinks a:hover{
+  color:var(--gold);
+}
+
+.menu{
+  display:none;
+  color:#fff;
+  font-size:28px;
+  cursor:pointer;
+}
+
+/* BUTTONS */
+.btn{
+  display:inline-block;
+  padding:13px 23px;
+  border-radius:4px;
+  font-weight:bold;
+  transition:.25s;
+  border:2px solid var(--gold);
+}
+
+.btn-gold{
+  background:var(--gold);
+  color:var(--brown);
+}
+
+.btn-outline{
+  color:#fff;
+  background:transparent;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  opacity:.92;
+}
+
+/* HERO */
+.hero{
+  min-height:650px;
+  display:flex;
+  align-items:center;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(10,40,27,.92),
+      rgba(10,40,27,.68),
+      rgba(10,40,27,.38)
+    ),
+    url("https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+}
+
+.hero-content{
+  max-width:720px;
+  color:#fff;
+  padding:90px 0;
+}
+
+.badge{
+  display:inline-block;
+  color:var(--gold);
+  border:1px solid var(--gold);
+  padding:6px 13px;
+  border-radius:30px;
+  margin-bottom:18px;
+  text-transform:uppercase;
+  font-size:12px;
+  letter-spacing:1.5px;
+}
+
+.hero h1{
+  font:700 clamp(42px,6vw,70px)/1.08 Georgia,serif;
+  margin-bottom:22px;
+}
+
+.hero h1 span{
+  color:var(--gold);
+}
+
+.hero p{
+  font-size:18px;
+  max-width:650px;
+  margin-bottom:30px;
+  color:#f7f3e9;
+}
+
+.actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+/* SECTIONS */
+section{
+  padding:85px 0;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:48px;
+}
+
+.section-title small{
+  color:var(--gold);
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-weight:bold;
+}
+
+.section-title h2{
+  color:var(--green);
+  font:700 40px/1.2 Georgia,serif;
+  margin:9px 0;
+}
+
+.section-title p{
+  max-width:700px;
+  margin:auto;
+}
+
+/* ABOUT */
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1.15fr;
+  gap:55px;
+  align-items:center;
+}
+
+.about-image{
+  min-height:470px;
+  border-radius:8px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  background:
+    url("https://images.unsplash.com/photo-1509099836639-18ba02c8b0d2?auto=format&fit=crop&w=1000&q=85")
+    center/cover;
+}
+
+.about-text h3{
+  font:700 32px Georgia,serif;
+  color:var(--green);
+  margin-bottom:18px;
+}
+
+.about-text p{
+  margin-bottom:17px;
+}
+
+.checks{
+  margin:25px 0;
+  list-style:none;
+}
+
+.checks li{
+  margin:9px 0;
+}
+
+.checks li:before{
+  content:"✓";
+  color:var(--gold);
+  font-weight:bold;
+  margin-right:10px;
+}
+
+/* SERVICES */
+.services{
+  background:#fffaf0;
+}
+
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+
+.card{
+  background:#fff;
+  border-top:4px solid var(--gold);
+  padding:28px 24px;
+  border-radius:5px;
+  box-shadow:var(--shadow);
+  transition:.25s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+.icon{
+  width:48px;
+  height:48px;
+  border-radius:50%;
+  background:var(--green);
+  color:var(--gold);
+  display:grid;
+  place-items:center;
+  font-size:21px;
+  margin-bottom:18px;
+}
+
+.card h3{
+  font:700 22px Georgia,serif;
+  color:var(--green);
+  margin-bottom:11px;
+}
+
+.card p{
+  font-size:15px;
+  color:#555;
+}
+
+/* CTA */
+.cta{
+  background:var(--brown);
+  color:#fff;
+  text-align:center;
+  padding:70px 0;
+}
+
+.cta h2{
+  font:700 38px Georgia,serif;
+  margin-bottom:13px;
+}
+
+.cta p{
+  max-width:700px;
+  margin:0 auto 25px;
+  color:#eee;
+}
+
+/* GALLERY */
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+}
+
+.gallery-grid div{
+  height:220px;
+  overflow:hidden;
+  border-radius:5px;
+}
+
+.gallery-grid img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.4s;
+}
+
+.gallery-grid img:hover{
+  transform:scale(1.06);
+}
+
+/* FAQ */
+.faq{
+  background:#fffaf0;
+}
+
+.faq-item{
+  background:#fff;
+  margin:12px auto;
+  max-width:850px;
+  border-left:4px solid var(--gold);
+  padding:18px 22px;
+  cursor:pointer;
+  box-shadow:0 3px 12px rgba(0,0,0,.06);
+}
+
+.faq-q{
+  font-weight:bold;
+  color:var(--green);
+  display:flex;
+  justify-content:space-between;
+}
+
+.faq-a{
+  display:none;
+  padding-top:10px;
+  color:#555;
+}
+
+.faq-item.open .faq-a{
+  display:block;
+}
+
+/* CONTACT */
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:35px;
+}
+
+.contact-box{
+  background:#fff;
+  padding:30px;
+  border-radius:6px;
+  box-shadow:var(--shadow);
+}
+
+.contact-box h3{
+  font:700 27px Georgia,serif;
+  color:var(--green);
+  margin-bottom:18px;
+}
+
+.contact-list{
+  list-style:none;
+}
+
+.contact-list li{
+  margin:14px 0;
+}
+
+.contact-list strong{
+  color:var(--green);
+}
+
+form input,
+form textarea{
+  width:100%;
+  padding:14px;
+  margin-bottom:13px;
+  border:1px solid #ddd;
+  border-radius:4px;
+  font:inherit;
+  background:#fff;
+}
+
+form textarea{
+  min-height:140px;
+  resize:vertical;
+}
+
+.map{
+  margin-top:25px;
+  border-radius:5px;
+  overflow:hidden;
+  height:250px;
+  background:#ddd;
+}
+
+.map iframe{
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+/* FOOTER */
+footer{
+  background:var(--green);
+  color:#eee;
+  padding:55px 0 20px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.3fr 1fr 1fr;
+  gap:35px;
+}
+
+footer h3{
+  color:var(--gold);
+  font-family:Georgia,serif;
+  margin-bottom:15px;
+}
+
+footer ul{
+  list-style:none;
+}
+
+footer li{
+  margin:7px 0;
+}
+
+.socials{
+  display:flex;
+  gap:10px;
+  margin-top:15px;
+}
+
+.socials a{
+  width:38px;
+  height:38px;
+  border:1px solid var(--gold);
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  color:#fff;
+}
+
+.copy{
+  text-align:center;
+  border-top:1px solid rgba(255,255,255,.15);
+  margin-top:35px;
+  padding-top:20px;
+  font-size:13px;
+}
+
+/* FLOATING BUTTONS */
+.floating{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:900;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.float-btn{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  font-weight:bold;
+  box-shadow:0 5px 20px rgba(0,0,0,.25);
+}
+
+.whatsapp{
+  background:#168c4a;
+}
+
+.call{
+  background:var(--brown);
+}
+
+.email{
+  background:var(--green2);
+}
+
+/* MOBILE */
+@media(max-width:850px){
+
+  .navlinks{
+    display:none;
+    position:absolute;
+    top:76px;
+    left:0;
+    right:0;
+    background:var(--green);
+    padding:20px;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .navlinks.show{
+    display:flex;
+  }
+
+  .menu{
+    display:block;
+  }
+
+  .about-grid,
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .service-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .gallery-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:560px){
+
+  section{
+    padding:65px 0;
+  }
+
+  .hero{
+    min-height:600px;
+  }
+
+  .hero h1{
+    font-size:43px;
+  }
+
+  .service-grid{
+    grid-template-columns:1fr;
+  }
+
+  .gallery-grid{
+    grid-template-columns:1fr;
+  }
+
+  .topbar .container{
+    justify-content:center;
+    text-align:center;
+  }
+
+  .about-image{
+    min-height:350px;
+  }
+
+  .section-title h2{
+    font-size:32px;
+  }
+}
+</style>
 </head>
-
 
 <body>
 
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="container">
+    <span>📍 Nairobi, Kenya</span>
+    <span>
+      Open 24 Hours •
+      <a href="tel:0123456789">0123456789</a>
+    </span>
+  </div>
+</div>
 
-<!-- =========================================
-     TOP CONTACT BAR
-========================================= -->
+<!-- NAVIGATION -->
+<header>
+<nav class="container nav">
 
-<div class="top-bar">
+  <a class="logo" href="#home">
+    DR <span>SULEIMAN</span>
+  </a>
 
-    <div class="top-bar-content">
+  <div class="menu" onclick="toggleMenu()">☰</div>
 
-        <span>OPEN 24 HOURS</span>
+  <ul class="navlinks" id="navlinks">
 
-        <span>
-            📞 +254 700 000 000
-        </span>
+    <li><a href="#home">Home</a></li>
 
-        <span>
-            ✉ your@email.com
-        </span>
+    <li><a href="#about">About</a></li>
 
-    </div>
+    <li><a href="#services">Services</a></li>
+
+    <li><a href="#gallery">Gallery</a></li>
+
+    <li><a href="#faq">FAQ</a></li>
+
+    <li><a href="#contact">Contact</a></li>
+
+    <li>
+      <a class="btn btn-gold" href="#contact">
+        Book a Consultation
+      </a>
+    </li>
+
+  </ul>
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+<div class="container">
+
+<div class="hero-content">
+
+<span class="badge">
+African Traditional & Spiritual Practitioner
+</span>
+
+<h1>
+Dr Suleiman<br>
+<span>Traditional Guidance</span>
+</h1>
+
+<p>
+A Nairobi-based traditional healer, diviner and herbalist offering
+traditional guidance, spiritual consultations and cultural support
+for people facing everyday personal and family challenges.
+</p>
+
+<div class="actions">
+
+<a class="btn btn-gold" href="#contact">
+Book a Consultation
+</a>
+
+<a class="btn btn-outline" href="#contact">
+Contact Us
+</a>
 
 </div>
 
-
-<!-- =========================================
-     NAVIGATION
-========================================= -->
-
-<header class="navbar">
-
-    <div class="nav-container">
-
-        <div class="logo">
-            Daktari wa mapenzi
-        </div>
-
-        <nav class="nav-links">
-
-            <a href="#home">
-                Home
-            </a>
-
-            <a href="#about">
-                About
-            </a>
-
-            <a href="#services">
-                Services
-            </a>
-
-            <a href="#reviews">
-                Reviews
-            </a>
-
-            <a href="#contact">
-                Contact
-            </a>
-
-        </nav>
-
-        <button
-            class="menu-button"
-            onclick="toggleMenu()">
-
-            ☰
-
-        </button>
-
-    </div>
-
-</header>
-
-
-<!-- =========================================
-     HERO
-========================================= -->
-
-<section
-    id="home"
-    class="hero">
-
-    <div class="hero-content">
-
-        <div class="hero-small">
-
-            WELCOME TO OUR WEBSITE
-
-        </div>
-
-        <h1>
-
-            Professional
-            Services You Can Trust
-
-        </h1>
-
-        <p>
-
-            Discover personalized services
-            designed to meet your needs.
-
-        </p>
-
-        <div class="buttons">
-
-            <a
-                href="#services"
-                class="button button-dark">
-
-                OUR SERVICES
-
-            </a>
-
-            <a
-                href="#contact"
-                class="button button-light">
-
-                CONTACT US
-
-            </a>
-
-        </div>
-
-    </div>
-
+</div>
+</div>
 </section>
 
+<!-- ABOUT -->
+<section id="about">
 
-<!-- =========================================
-     ABOUT
-========================================= -->
+<div class="container">
 
-<section
-    id="about"
-    class="section">
+<div class="about-grid">
 
-    <div class="container">
+<div class="about-image"></div>
 
-        <div class="about-grid">
+<div class="about-text">
 
-            <div class="about-image"></div>
+<div class="section-title"
+style="text-align:left;margin-bottom:20px">
 
-            <div class="about-text">
+<small>About Dr Suleiman</small>
 
-                <div class="section-label">
-                    ABOUT US
-                </div>
+<h2>
+Experienced African Traditional Practitioner
+</h2>
 
-                <h2>
+</div>
 
-                    Quality Service
-                    With A Personal Touch
+<p>
+Dr Suleiman is a Nairobi-based African traditional and spiritual
+practitioner who works with people facing day-to-day challenges.
+</p>
 
-                </h2>
+<p>
+Through traditional practices, spiritual guidance and cultural
+knowledge, Dr Suleiman helps people seek solutions and guidance
+for issues affecting their personal and family lives.
+</p>
 
-                <p>
+<ul class="checks">
 
-                    Welcome to our website.
+<li>Traditional consultation</li>
 
-                    We are committed to providing
-                    professional and personalized
-                    services to our clients.
+<li>Spiritual and cultural guidance</li>
 
-                </p>
+<li>Private and respectful consultations</li>
 
-                <p>
+<li>Personal and family guidance</li>
 
-                    Our goal is to create a
-                    welcoming experience while
-                    delivering reliable service.
+</ul>
 
-                </p>
-
-                <a
-                    href="#contact"
-                    class="button button-dark">
-
-                    GET IN TOUCH
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     SERVICES
-========================================= -->
-
-<section
-    id="services"
-    class="section services">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <div class="section-label">
-                WHAT WE OFFER
-            </div>
-
-            <h2>
-                Our Services
-            </h2>
-
-            <p>
-
-                Explore our range of
-                professional services.
-
-            </p>
-
-        </div>
-
-
-        <div class="services-grid">
-
-
-            <article class="service-card">
-
-                <div
-                    class="service-image service-1">
-                </div>
-
-                <div class="service-content">
-
-                    <span class="service-number">
-                        01
-                    </span>
-
-                    <h3>
-                        Service One
-                    </h3>
-
-                    <p>
-
-                        Add your service
-                        description here.
-
-                    </p>
-
-                    <a
-                        href="#contact"
-                        class="service-link">
-
-                        Learn More →
-
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <article class="service-card">
-
-                <div
-                    class="service-image service-2">
-                </div>
-
-                <div class="service-content">
-
-                    <span class="service-number">
-                        02
-                    </span>
-
-                    <h3>
-                        Service Two
-                    </h3>
-
-                    <p>
-
-                        Add your service
-                        description here.
-
-                    </p>
-
-                    <a
-                        href="#contact"
-                        class="service-link">
-
-                        Learn More →
-
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <article class="service-card">
-
-                <div
-                    class="service-image service-3">
-                </div>
-
-                <div class="service-content">
-
-                    <span class="service-number">
-                        03
-                    </span>
-
-                    <h3>
-                        Service Three
-                    </h3>
-
-                    <p>
-
-                        Add your service
-                        description here.
-
-                    </p>
-
-                    <a
-                        href="#contact"
-                        class="service-link">
-
-                        Learn More →
-
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <article class="service-card">
-
-                <div
-                    class="service-image service-4">
-                </div>
-
-                <div class="service-content">
-
-                    <span class="service-number">
-                        04
-                    </span>
-
-                    <h3>
-                        Service Four
-                    </h3>
-
-                    <p>
-
-                        Add your service
-                        description here.
-
-                    </p>
-
-                    <a
-                        href="#contact"
-                        class="service-link">
-
-                        Learn More →
-
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <article class="service-card">
-
-                <div
-                    class="service-image service-5">
-                </div>
-
-                <div class="service-content">
-
-                    <span class="service-number">
-                        05
-                    </span>
-
-                    <h3>
-                        Service Five
-                    </h3>
-
-                    <p>
-
-                        Add your service
-                        description here.
-
-                    </p>
-
-                    <a
-                        href="#contact"
-                        class="service-link">
-
-                        Learn More →
-
-                    </a>
-
-                </div>
-
-            </article>
-
-
-            <article class="service-card">
-
-                <div
-                    class="service-image service-6">
-                </div>
-
-                <div class="service-content">
-
-                    <span class="service-number">
-                        06
-                    </span>
-
-                    <h3>
-                        Service Six
-                    </h3>
-
-                    <p>
-
-                        Add your service
-                        description here.
-
-                    </p>
-
-                    <a
-                        href="#contact"
-                        class="service-link">
-
-                        Learn More →
-
-                    </a>
-
-                </div>
-
-            </article>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     CTA
-========================================= -->
-
-<section class="cta">
-
-    <div class="container">
-
-        <div class="section-label">
-            NEED OUR SERVICES?
-        </div>
-
-        <h2>
-            Let's Talk About Your Needs
-        </h2>
-
-        <a
-            href="#contact"
-            class="button button-light">
-
-            CONTACT US
-
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     REVIEWS
-========================================= -->
-
-<section
-    id="reviews"
-    class="section">
-
-    <div class="container">
-
-        <div class="section-heading">
-
-            <div class="section-label">
-                TESTIMONIALS
-            </div>
-
-            <h2>
-                What Our Clients Say
-            </h2>
-
-        </div>
-
-
-        <div class="reviews-grid">
-
-
-            <div class="review">
-
-                <div class="stars">
-                    ★★★★★
-                </div>
-
-                <p>
-
-                    "Excellent service and
-                    very professional experience."
-
-                </p>
-
-                <h4>
-                    Client One
-                </h4>
-
-            </div>
-
-
-            <div class="review">
-
-                <div class="stars">
-                    ★★★★★
-                </div>
-
-                <p>
-
-                    "Very helpful and responsive.
-                    I was happy with the service."
-
-                </p>
-
-                <h4>
-                    Client Two
-                </h4>
-
-            </div>
-
-
-            <div class="review">
-
-                <div class="stars">
-                    ★★★★★
-                </div>
-
-                <p>
-
-                    "Great communication and
-                    excellent customer service."
-
-                </p>
-
-                <h4>
-                    Client Three
-                </h4>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     CONTACT
-========================================= -->
-
-<section
-    id="contact"
-    class="section contact">
-
-    <div class="container">
-
-        <div class="contact-grid">
-
-
-            <div class="contact-text">
-
-                <div class="section-label">
-                    CONTACT US
-                </div>
-
-                <h2>
-                    Let's Talk
-                </h2>
-
-                <p>
-
-                    Have a question?
-
-                    Get in touch with us
-                    and we'll be happy to help.
-
-                </p>
-
-
-                <div class="contact-details">
-
-                    <p>
-                        📞
-                        <strong>Phone:</strong>
-                        +254 700 000 000
-                    </p>
-
-                    <p>
-                        💬
-                        <strong>WhatsApp:</strong>
-                        +254 700 000 000
-                    </p>
-
-                    <p>
-                        ✉
-                        <strong>Email:</strong>
-                        your@email.com
-                    </p>
-
-                    <p>
-                        📍
-                        <strong>Location:</strong>
-                        Nairobi, Kenya
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <form
-                class="contact-form"
-                onsubmit="sendMessage(event)">
-
-                <input
-                    type="text"
-                    placeholder="Daktari Suleiman kutoka Tanga"
-                    required>
-
-                <input
-                    type="email"
-                    placeholder="daktarisuleimain@gmail.com"
-                    required>
-
-                <input
-                    type="tel"
-                    placeholder="0123456789">
-
-                <textarea
-                    rows="6"
-                    placeholder="Your Message"
-                    required>
-                </textarea>
-
-                <button
-                    type="submit"
-                    class="button button-dark">
-
-                    SEND MESSAGE
-
-                </button>
-
-            </form>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     FOOTER
-========================================= -->
-
-<footer>
-
-    <div class="footer-grid">
-
-
-        <div>
-
-            <h3>
-                Daktari wa mapenzi
-            </h3>
-
-            <p>
-
-                Professional service
-                you can trust.
-
-            </p>
-
-        </div>
-
-
-        <div>
-
-            <h4>
-                QUICK LINKS
-            </h4>
-
-            <a href="#home">
-                Home
-            </a>
-
-            <a href="#about">
-                About
-            </a>
-
-            <a href="#services">
-                Services
-            </a>
-
-            <a href="#contact">
-                Contact
-            </a>
-
-        </div>
-
-
-        <div>
-
-            <h4>
-                CONTACT
-            </h4>
-
-            <p>
-                +254 700 000 000
-            </p>
-
-            <p>
-                your@email.com
-            </p>
-
-        </div>
-
-
-    </div>
-
-
-    <div class="copyright">
-
-        © 2026 Daktari Suleiman kutoka Tanga.
-        All Rights Reserved.
-
-    </div>
-
-</footer>
-
-
-<!-- =========================================
-     WHATSAPP BUTTON
-========================================= -->
-
-<a
-    href="https://wa.me/254700000000"
-    class="whatsapp"
-    target="_blank"
-    title="Chat on WhatsApp">
-
-    💬
-
+<a class="btn btn-gold" href="#contact">
+Learn More
 </a>
 
+</div>
 
-<!-- =========================================
-     JAVASCRIPT
-========================================= -->
+</div>
+</div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>What We Offer</small>
+
+<h2>Our Services</h2>
+
+<p>
+Consultations are intended to provide traditional, cultural
+and personal guidance. Results are not guaranteed.
+</p>
+
+</div>
+
+<div class="service-grid">
+
+<!-- SERVICE 1 -->
+<article class="card">
+
+<div class="icon">❤️</div>
+
+<h3>
+Love & Relationship Problems
+</h3>
+
+<p>
+Personalized guidance for love, relationships,
+communication and relationship challenges.
+</p>
+
+</article>
+
+<!-- SERVICE 2 -->
+<article class="card">
+
+<div class="icon">✦</div>
+
+<h3>
+Bad Luck
+</h3>
+
+<p>
+Traditional and cultural consultation for people who feel
+they are experiencing repeated setbacks, obstacles or
+difficult periods in their lives.
+</p>
+
+</article>
+
+<!-- SERVICE 3 -->
+<article class="card">
+
+<div class="icon">☀️</div>
+
+<h3>
+Spiritual Disturbances
+</h3>
+
+<p>
+Private consultation and traditional spiritual guidance
+for people seeking cultural perspectives on unusual
+or difficult personal experiences.
+</p>
+
+</article>
+
+<!-- SERVICE 4 -->
+<article class="card">
+
+<div class="icon">⌕</div>
+
+<h3>
+Unemployment
+</h3>
+
+<p>
+Guidance and encouragement for people experiencing
+unemployment, career uncertainty and challenges while
+seeking new opportunities.
+</p>
+
+</article>
+
+<!-- SERVICE 5 -->
+<article class="card">
+
+<div class="icon">◆</div>
+
+<h3>
+Workplace & Career Difficulties
+</h3>
+
+<p>
+Traditional consultation and personal guidance for
+workplace concerns, career decisions, professional
+relationships and direction.
+</p>
+
+</article>
+
+<!-- SERVICE 6 -->
+<article class="card">
+
+<div class="icon">KSh</div>
+
+<h3>
+Financial Difficulties & Debt
+</h3>
+
+<p>
+Supportive consultation for people dealing with financial
+pressure, debt and uncertainty, alongside practical steps
+toward better financial planning.
+</p>
+
+</article>
+
+<!-- SERVICE 7 -->
+<article class="card">
+
+<div class="icon">☮️</div>
+
+<h3>
+Personal Direction, Peace & Emotional Support
+</h3>
+
+<p>
+Private conversations and traditional guidance for people
+seeking clarity, peace, encouragement and a sense of
+direction during difficult periods.
+</p>
+
+</article>
+
+<!-- SERVICE 8 -->
+<article class="card">
+
+<div class="icon">⌂</div>
+
+<h3>
+Children's Behavioural & School Challenges
+</h3>
+
+<p>
+Guidance for parents and families dealing with children's
+behavioural, educational or school-related concerns,
+with practical support and referral when appropriate.
+</p>
+
+</article>
+
+<!-- SERVICE 9 -->
+<article class="card">
+
+<div class="icon">♡</div>
+
+<h3>
+Conceiving & Family Planning Concerns
+</h3>
+
+<p>
+Traditional and cultural consultation for people with
+family-planning concerns. Medical fertility or reproductive
+health questions should also be discussed with a qualified
+healthcare professional.
+</p>
+
+</article>
+
+</div>
+</div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+
+<div class="container">
+
+<h2>
+Looking for Guidance?
+</h2>
+
+<p>
+Book a private consultation with Dr Suleiman in Nairobi.
+</p>
+
+<a class="btn btn-gold" href="#contact">
+Book a Consultation
+</a>
+
+</div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>Gallery</small>
+
+<h2>Our Gallery</h2>
+
+<p>
+Images can be replaced with your own professional photos.
+</p>
+
+</div>
+
+<div class="gallery-grid">
+
+<div>
+<img
+src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=800&q=80"
+alt="African landscape">
+</div>
+
+<div>
+<img
+src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=800&q=80"
+alt="African nature">
+</div>
+
+<div>
+<img
+src="https://images.unsplash.com/photo-1533130061792-64b345e4a833?auto=format&fit=crop&w=800&q=80"
+alt="Nature">
+</div>
+
+<div>
+<img
+src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=800&q=80"
+alt="Landscape">
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>
+Frequently Asked Questions
+</small>
+
+<h2>FAQ</h2>
+
+</div>
+
+<div class="faq-item">
+
+<div class="faq-q">
+Where is Dr Suleiman located?
+<span>+</span>
+</div>
+
+<div class="faq-a">
+Dr Suleiman is based in Nairobi, Kenya.
+Contact us before visiting for consultation
+and location details.
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<div class="faq-q">
+How do I book a consultation?
+<span>+</span>
+</div>
+
+<div class="faq-a">
+Use the phone, WhatsApp, email or contact
+form on this website to request a consultation.
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<div class="faq-q">
+Are consultations private?
+<span>+</span>
+</div>
+
+<div class="faq-a">
+Consultations are intended to be respectful
+and private. Please avoid sharing highly
+sensitive information through public channels.
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<div class="faq-q">
+Are results guaranteed?
+<span>+</span>
+</div>
+
+<div class="faq-a">
+No. Traditional or spiritual consultations
+cannot guarantee a particular outcome.
+</div>
+
+</div>
+
+<div class="faq-item">
+
+<div class="faq-q">
+Can traditional consultation replace medical care?
+<span>+</span>
+</div>
+
+<div class="faq-a">
+No. For medical, mental-health, pregnancy,
+fertility or other health concerns, consult
+a qualified healthcare professional.
+Traditional consultation may be considered
+separately as cultural or spiritual support.
+</div>
+
+</div>
+
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+
+<div class="container">
+
+<div class="section-title">
+
+<small>
+Get In Touch
+</small>
+
+<h2>
+Contact Dr Suleiman
+</h2>
+
+<p>
+Reach us by phone, WhatsApp, email or
+the contact form below.
+</p>
+
+</div>
+
+<div class="contact-grid">
+
+<div class="contact-box">
+
+<h3>
+Contact Information
+</h3>
+
+<ul class="contact-list">
+
+<li>
+📞 <strong>Phone:</strong>
+<a href="tel:0123456789">
+0123456789
+</a>
+</li>
+
+<li>
+💬 <strong>WhatsApp:</strong>
+<a href="https://wa.me/254123456789">
+0123456789
+</a>
+</li>
+
+<li>
+✉️ <strong>Email:</strong>
+<a href="mailto:daktarisuleiman@gmail.com">
+daktarisuleiman@gmail.com
+</a>
+</li>
+
+<li>
+🕐 <strong>Opening Hours:</strong>
+24 Hours
+</li>
+
+<li>
+📍 <strong>Location:</strong>
+Nairobi, Kenya
+</li>
+
+</ul>
+
+<div class="actions" style="margin-top:22px">
+
+<a class="btn btn-gold"
+href="tel:0123456789">
+Call Now
+</a>
+
+<a class="btn"
+style="background:#168c4a;color:white;border-color:#168c4a"
+href="https://wa.me/254123456789">
+WhatsApp
+</a>
+
+</div>
+
+<div class="map">
+
+<iframe
+src="https://www.google.com/maps?q=Nairobi%2C%20Kenya&output=embed"
+loading="lazy">
+</iframe>
+
+</div>
+
+</div>
+
+<!-- CONTACT FORM -->
+<div class="contact-box">
+
+<h3>
+Send a Message
+</h3>
+
+<form onsubmit="sendMessage(event)">
+
+<input
+id="name"
+type="text"
+placeholder="Your name"
+required>
+
+<input
+id="email"
+type="email"
+placeholder="Your email"
+required>
+
+<input
+id="phone"
+type="tel"
+placeholder="Your phone number">
+
+<textarea
+id="message"
+placeholder="How can we help you?"
+required>
+</textarea>
+
+<button
+class="btn btn-gold"
+type="submit">
+Send Message
+</button>
+
+</form>
+
+<div style="margin-top:25px">
+
+<p>
+<strong>Social media</strong>
+</p>
+
+<div class="socials">
+
+<a href="#" aria-label="Facebook">
+f
+</a>
+
+<a href="#" aria-label="Instagram">
+◎
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+
+<h3>
+Dr Suleiman
+</h3>
+
+<p>
+A Nairobi-based African traditional and spiritual
+practitioner offering traditional guidance and
+cultural consultations.
+</p>
+
+</div>
+
+<div>
+
+<h3>
+Quick Links
+</h3>
+
+<ul>
+
+<li>
+<a href="#about">About</a>
+</li>
+
+<li>
+<a href="#services">Services</a>
+</li>
+
+<li>
+<a href="#gallery">Gallery</a>
+</li>
+
+<li>
+<a href="#faq">FAQ</a>
+</li>
+
+<li>
+<a href="#contact">Contact</a>
+</li>
+
+</ul>
+
+</div>
+
+<div>
+
+<h3>
+Contact
+</h3>
+
+<p>
+Nairobi, Kenya
+</p>
+
+<p>
+0123456789
+</p>
+
+<p>
+daktarisuleiman@gmail.com
+</p>
+
+<p>
+Open 24 Hours
+</p>
+
+</div>
+
+</div>
+
+<div class="copy">
+
+© 2026 Dr Suleiman. All Rights Reserved.
+
+</div>
+
+</div>
+</footer>
+
+<!-- FLOATING CONTACT BUTTONS -->
+<div class="floating">
+
+<a
+class="float-btn whatsapp"
+href="https://wa.me/254123456789"
+title="WhatsApp">
+W
+</a>
+
+<a
+class="float-btn call"
+href="tel:0123456789"
+title="Call">
+☎️
+</a>
+
+<a
+class="float-btn email"
+href="mailto:daktarisuleiman@gmail.com"
+title="Email">
+✉️
+</a>
+
+</div>
 
 <script>
 
-    /* MOBILE MENU */
+function toggleMenu(){
 
-    function toggleMenu() {
+document
+.getElementById("navlinks")
+.classList
+.toggle("show");
 
-        const menu =
-            document.querySelector(".nav-links");
+}
 
-        menu.classList.toggle("active");
+document
+.querySelectorAll(".navlinks a")
+.forEach(a=>{
 
-    }
+a.addEventListener("click",()=>{
 
+document
+.getElementById("navlinks")
+.classList
+.remove("show");
 
-    /* CONTACT FORM */
+});
 
-    function sendMessage(event) {
+});
 
-        event.preventDefault();
+document
+.querySelectorAll(".faq-item")
+.forEach(item=>{
 
-        alert(
-            "Thank you! Your message has been received."
-        );
+item.addEventListener("click",()=>{
 
-    }
+item.classList.toggle("open");
 
+});
 
-    /* CLOSE MOBILE MENU AFTER CLICKING */
+});
 
-    document
-        .querySelectorAll(".nav-links a")
-        .forEach(function(link) {
+function sendMessage(e){
 
-            link.addEventListener(
-                "click",
-                function() {
+e.preventDefault();
 
-                    document
-                        .querySelector(".nav-links")
-                        .classList
-                        .remove("active");
+const name =
+document.getElementById("name").value;
 
-                }
-            );
+const email =
+document.getElementById("email").value;
 
-        });
+const phone =
+document.getElementById("phone").value;
+
+const message =
+document.getElementById("message").value;
+
+const subject =
+encodeURIComponent(
+"Website consultation request from " + name
+);
+
+const body =
+encodeURIComponent(
+"Name: " + name +
+"\nEmail: " + email +
+"\nPhone: " + phone +
+"\n\nMessage:\n" + message
+);
+
+window.location.href =
+"mailto:daktarisuleiman@gmail.com?subject=" +
+subject +
+"&body=" +
+body;
+
+}
 
 </script>
 
-
 </body>
-
 </html>
