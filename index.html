@@ -9,7 +9,7 @@
 <style>
 
 /* =========================================================
-   GLOBAL
+   RESET
 ========================================================= */
 
 * {
@@ -24,7 +24,7 @@ html {
 
 body {
     font-family: Georgia, "Times New Roman", serif;
-    background: #100b07;
+    background: #090604;
     color: #f4ead7;
     line-height: 1.7;
 }
@@ -53,40 +53,44 @@ a {
 header {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
-    z-index: 999;
-    background: rgba(8,5,3,0.88);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(218,170,72,0.25);
+    z-index: 9999;
+
+    background: rgba(7,4,2,0.94);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(214,168,63,0.28);
 }
 
 .navbar {
-    min-height: 75px;
+    min-height: 74px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 23px;
     font-weight: bold;
     letter-spacing: 2px;
     color: #e4b84f;
 }
 
 .logo span {
-    color: #fff;
+    color: #ffffff;
 }
 
 .nav-links {
     display: flex;
-    gap: 28px;
+    gap: 27px;
     list-style: none;
 }
 
 .nav-links a {
     color: #eee2ce;
-    font-size: 14px;
+    font-size: 13px;
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: 0.3s;
@@ -98,62 +102,99 @@ header {
 
 
 /* =========================================================
+   LANGUAGE BUTTON
+========================================================= */
+
+.language-btn {
+    margin-left: 20px;
+    padding: 7px 12px;
+
+    background: transparent;
+    color: #e3b54c;
+
+    border: 1px solid #9f772b;
+    cursor: pointer;
+
+    font-family: inherit;
+    font-size: 12px;
+}
+
+
+/* =========================================================
    HERO
 ========================================================= */
 
 .hero {
     min-height: 100vh;
+
     position: relative;
+
     display: flex;
     align-items: center;
+
     overflow: hidden;
 
-    background:
+    background-image:
         linear-gradient(
-            rgba(5,3,2,0.58),
-            rgba(5,3,2,0.82)
+            rgba(4,2,1,0.48),
+            rgba(4,2,1,0.86)
         ),
-        url("images/hero.jpg");
+        url("https://images.pexels.com/photos/32409583/pexels-photo-32409583.jpeg?auto=compress&cs=tinysrgb&w=1800");
 
     background-size: cover;
     background-position: center;
 }
 
-.hero::before {
+.hero::after {
     content: "";
+
     position: absolute;
     inset: 0;
 
     background:
         radial-gradient(
             circle at center,
-            transparent 0%,
-            rgba(0,0,0,0.25) 45%,
-            rgba(0,0,0,0.85) 100%
+            transparent 10%,
+            rgba(0,0,0,0.15) 45%,
+            rgba(0,0,0,0.82) 100%
         );
+
+    pointer-events: none;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 750px;
+
+    max-width: 780px;
+
     padding-top: 70px;
 }
 
 .small-title {
-    color: #e4b84f;
+    color: #e1b447;
+
     letter-spacing: 5px;
-    font-size: 13px;
+
+    font-size: 12px;
+
     text-transform: uppercase;
+
     margin-bottom: 18px;
 }
 
 .hero h1 {
-    font-size: clamp(45px, 7vw, 82px);
-    line-height: 1;
+    font-size: clamp(46px, 7vw, 82px);
+
+    line-height: 0.98;
+
     text-transform: uppercase;
+
     letter-spacing: 3px;
-    text-shadow: 0 5px 25px #000;
+
+    text-shadow:
+        0 4px 15px #000,
+        0 8px 35px #000;
 }
 
 .hero h1 span {
@@ -161,25 +202,37 @@ header {
 }
 
 .hero p {
-    margin-top: 25px;
-    max-width: 650px;
+    margin-top: 27px;
+
+    max-width: 680px;
+
     font-size: 19px;
+
     color: #eee3d0;
 }
 
 .hero-buttons {
     margin-top: 35px;
+
     display: flex;
     gap: 15px;
+
     flex-wrap: wrap;
 }
 
 .btn {
-    padding: 15px 30px;
+    display: inline-block;
+
+    padding: 14px 28px;
+
     border: 1px solid #d6a83f;
+
     text-transform: uppercase;
+
     letter-spacing: 1px;
-    font-size: 13px;
+
+    font-size: 12px;
+
     transition: 0.3s;
 }
 
@@ -189,11 +242,11 @@ header {
 }
 
 .btn-primary:hover {
-    background: #f1cd69;
+    background: #f2cd69;
 }
 
 .btn-outline {
-    color: white;
+    color: #ffffff;
 }
 
 .btn-outline:hover {
@@ -203,7 +256,7 @@ header {
 
 
 /* =========================================================
-   SECTION STYLE
+   SECTION TITLES
 ========================================================= */
 
 section {
@@ -218,18 +271,27 @@ section {
 
 .section-title small {
     color: #d8aa42;
+
     letter-spacing: 4px;
+
     text-transform: uppercase;
+
+    font-size: 12px;
 }
 
 .section-title h2 {
     margin-top: 10px;
-    font-size: 42px;
+
+    font-size: 43px;
+
+    line-height: 1.1;
 }
 
 .section-title p {
-    max-width: 650px;
+    max-width: 680px;
+
     margin: 15px auto;
+
     color: #bdb09c;
 }
 
@@ -240,19 +302,21 @@ section {
 
 .about {
     background:
-        linear-gradient(
-            rgba(13,8,5,0.94),
-            rgba(13,8,5,0.96)
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(103,63,23,0.16),
+            transparent 50%
         ),
-        url("images/pattern.jpg");
-
-    background-size: cover;
+        #100904;
 }
 
 .about-grid {
     display: grid;
+
     grid-template-columns: 1fr 1fr;
+
     gap: 60px;
+
     align-items: center;
 }
 
@@ -262,21 +326,39 @@ section {
 
 .about-image img {
     height: 600px;
+
     object-fit: cover;
-    filter: brightness(0.72) contrast(1.12) saturate(0.9);
+
+    filter:
+        brightness(0.62)
+        contrast(1.15)
+        saturate(0.85);
 }
 
-.about-image::after {
+.about-image::before {
     content: "";
+
     position: absolute;
-    inset: 18px;
-    border: 1px solid rgba(224,176,71,0.5);
-    pointer-events: none;
+
+    top: 18px;
+    left: 18px;
+    right: -18px;
+    bottom: -18px;
+
+    border: 1px solid rgba(220,174,67,0.5);
+
+    z-index: 0;
+}
+
+.about-image img {
+    position: relative;
+    z-index: 1;
 }
 
 .about-text h2 {
-    font-size: 42px;
-    margin-bottom: 20px;
+    font-size: 43px;
+
+    margin-bottom: 22px;
 }
 
 .about-text h2 span {
@@ -285,6 +367,7 @@ section {
 
 .about-text p {
     color: #c5b8a5;
+
     margin-bottom: 20px;
 }
 
@@ -294,76 +377,100 @@ section {
 ========================================================= */
 
 .services {
-    background: #0b0704;
+    background: #080503;
 }
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 22px;
 }
 
 .service-card {
-    min-height: 330px;
+    min-height: 360px;
+
     position: relative;
+
     overflow: hidden;
-    border: 1px solid rgba(214,168,63,0.25);
+
+    border: 1px solid rgba(214,168,63,0.22);
+
+    background: #120a05;
 }
 
 .service-card img {
-    height: 100%;
-    min-height: 330px;
+    width: 100%;
+    height: 360px;
+
     object-fit: cover;
+
+    filter:
+        brightness(0.42)
+        contrast(1.15)
+        saturate(0.82);
+
     transition: 0.6s;
-    filter: brightness(0.48) saturate(0.8);
 }
 
 .service-card:hover img {
     transform: scale(1.08);
-    filter: brightness(0.65);
+
+    filter:
+        brightness(0.58)
+        contrast(1.1);
 }
 
 .service-content {
     position: absolute;
-    inset: auto 0 0 0;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
     padding: 30px;
+
     background:
         linear-gradient(
             transparent,
-            rgba(0,0,0,0.95)
+            rgba(0,0,0,0.97)
         );
 }
 
 .service-content h3 {
     color: #e3b64e;
+
     font-size: 23px;
+
     margin-bottom: 8px;
 }
 
 .service-content p {
     color: #ddd0bc;
+
     font-size: 14px;
 }
 
 
 /* =========================================================
-   DRAMATIC FEATURE BANNER
+   DRAMATIC AFRICAN BANNER
 ========================================================= */
 
 .dark-banner {
-    min-height: 550px;
+    min-height: 580px;
 
     display: flex;
     align-items: center;
 
-    background:
+    background-image:
         linear-gradient(
             90deg,
-            rgba(5,2,1,0.95),
-            rgba(5,2,1,0.55),
-            rgba(5,2,1,0.85)
+            rgba(5,2,1,0.94),
+            rgba(5,2,1,0.48),
+            rgba(5,2,1,0.82)
         ),
-        url("images/pots-and-smoke.jpg");
+        url("https://images.pexels.com/photos/24375991/pexels-photo-24375991.jpeg?auto=compress&cs=tinysrgb&w=1800");
 
     background-size: cover;
     background-position: center;
@@ -373,13 +480,15 @@ section {
 }
 
 .banner-text {
-    max-width: 650px;
+    max-width: 680px;
 }
 
 .banner-text h2 {
-    font-size: clamp(38px, 5vw, 65px);
+    font-size: clamp(40px,5vw,67px);
+
     line-height: 1.05;
-    margin-bottom: 20px;
+
+    margin-bottom: 22px;
 }
 
 .banner-text h2 span {
@@ -388,6 +497,8 @@ section {
 
 .banner-text p {
     color: #d2c5b1;
+
+    font-size: 17px;
 }
 
 
@@ -396,38 +507,65 @@ section {
 ========================================================= */
 
 .gallery {
-    background: #120b07;
+    background: #110905;
 }
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+
+    grid-template-columns: repeat(3,1fr);
+
     gap: 8px;
 }
 
 .gallery-item {
-    height: 300px;
+    height: 310px;
+
     overflow: hidden;
+
     position: relative;
+
+    background: #160c06;
+}
+
+.gallery-item::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,0,0,0.12),
+            rgba(0,0,0,0.4)
+        );
+
+    pointer-events: none;
 }
 
 .gallery-item img {
+    width: 100%;
     height: 100%;
+
     object-fit: cover;
 
     filter:
-        brightness(0.58)
-        contrast(1.15)
-        saturate(0.85);
+        brightness(0.55)
+        contrast(1.18)
+        saturate(0.82);
 
-    transition: 0.5s;
+    transition: 0.55s;
 }
 
 .gallery-item:hover img {
     transform: scale(1.08);
+
     filter:
-        brightness(0.78)
-        contrast(1.1);
+        brightness(0.72)
+        contrast(1.12)
+        saturate(0.95);
 }
 
 
@@ -438,39 +576,54 @@ section {
 .testimonials {
     background:
         linear-gradient(
-            rgba(10,6,3,0.95),
-            rgba(10,6,3,0.95)
+            rgba(10,6,3,0.94),
+            rgba(10,6,3,0.97)
         ),
-        url("images/herbs.jpg");
+        url("https://images.pexels.com/photos/31923982/pexels-photo-31923982.jpeg?auto=compress&cs=tinysrgb&w=1600");
 
     background-size: cover;
+
+    background-position: center;
 }
 
 .testimonial-grid {
     display: grid;
+
     grid-template-columns: repeat(3,1fr);
-    gap: 25px;
+
+    gap: 24px;
 }
 
 .testimonial {
     padding: 35px;
-    background: rgba(30,18,10,0.85);
-    border: 1px solid rgba(214,168,63,0.2);
+
+    background:
+        rgba(27,16,8,0.88);
+
+    border:
+
+        1px solid rgba(214,168,63,0.2);
+
+    backdrop-filter: blur(5px);
 }
 
 .stars {
     color: #e4b84f;
+
     letter-spacing: 3px;
+
     margin-bottom: 15px;
 }
 
 .testimonial p {
     color: #d2c5b1;
+
     font-style: italic;
 }
 
 .testimonial h4 {
     margin-top: 20px;
+
     color: #e1b44a;
 }
 
@@ -480,28 +633,40 @@ section {
 ========================================================= */
 
 .contact {
-    background: #080503;
     text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(112,70,24,0.16),
+            transparent 55%
+        ),
+        #080503;
 }
 
 .contact-box {
     max-width: 800px;
+
     margin: auto;
 }
 
 .contact-box h2 {
-    font-size: 48px;
+    font-size: 52px;
 }
 
 .contact-box p {
     margin: 20px auto 30px;
+
     color: #c2b5a2;
 }
 
 .contact-buttons {
     display: flex;
+
     justify-content: center;
+
     gap: 15px;
+
     flex-wrap: wrap;
 }
 
@@ -512,42 +677,53 @@ section {
 
 footer {
     background: #050302;
+
     padding: 35px 0;
+
     text-align: center;
+
     border-top: 1px solid rgba(214,168,63,0.2);
 }
 
 footer p {
     color: #8f8272;
+
     font-size: 13px;
 }
 
 
 /* =========================================================
-   FLOATING WHATSAPP
+   WHATSAPP
 ========================================================= */
 
 .whatsapp {
     position: fixed;
+
     right: 20px;
     bottom: 20px;
-    z-index: 999;
+
+    z-index: 9999;
 
     width: 60px;
     height: 60px;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
     border-radius: 50%;
 
     background: #25d366;
+
     color: white;
+
+    font-family: Arial, sans-serif;
 
     font-size: 26px;
 
-    box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+    box-shadow:
+        0 5px 25px rgba(0,0,0,0.5);
 }
 
 
@@ -555,7 +731,7 @@ footer p {
    MOBILE
 ========================================================= */
 
-@media (max-width: 850px) {
+@media(max-width:900px) {
 
     .nav-links {
         display: none;
@@ -563,10 +739,6 @@ footer p {
 
     .about-grid {
         grid-template-columns: 1fr;
-    }
-
-    .about-image img {
-        height: 450px;
     }
 
     .services-grid {
@@ -581,23 +753,16 @@ footer p {
         grid-template-columns: 1fr;
     }
 
-    .hero h1 {
-        font-size: 48px;
+    .about-image img {
+        height: 480px;
     }
 }
 
-@media (max-width: 550px) {
+
+@media(max-width:550px) {
 
     section {
-        padding: 70px 0;
-    }
-
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery-item {
-        height: 330px;
+        padding: 75px 0;
     }
 
     .hero {
@@ -608,8 +773,28 @@ footer p {
         padding-top: 100px;
     }
 
+    .hero h1 {
+        font-size: 47px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item {
+        height: 330px;
+    }
+
+    .section-title h2 {
+        font-size: 35px;
+    }
+
     .contact-box h2 {
-        font-size: 38px;
+        font-size: 40px;
     }
 }
 
@@ -633,13 +818,51 @@ footer p {
 </div>
 
 <ul class="nav-links">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#testimonials">Testimonials</a></li>
-    <li><a href="#contact">Contact</a></li>
+
+<li>
+<a href="#home" data-en="Home" data-sw="Mwanzo">
+Home
+</a>
+</li>
+
+<li>
+<a href="#about" data-en="About" data-sw="Kuhusu">
+About
+</a>
+</li>
+
+<li>
+<a href="#services" data-en="Services" data-sw="Huduma">
+Services
+</a>
+</li>
+
+<li>
+<a href="#gallery" data-en="Gallery" data-sw="Picha">
+Gallery
+</a>
+</li>
+
+<li>
+<a href="#testimonials" data-en="Testimonials" data-sw="Ushuhuda">
+Testimonials
+</a>
+</li>
+
+<li>
+<a href="#contact" data-en="Contact" data-sw="Mawasiliano">
+Contact
+</a>
+</li>
+
 </ul>
+
+<button
+class="language-btn"
+onclick="changeLanguage()"
+id="languageButton">
+SW
+</button>
 
 </div>
 
@@ -655,28 +878,53 @@ footer p {
 
 <div class="container hero-content">
 
-<div class="small-title">
+<div class="small-title"
+data-en="Traditional Healing • Spiritual Guidance"
+data-sw="Uponyaji wa Jadi • Mwongozo wa Kiroho">
+
 Traditional Healing • Spiritual Guidance
+
 </div>
+
 
 <h1>
 Dr. <span>Suleiman</span><br>
 Murisho
 </h1>
 
-<p>
-Traditional African spiritual guidance, cultural healing
-and personal consultation in a private and respectful setting.
+
+<p
+data-en="Traditional African spiritual guidance, cultural consultation and personal guidance in a private and respectful setting."
+data-sw="Mwongozo wa jadi wa Kiafrika, ushauri wa kitamaduni na mwongozo wa kibinafsi katika mazingira ya faragha na heshima.">
+
+Traditional African spiritual guidance,
+cultural consultation and personal guidance
+in a private and respectful setting.
+
 </p>
+
 
 <div class="hero-buttons">
 
-<a href="#contact" class="btn btn-primary">
+<a
+href="#contact"
+class="btn btn-primary"
+data-en="Get Help Now"
+data-sw="Pata Msaada Sasa">
+
 Get Help Now
+
 </a>
 
-<a href="#services" class="btn btn-outline">
+
+<a
+href="#services"
+class="btn btn-outline"
+data-en="Our Services"
+data-sw="Huduma Zetu">
+
 Our Services
+
 </a>
 
 </div>
@@ -697,37 +945,66 @@ Our Services
 
 <div class="about-grid">
 
+
 <div class="about-image">
 
-<img src="images/healer.jpg"
-     alt="Traditional healer">
+<img
+src="https://images.pexels.com/photos/33434905/pexels-photo-33434905.jpeg?auto=compress&cs=tinysrgb&w=1200"
+alt="African traditional culture and pottery">
 
 </div>
 
 
 <div class="about-text">
 
-<div class="small-title">
+<div
+class="small-title"
+data-en="About Dr. Murisho"
+data-sw="Kuhusu Dr. Murisho">
+
 About Dr. Murisho
+
 </div>
 
-<h2>
+
+<h2
+data-en="Rooted in African Tradition"
+data-sw="Misingi katika Mila za Kiafrika">
+
 Rooted in <span>African Tradition</span>
+
 </h2>
 
-<p>
+
+<p
+data-en="Dr. Murisho provides traditional and spiritual consultation inspired by African cultural heritage."
+data-sw="Dr. Murisho hutoa ushauri wa jadi na kiroho unaotokana na urithi wa kitamaduni wa Kiafrika.">
+
 Dr. Murisho provides traditional and spiritual consultation
-in a setting inspired by African cultural heritage.
+inspired by African cultural heritage.
+
 </p>
 
-<p>
+
+<p
+data-en="Each consultation begins with listening and understanding the situation before discussing appropriate traditional or spiritual practices."
+data-sw="Kila mashauriano huanza kwa kusikiliza na kuelewa hali kabla ya kujadili mbinu zinazofaa za jadi au kiroho.">
+
 Each consultation begins with listening and understanding
 the situation before discussing appropriate traditional
 or spiritual practices.
+
 </p>
 
-<a href="#contact" class="btn btn-primary">
+
+<a
+href="#contact"
+class="btn btn-primary"
+data-en="Book a Consultation"
+data-sw="Weka Nafasi ya Mashauriano">
+
 Book a Consultation
+
 </a>
 
 </div>
@@ -748,33 +1025,68 @@ Book a Consultation
 
 <div class="container">
 
+
 <div class="section-title">
 
-<small>What We Offer</small>
+<small
+data-en="What We Offer"
+data-sw="Tunachotoa">
 
-<h2>Traditional Services</h2>
+What We Offer
 
-<p>
-Explore our consultation and traditional guidance services.
+</small>
+
+
+<h2
+data-en="Traditional Services"
+data-sw="Huduma za Jadi">
+
+Traditional Services
+
+</h2>
+
+
+<p
+data-en="Explore our traditional consultation and spiritual guidance services."
+data-sw="Gundua huduma zetu za mashauriano ya jadi na mwongozo wa kiroho.">
+
+Explore our traditional consultation
+and spiritual guidance services.
+
 </p>
 
 </div>
+
 
 
 <div class="services-grid">
 
 
+<!-- SERVICE 1 -->
+
 <div class="service-card">
 
-<img src="images/herbs.jpg"
-     alt="Traditional herbs">
+<img
+src="https://images.pexels.com/photos/29630132/pexels-photo-29630132.jpeg?auto=compress&cs=tinysrgb&w=1200"
+alt="African traditional pottery">
 
 <div class="service-content">
 
-<h3>Traditional Guidance</h3>
+<h3
+data-en="Traditional Guidance"
+data-sw="Mwongozo wa Jadi">
 
-<p>
-Private consultation and culturally rooted guidance.
+Traditional Guidance
+
+</h3>
+
+<p
+data-en="Private consultation inspired by African cultural traditions."
+data-sw="Mashauriano ya faragha yanayotokana na mila za Kiafrika.">
+
+Private consultation inspired by
+African cultural traditions.
+
 </p>
 
 </div>
@@ -783,17 +1095,31 @@ Private consultation and culturally rooted guidance.
 
 
 
+<!-- SERVICE 2 -->
+
 <div class="service-card">
 
-<img src="images/pots.jpg"
-     alt="Traditional African pottery">
+<img
+src="https://images.pexels.com/photos/24375991/pexels-photo-24375991.jpeg?auto=compress&cs=tinysrgb&w=1200"
+alt="Traditional pot">
 
 <div class="service-content">
 
-<h3>Spiritual Consultation</h3>
+<h3
+data-en="Spiritual Consultation"
+data-sw="Mashauriano ya Kiroho">
 
-<p>
-A private environment for discussing personal concerns.
+Spiritual Consultation
+
+</h3>
+
+<p
+data-en="A private environment for discussing personal concerns."
+data-sw="Mazingira ya faragha kwa ajili ya kuzungumzia changamoto binafsi.">
+
+A private environment for
+discussing personal concerns.
+
 </p>
 
 </div>
@@ -802,17 +1128,31 @@ A private environment for discussing personal concerns.
 
 
 
+<!-- SERVICE 3 -->
+
 <div class="service-card">
 
-<img src="images/consultation.jpg"
-     alt="Consultation">
+<img
+src="https://images.pexels.com/photos/31923982/pexels-photo-31923982.jpeg?auto=compress&cs=tinysrgb&w=1200"
+alt="African market and traditional products">
 
 <div class="service-content">
 
-<h3>Personal Consultation</h3>
+<h3
+data-en="Personal Consultation"
+data-sw="Mashauriano ya Kibinafsi">
 
-<p>
-One-on-one conversations focused on understanding your situation.
+Personal Consultation
+
+</h3>
+
+<p
+data-en="One-on-one conversations focused on understanding your situation."
+data-sw="Mazungumzo ya mtu mmoja kwa mmoja yanayolenga kuelewa hali yako.">
+
+One-on-one conversations focused
+on understanding your situation.
+
 </p>
 
 </div>
@@ -838,19 +1178,30 @@ One-on-one conversations focused on understanding your situation.
 
 <div class="banner-text">
 
-<div class="small-title">
+<div
+class="small-title"
+data-en="African Heritage"
+data-sw="Urithi wa Kiafrika">
+
 African Heritage
+
 </div>
+
 
 <h2>
 Ancient <span>Traditions.</span><br>
-Modern Presentation.
+Powerful Atmosphere.
 </h2>
 
-<p>
-The visual identity of this website draws inspiration from
-traditional African textures, pottery, herbs, warm firelight,
-handcrafted objects and natural materials.
+
+<p
+data-en="Our visual identity draws inspiration from traditional African pottery, herbs, natural materials, cultural objects and warm earthy surroundings."
+data-sw="Muonekano wetu umechochewa na vyungu vya jadi vya Kiafrika, mimea, vitu vya asili, vitu vya kitamaduni na mazingira yenye rangi za udongo.">
+
+Our visual identity draws inspiration from
+traditional African pottery, herbs, natural
+materials, cultural objects and warm earthy surroundings.
+
 </p>
 
 </div>
@@ -869,66 +1220,105 @@ handcrafted objects and natural materials.
 
 <div class="container">
 
+
 <div class="section-title">
 
-<small>Our World</small>
+<small
+data-en="Our World"
+data-sw="Ulimwengu Wetu">
 
-<h2>Gallery</h2>
+Our World
 
-<p>
-A glimpse into the atmosphere surrounding our traditional practice.
+</small>
+
+
+<h2
+data-en="Gallery"
+data-sw="Picha">
+
+Gallery
+
+</h2>
+
+
+<p
+data-en="A glimpse into the atmosphere surrounding our traditional practice."
+data-sw="Mwonekano wa mazingira yanayozunguka huduma zetu za jadi.">
+
+A glimpse into the atmosphere
+surrounding our traditional practice.
+
 </p>
 
 </div>
 
 
+
 <div class="gallery-grid">
 
 
+<!-- PHOTO 1 -->
+
 <div class="gallery-item">
 
-<img src="images/gallery1.jpg"
-     alt="African traditional setting">
+<img
+src="https://images.pexels.com/photos/32409583/pexels-photo-32409583.jpeg?auto=compress&cs=tinysrgb&w=1400"
+alt="African pottery">
 
 </div>
 
 
+<!-- PHOTO 2 -->
+
 <div class="gallery-item">
 
-<img src="images/gallery2.jpg"
-     alt="Clay pots and herbs">
+<img
+src="https://images.pexels.com/photos/29630132/pexels-photo-29630132.jpeg?auto=compress&cs=tinysrgb&w=1400"
+alt="Traditional African pottery">
 
 </div>
 
 
+<!-- PHOTO 3 -->
+
 <div class="gallery-item">
 
-<img src="images/gallery3.jpg"
-     alt="Traditional African objects">
+<img
+src="https://images.pexels.com/photos/24375991/pexels-photo-24375991.jpeg?auto=compress&cs=tinysrgb&w=1400"
+alt="Traditional pot">
 
 </div>
 
 
+<!-- PHOTO 4 -->
+
 <div class="gallery-item">
 
-<img src="images/gallery4.jpg"
-     alt="Herbal preparation">
+<img
+src="https://images.pexels.com/photos/31923982/pexels-photo-31923982.jpeg?auto=compress&cs=tinysrgb&w=1400"
+alt="African traditional market">
 
 </div>
 
 
+<!-- PHOTO 5 -->
+
 <div class="gallery-item">
 
-<img src="images/gallery5.jpg"
-     alt="Traditional consultation">
+<img
+src="https://images.pexels.com/photos/33434905/pexels-photo-33434905.jpeg?auto=compress&cs=tinysrgb&w=1400"
+alt="African traditional attire and pottery">
 
 </div>
 
 
+<!-- PHOTO 6 -->
+
 <div class="gallery-item">
 
-<img src="images/gallery6.jpg"
-     alt="African spiritual atmosphere">
+<img
+src="https://images.pexels.com/photos/29630132/pexels-photo-29630132.jpeg?auto=compress&cs=tinysrgb&w=1400"
+alt="African artisan pottery">
 
 </div>
 
@@ -949,13 +1339,28 @@ A glimpse into the atmosphere surrounding our traditional practice.
 
 <div class="container">
 
+
 <div class="section-title">
 
-<small>Client Experiences</small>
+<small
+data-en="Client Experiences"
+data-sw="Uzoefu wa Wateja">
 
-<h2>Testimonials</h2>
+Client Experiences
+
+</small>
+
+
+<h2
+data-en="Testimonials"
+data-sw="Ushuhuda">
+
+Testimonials
+
+</h2>
 
 </div>
+
 
 
 <div class="testimonial-grid">
@@ -967,9 +1372,13 @@ A glimpse into the atmosphere surrounding our traditional practice.
 ★★★★★
 </div>
 
-<p>
-"Dr. Murisho listened carefully and gave me time to
-explain what I was going through."
+<p
+data-en="The consultation was private, calm and respectful. I appreciated having someone listen carefully."
+data-sw="Mashauriano yalikuwa ya faragha, yenye utulivu na heshima. Nilithamini kusikilizwa kwa makini.">
+
+"The consultation was private, calm and respectful.
+I appreciated having someone listen carefully."
+
 </p>
 
 <h4>— Amina</h4>
@@ -984,9 +1393,13 @@ explain what I was going through."
 ★★★★☆
 </div>
 
-<p>
-"The consultation was private, calm and respectful.
-I appreciated being heard."
+<p
+data-en="I was given time to explain what I was going through and discuss my concerns."
+data-sw="Nilipewa muda wa kueleza nilichokuwa napitia na kuzungumzia changamoto zangu.">
+
+"I was given time to explain what I was going
+through and discuss my concerns."
+
 </p>
 
 <h4>— Hassan</h4>
@@ -1001,9 +1414,13 @@ I appreciated being heard."
 ★★★★★
 </div>
 
-<p>
-"The atmosphere was welcoming and the consultation
-was handled professionally."
+<p
+data-en="The environment was welcoming and the consultation was handled respectfully."
+data-sw="Mazingira yalikuwa ya kukaribisha na mashauriano yalifanyika kwa heshima.">
+
+"The environment was welcoming and the
+consultation was handled respectfully."
+
 </p>
 
 <h4>— Fatma</h4>
@@ -1029,29 +1446,61 @@ was handled professionally."
 
 <div class="contact-box">
 
-<div class="small-title">
+
+<div
+class="small-title"
+data-en="Private Consultation"
+data-sw="Mashauriano ya Faragha">
+
 Private Consultation
+
 </div>
 
-<h2>
+
+<h2
+data-en="Let's Talk"
+data-sw="Tuongee">
+
 Let's Talk
+
 </h2>
 
-<p>
-For appointments and enquiries, contact Dr. Murisho directly.
+
+<p
+data-en="For appointments and enquiries, contact Dr. Murisho directly."
+data-sw="Kwa miadi na maswali, wasiliana moja kwa moja na Dr. Murisho.">
+
+For appointments and enquiries,
+contact Dr. Murisho directly.
+
 </p>
+
 
 <div class="contact-buttons">
 
-<a href="https://wa.me/254XXXXXXXXX"
-   class="btn btn-primary">
+
+<a
+href="https://wa.me/254700000000"
+class="btn btn-primary"
+target="_blank"
+data-en="WhatsApp"
+data-sw="WhatsApp">
+
 WhatsApp
+
 </a>
 
-<a href="tel:+254XXXXXXXXX"
-   class="btn btn-outline">
+
+<a
+href="tel:+254700000000"
+class="btn btn-outline"
+data-en="Call Now"
+data-sw="Piga Simu">
+
 Call Now
+
 </a>
+
 
 </div>
 
@@ -1081,13 +1530,65 @@ Call Now
 
 
 
-<!-- WHATSAPP -->
+<!-- =====================================================
+     WHATSAPP BUTTON
+===================================================== -->
 
-<a class="whatsapp"
-   href="https://wa.me/254XXXXXXXXX"
-   aria-label="WhatsApp">
-☏
+<a
+class="whatsapp"
+href="https://wa.me/254700000000"
+target="_blank"
+aria-label="WhatsApp">
+
+☎
+
 </a>
+
+
+
+<!-- =====================================================
+     LANGUAGE SCRIPT
+===================================================== -->
+
+<script>
+
+let currentLanguage = "en";
+
+
+function changeLanguage() {
+
+    currentLanguage =
+        currentLanguage === "en"
+        ? "sw"
+        : "en";
+
+
+    const elements =
+        document.querySelectorAll("[data-en]");
+
+
+    elements.forEach(function(element) {
+
+        element.textContent =
+            element.getAttribute(
+                "data-" + currentLanguage
+            );
+
+    });
+
+
+    const button =
+        document.getElementById("languageButton");
+
+
+    button.textContent =
+        currentLanguage === "en"
+        ? "SW"
+        : "EN";
+
+}
+
+</script>
 
 
 </body>
