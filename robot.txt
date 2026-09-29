@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fatmah-crypto.github.io/my-business-website/sitemap.xml
