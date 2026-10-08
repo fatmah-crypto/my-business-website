@@ -79,18 +79,18 @@ content="https://fatmah-crypto.github.io/my-business-website/dr-suleiman-main.pn
 
 :root{
 
---green:#123c2c;
---dark-green:#0b2c20;
---green-light:#1d5a42;
+--green:#28364a;
+--dark-green:#1c2736;
+--green-light:#42566d;
 
---gold:#c9a227;
---gold-light:#e3c75a;
+--gold:#ad633f;
+--gold-light:#d99a68;
 
---cream:#f8f1df;
---cream-light:#fffdf7;
+--cream:#eee3cf;
+--cream-light:#f8f3e9;
 
---brown:#6b4732;
---dark-brown:#3a2418;
+--brown:#76513b;
+--dark-brown:#30251f;
 
 --text:#292929;
 --white:#ffffff;
@@ -2129,6 +2129,21 @@ gap:6px;
 
 }
 
+
+/* Warm, heritage-inspired finish */
+body{
+  font-family: Georgia, "Times New Roman", serif;
+  background-color:var(--cream-light);
+  background-image:repeating-linear-gradient(135deg,rgba(118,81,59,.025) 0 1px,transparent 1px 12px);
+}
+nav{background:rgba(28,39,54,.98)}
+.hero{background-image:linear-gradient(110deg,rgba(20,29,41,.82),rgba(74,43,30,.72)),url("dr-suleiman-main.png");}
+.hero h1,.section-title h2,.about-content h2,.cta h2{font-family:Georgia,"Times New Roman",serif;letter-spacing:.01em}
+.hero h1{font-weight:500;text-shadow:0 5px 24px rgba(0,0,0,.42)}
+.about{background-color:var(--cream);background-image:repeating-linear-gradient(45deg,rgba(118,81,59,.035) 0 1px,transparent 1px 14px)}
+.service-card,.testimonial-card,.faq-item,.contact-card{border-radius:4px}
+.section-title h2::after{height:2px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
 </style>
 
 </head>
@@ -2298,13 +2313,7 @@ Traditional & Spiritual Guidance
 </div>
 
 
-<h1>
-
-Dr Suleiman
-
-<span>Murisho</span>
-
-</h1>
+<h1 data-i18n="heroHeading">A Heritage of Wisdom &amp; Care</h1>
 
 
 <p data-i18n="heroDesc">
@@ -3781,6 +3790,9 @@ contact:"Contact",
 practitioner:
 "African Traditional & Spiritual Practitioner",
 
+heroHeading:
+"A Heritage of Wisdom & Care",
+
 traditional:
 "Traditional & Spiritual Guidance",
 
@@ -4076,6 +4088,9 @@ contact:"Wasiliana",
 
 practitioner:
 "Mtaalamu wa Tiba za Jadi na Kiroho za Kiafrika",
+
+heroHeading:
+"Urithi wa Hekima na Huduma",
 
 traditional:
 "Ushauri wa Jadi na Kiroho",
