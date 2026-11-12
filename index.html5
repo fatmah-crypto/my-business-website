@@ -1,336 +1,516 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#10091b">
-
+<meta name="theme-color" content="#090612">
 <title>SIP & SOCIAL | Meet. Connect. Socialize.</title>
 
 <style>
 :root {
-  --bg: #10091b;
-  --panel: #1c122b;
-  --panel2: #271739;
-  --purple: #8b35dc;
-  --neon: #c66bff;
-  --white: #ffffff;
-  --muted: #b8a9c9;
-  --border: #49305e;
-  --danger: #ef5555;
-  --success: #48d6a0;
+  --bg:#090612;
+  --panel:#171020;
+  --panel2:#21132f;
+  --purple:#963dff;
+  --neon:#dc55ff;
+  --white:#fff;
+  --muted:#b5a9c2;
+  --border:#38234d;
+  --green:#54e6ad;
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: var(--bg);
-  color: var(--white);
-  line-height: 1.6;
+  font-family:Arial,sans-serif;
+  background:var(--bg);
+  color:var(--white);
+  line-height:1.5;
 }
 
-button, input, textarea, select {
-  font: inherit;
+button,input,textarea,select {
+  font:inherit;
 }
 
 button {
-  cursor: pointer;
+  cursor:pointer;
+  border:0;
+  border-radius:9px;
+  padding:12px 18px;
+  font-weight:bold;
 }
 
-header {
-  background: #170e23;
-  padding: 17px 6%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid var(--border);
-  position: sticky;
-  top: 0;
-  z-index: 10;
+.primary {
+  color:white;
+  background:linear-gradient(100deg,#8535ff,#d34fff);
 }
 
-.logo {
-  color: var(--neon);
-  font-size: 25px;
-  font-weight: bold;
-  letter-spacing: 2px;
+.secondary {
+  color:white;
+  background:#29183b;
+  border:1px solid var(--purple);
 }
 
-.logo span {
-  color: white;
+button:hover {
+  filter:brightness(1.15);
 }
 
-nav {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+input,textarea,select {
+  width:100%;
+  padding:13px;
+  background:#100b19;
+  border:1px solid var(--border);
+  border-radius:8px;
+  color:white;
+  outline:none;
 }
 
-nav button {
-  background: transparent;
-  border: 0;
-  color: white;
-  padding: 9px 12px;
-  border-radius: 7px;
-}
-
-nav button:hover, nav button.active {
-  background: var(--purple);
-}
-
-main {
-  max-width: 1150px;
-  padding: 25px 18px;
-  margin: auto;
-}
-
-section {
-  margin-bottom: 25px;
-}
-
-.hero {
-  min-height: 330px;
-  padding: 55px 25px;
-  border-radius: 20px;
-  background:
-    radial-gradient(circle at top right, #7624ae, transparent 45%),
-    linear-gradient(135deg, #241036, #10091b);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.hero h1 {
-  font-size: clamp(35px, 7vw, 65px);
-  line-height: 1.1;
-  margin-bottom: 15px;
-}
-
-.hero h1 span {
-  color: var(--neon);
-}
-
-.hero p {
-  color: var(--muted);
-  max-width: 550px;
-  margin-bottom: 20px;
-}
-
-.card {
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 20px;
-  margin-bottom: 17px;
-}
-
-.card h2, .card h3 {
-  margin-bottom: 13px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 17px;
-}
-
-input, textarea, select {
-  width: 100%;
-  background: #10091b;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 12px;
-  margin: 7px 0 14px;
-  color: white;
-  outline: none;
-}
-
-input:focus, textarea:focus, select:focus {
-  border-color: var(--neon);
+input:focus,textarea:focus,select:focus {
+  border-color:var(--neon);
 }
 
 textarea {
-  min-height: 90px;
-  resize: vertical;
+  resize:vertical;
+  min-height:85px;
 }
 
-label {
-  color: var(--muted);
-  font-size: 14px;
+a {
+  color:inherit;
+  text-decoration:none;
 }
 
-.btn {
-  background: var(--purple);
-  color: white;
-  border: none;
-  padding: 11px 17px;
-  border-radius: 8px;
-  font-weight: bold;
-  margin: 4px 3px 4px 0;
+header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  padding:19px 6%;
+  background:#0c0814;
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:10;
 }
 
-.btn:hover {
-  background: #a44bea;
+.logo {
+  font-size:24px;
+  font-weight:900;
+  letter-spacing:2px;
+  color:var(--neon);
+  white-space:nowrap;
 }
 
-.btn.secondary {
-  background: #352344;
-  border: 1px solid var(--border);
+.logo span {
+  color:white;
 }
 
-.btn.danger {
-  background: #8c2929;
+nav {
+  display:flex;
+  gap:22px;
 }
 
-.btn.small {
-  padding: 7px 11px;
-  font-size: 13px;
+nav a {
+  font-size:14px;
+  color:#e8dff0;
 }
 
-.muted {
-  color: var(--muted);
+nav a:hover {
+  color:var(--neon);
 }
 
-.purple {
-  color: var(--neon);
+#accountArea {
+  display:flex;
+  align-items:center;
+  gap:10px;
 }
 
-.hidden {
-  display: none !important;
+#accountArea button {
+  padding:10px 14px;
 }
 
-.center {
-  text-align: center;
+.hero {
+  min-height:510px;
+  display:flex;
+  align-items:center;
+  padding:85px 8%;
+  background:
+    linear-gradient(90deg,rgba(9,6,18,.97),rgba(22,7,38,.6)),
+    url("https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1600")
+    center/cover;
 }
 
-.auth-box {
-  max-width: 470px;
-  margin: 30px auto;
+.hero-content {
+  max-width:680px;
 }
 
-.profile-photo {
-  width: 105px;
-  height: 105px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--neon);
-  background: var(--panel2);
+.hero h1 {
+  font-size:clamp(42px,7vw,76px);
+  line-height:1.08;
+  margin-bottom:20px;
 }
 
-.member-photo {
-  width: 100%;
-  height: 190px;
-  object-fit: cover;
-  border-radius: 10px;
-  background: var(--panel2);
+.hero h1 span {
+  color:var(--neon);
 }
 
-.member-card {
-  overflow: hidden;
+.hero p {
+  color:#d5c9e1;
+  font-size:17px;
+  line-height:1.8;
+  margin-bottom:28px;
 }
 
-.member-card h3 {
-  margin-top: 12px;
+.hero-buttons {
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+section {
+  padding:65px 7%;
+}
+
+.section-title {
+  font-size:30px;
+  margin-bottom:10px;
+}
+
+.section-subtitle {
+  color:var(--muted);
+  margin-bottom:28px;
+}
+
+.categories {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:25px;
+}
+
+.category {
+  background:var(--panel);
+  color:white;
+  border:1px solid var(--border);
+  border-radius:25px;
+}
+
+.category.active {
+  background:var(--purple);
+}
+
+.people-grid,.meetup-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:22px;
+}
+
+.card {
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:15px;
+  overflow:hidden;
+  transition:.25s;
+}
+
+.card:hover {
+  transform:translateY(-4px);
+  border-color:var(--neon);
+}
+
+.profile-image {
+  height:270px;
+  width:100%;
+  object-fit:cover;
+  background:#241632;
+}
+
+.card-content {
+  padding:18px;
+}
+
+.card-content h3 {
+  margin-bottom:7px;
+}
+
+.card-content p {
+  color:var(--muted);
+  font-size:14px;
+  margin:10px 0;
+}
+
+.distance {
+  color:#d28bff;
+  font-size:13px;
+  margin:12px 0;
 }
 
 .tag {
-  display: inline-block;
-  background: #39204f;
-  color: #e3c2ff;
-  border-radius: 20px;
-  padding: 5px 10px;
-  margin: 3px;
-  font-size: 12px;
+  display:inline-block;
+  background:#302044;
+  color:#e1b5ff;
+  padding:5px 10px;
+  border-radius:20px;
+  font-size:11px;
+  margin:3px;
 }
 
-.notice {
-  background: #281b35;
-  border-left: 4px solid var(--neon);
-  padding: 13px;
-  border-radius: 5px;
-  margin: 12px 0;
-  color: var(--muted);
+.card-actions {
+  display:flex;
+  gap:8px;
+  margin-top:15px;
 }
 
-.message {
-  padding: 12px;
-  margin: 8px 0;
-  border-radius: 10px;
-  background: var(--panel2);
-  overflow-wrap: anywhere;
+.card-actions button {
+  flex:1;
+  padding:10px;
+  font-size:12px;
 }
 
-.message.mine {
-  background: #59318a;
-  margin-left: 15%;
+.meetup-card {
+  padding:22px;
 }
 
-.message.theirs {
-  margin-right: 15%;
+.meetup-card h3 {
+  color:var(--neon);
+  font-size:19px;
 }
 
-.message small {
-  display: block;
-  color: #d4c2e5;
-  font-size: 11px;
+.meetup-info {
+  color:var(--muted);
+  font-size:14px;
+  margin:15px 0;
+  line-height:2;
+  white-space:pre-line;
 }
 
-hr {
-  border: 0;
-  border-top: 1px solid var(--border);
-  margin: 17px 0;
+.meetup-card button {
+  width:100%;
+  margin-top:10px;
+}
+
+.create-section {
+  background:linear-gradient(135deg,#170d28,#26103c);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+
+.form-container {
+  max-width:650px;
+}
+
+.form-grid {
+  display:grid;
+  gap:14px;
+}
+
+.form-grid label {
+  font-size:13px;
+  color:#e2d5ed;
+  display:block;
+  margin-bottom:7px;
+}
+
+.form-grid small {
+  display:block;
+  color:var(--muted);
+  margin-top:5px;
+}
+
+.preview-image {
+  width:100px;
+  height:100px;
+  object-fit:cover;
+  border-radius:12px;
+  border:1px solid var(--purple);
+}
+
+.photo-previews {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.feature-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:18px;
+}
+
+.feature {
+  background:var(--panel);
+  border:1px solid var(--border);
+  padding:24px;
+  border-radius:14px;
+}
+
+.feature h3 {
+  color:var(--neon);
+  margin-bottom:10px;
+}
+
+.feature p {
+  color:var(--muted);
+  font-size:14px;
+}
+
+.empty {
+  color:var(--muted);
+  padding:30px 10px;
+  text-align:center;
+  grid-column:1/-1;
+  background:var(--panel);
+  border-radius:12px;
 }
 
 footer {
-  padding: 35px 15px;
-  text-align: center;
-  color: var(--muted);
-  background: #170e23;
-  margin-top: 40px;
+  padding:40px 20px;
+  text-align:center;
+  color:var(--muted);
+  line-height:2;
 }
 
-#status {
-  position: fixed;
-  bottom: 15px;
-  left: 15px;
-  right: 15px;
-  max-width: 500px;
-  margin: auto;
-  z-index: 50;
-  background: #39204f;
-  padding: 13px;
-  border-radius: 9px;
-  text-align: center;
-  display: none;
+.modal {
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  z-index:30;
+  justify-content:center;
+  align-items:center;
+  padding:15px;
 }
 
-@media(max-width:650px) {
+.modal-content {
+  background:#171020;
+  border:1px solid var(--purple);
+  border-radius:15px;
+  padding:27px;
+  width:100%;
+  max-width:470px;
+  max-height:90vh;
+  overflow-y:auto;
+}
+
+.modal-content h2 {
+  color:var(--neon);
+  margin-bottom:20px;
+}
+
+.modal-content input,
+.modal-content textarea,
+.modal-content select {
+  margin-bottom:13px;
+}
+
+.close {
+  float:right;
+  color:white;
+  background:transparent;
+  font-size:25px;
+  padding:0 5px;
+}
+
+.modal-content label {
+  display:block;
+  color:var(--muted);
+  font-size:13px;
+  margin-bottom:12px;
+}
+
+.inline-check {
+  display:flex!important;
+  align-items:center;
+  gap:9px;
+}
+
+.inline-check input {
+  width:auto;
+  margin:0;
+}
+
+.modal-content button[type="submit"] {
+  width:100%;
+}
+
+#notification {
+  display:none;
+  position:fixed;
+  z-index:60;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  padding:14px 20px;
+  background:#29183b;
+  border:1px solid var(--neon);
+  border-radius:10px;
+  max-width:90%;
+  text-align:center;
+}
+
+.user-bar {
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.user-avatar {
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+#profileArea {
+  display:none;
+}
+
+@media(max-width:750px) {
   header {
-    flex-direction: column;
-    gap: 10px;
+    flex-wrap:wrap;
+    padding:15px 4%;
   }
 
   nav {
-    justify-content: center;
+    order:3;
+    width:100%;
+    justify-content:space-around;
+    gap:8px;
   }
 
-  nav button {
-    font-size: 12px;
-    padding: 8px;
+  nav a {
+    font-size:12px;
   }
 
   .hero {
-    min-height: 280px;
-    padding: 30px 20px;
+    min-height:450px;
+    padding:65px 6%;
   }
 
-  main {
-    padding: 15px 12px;
+  section {
+    padding:48px 5%;
+  }
+
+  .section-title {
+    font-size:25px;
+  }
+
+  .people-grid,.meetup-grid {
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  }
+}
+
+@media(max-width:420px) {
+  .logo {
+    font-size:19px;
+  }
+
+  .people-grid,.meetup-grid {
+    grid-template-columns:1fr;
   }
 }
 </style>
@@ -339,1444 +519,955 @@ footer {
 <body>
 
 <header>
-  <div class="logo">SIP <span>& SOCIAL</span></div>
+  <div class="logo">SIP <span>&</span> SOCIAL</div>
 
-  <nav id="navigation" class="hidden">
-    <button data-tab="home" class="active">Home</button>
-    <button data-tab="discover">Discover</button>
-    <button data-tab="profile">My Profile</button>
-    <button data-tab="connections">Connections</button>
-    <button data-tab="messages">Messages</button>
-    <button data-tab="meetups">Meetups</button>
-    <button id="logoutBtn">Logout</button>
+  <nav>
+    <a href="#discover">Discover</a>
+    <a href="#meetups">Meetups</a>
+    <a href="#create">Create</a>
+    <a href="#safety">Safety</a>
   </nav>
-</header>
 
-<main>
-
-<!-- WELCOME PAGE -->
-
-<section id="welcome">
-  <div class="hero">
-    <h1>Meet.<br><span>Connect.</span><br>Socialize.</h1>
-    <p>
-      Welcome to SIP & SOCIAL. Discover new people,
-      share interests, build friendships and enjoy
-      social experiences together.
-    </p>
-
-    <div>
-      <button class="btn" onclick="showAuth('signup')">
-        Create Account
-      </button>
-
-      <button class="btn secondary" onclick="showAuth('login')">
-        Log In
-      </button>
-    </div>
-  </div>
-
-  <div class="grid" style="margin-top:25px">
-    <div class="card">
-      <h3 class="purple">Meet New People</h3>
-      <p class="muted">Discover members and find people with similar interests.</p>
-    </div>
-
-    <div class="card">
-      <h3 class="purple">Make Connections</h3>
-      <p class="muted">Send connection requests and start conversations.</p>
-    </div>
-
-    <div class="card">
-      <h3 class="purple">Plan Meetups</h3>
-      <p class="muted">Find public venues and arrange social gatherings.</p>
-    </div>
-  </div>
-</section>
-
-<!-- SIGN UP -->
-
-<section id="signup" class="auth-box hidden">
-  <div class="card">
-    <h2>Create Your Account</h2>
-    <p class="muted">Join the SIP & SOCIAL community.</p>
-
-    <form id="signupForm">
-      <label>Display name</label>
-      <input id="signupName" required minlength="2" maxlength="40"
-        placeholder="Your name">
-
-      <label>Email address</label>
-      <input id="signupEmail" type="email" required
-        placeholder="you@example.com">
-
-      <label>Date of birth</label>
-      <input id="signupDob" type="date" required>
-
-      <label>Password</label>
-      <input id="signupPassword" type="password"
-        minlength="8" required placeholder="At least 8 characters">
-
-      <label class="muted">
-        <input type="checkbox" id="agreeTerms" required
-          style="width:auto">
-        I confirm that I am 18 or older and agree to the community rules.
-      </label>
-
-      <button class="btn" type="submit" style="width:100%">
-        CREATE ACCOUNT
-      </button>
-    </form>
-
-    <p class="muted center">
-      Already registered?
-      <a href="#" onclick="showAuth('login')" class="purple">Log in</a>
-    </p>
-  </div>
-</section>
-
-<!-- LOGIN -->
-
-<section id="login" class="auth-box hidden">
-  <div class="card">
-    <h2>Welcome Back</h2>
-    <p class="muted">Log in to your account.</p>
-
-    <form id="loginForm">
-      <label>Email</label>
-      <input id="loginEmail" type="email" required>
-
-      <label>Password</label>
-      <input id="loginPassword" type="password" required>
-
-      <button class="btn" type="submit" style="width:100%">
-        LOG IN
-      </button>
-    </form>
-
-    <p class="center">
-      <a href="#" onclick="resetPassword()" class="purple">
-        Forgot password?
-      </a>
-    </p>
-
-    <p class="center muted">
-      New here?
-      <a href="#" onclick="showAuth('signup')" class="purple">
-        Create an account
-      </a>
-    </p>
-  </div>
-</section>
-
-<!-- HOME DASHBOARD -->
-
-<section id="home" class="hidden">
-  <div class="hero">
-    <h1>Welcome to <span>SIP & SOCIAL</span></h1>
-    <p id="welcomeName">Your social space starts here.</p>
-    <button class="btn" onclick="openTab('discover')">
-      Discover Members
+  <div id="accountArea">
+    <button class="primary" onclick="openModal('authModal')">
+      Join / Login
     </button>
   </div>
+</header>
 
-  <div class="grid" style="margin-top:20px">
-    <div class="card">
-      <h3>Find people</h3>
-      <p class="muted">Discover members around your preferred area.</p>
-      <button class="btn small" onclick="openTab('discover')">
-        Explore
+<div class="hero">
+  <div class="hero-content">
+    <h1>Good Drinks.<br>Great People.<br><span>Better Connections.</span></h1>
+
+    <p>
+      Find people around you, discover new places,
+      create social meetups and make meaningful connections.
+      Never let a good evening go to waste.
+    </p>
+
+    <div class="hero-buttons">
+      <button class="primary" onclick="goTo('discover')">
+        Discover People
       </button>
-    </div>
 
-    <div class="card">
-      <h3>Your connections</h3>
-      <p class="muted">Manage your friendship requests.</p>
-      <button class="btn small" onclick="openTab('connections')">
-        View Connections
-      </button>
-    </div>
-
-    <div class="card">
-      <h3>Upcoming meetups</h3>
-      <p class="muted">See social events and gatherings.</p>
-      <button class="btn small" onclick="openTab('meetups')">
+      <button class="secondary" onclick="goTo('meetups')">
         Explore Meetups
       </button>
     </div>
   </div>
+</div>
+
+<section id="discover">
+  <h2 class="section-title">Discover Your People ✨</h2>
+  <p class="section-subtitle">
+    Meet people with similar interests and social preferences.
+  </p>
+
+  <div class="categories">
+    <button class="category active" onclick="filterPeople('All',this)">Everyone</button>
+    <button class="category" onclick="filterPeople('Coffee',this)">Coffee</button>
+    <button class="category" onclick="filterPeople('Party',this)">Social events</button>
+    <button class="category" onclick="filterPeople('Chill',this)">Chill vibes</button>
+    <button class="category" onclick="filterPeople('Adventure',this)">Adventure</button>
+  </div>
+
+  <div class="people-grid" id="peopleGrid"></div>
 </section>
 
-<!-- DISCOVER MEMBERS -->
-
-<section id="discover" class="hidden">
-  <h2>Discover People</h2>
-  <p class="muted">Find people by interests and approximate area.</p>
-
-  <input id="searchMembers"
-    placeholder="Search names, interests or areas...">
-
-  <div id="membersList" class="grid"></div>
+<section id="profileArea">
+  <h2 class="section-title">My Profile 👤</h2>
+  <p class="section-subtitle">Your SIP & SOCIAL account.</p>
+  <div id="myProfile" class="card" style="max-width:550px"></div>
+  <br>
+  <button class="secondary" onclick="openModal('editModal')">Edit Profile</button>
+  <button class="secondary" onclick="logout()">Log Out</button>
 </section>
 
-<!-- PROFILE -->
+<section id="meetups">
+  <h2 class="section-title">Upcoming Meetups 🥤</h2>
+  <p class="section-subtitle">
+    Choose a meetup, check the date and time, and RSVP.
+  </p>
 
-<section id="profile" class="hidden">
-  <div class="card">
-    <h2>My Profile</h2>
-
-    <div class="center">
-      <img id="myAvatar" class="profile-photo"
-        alt="Your profile picture"
-        src="https://placehold.co/150x150/271739/ffffff?text=Profile">
-
-      <p>
-        <label for="avatarInput" class="purple">
-          Upload profile picture
-        </label>
-      </p>
-
-      <input id="avatarInput" type="file"
-        accept="image/jpeg,image/png,image/webp">
-    </div>
-
-    <form id="profileForm">
-      <label>Display name</label>
-      <input id="editName" required maxlength="40">
-
-      <label>About me</label>
-      <textarea id="editBio" maxlength="300"
-        placeholder="Tell people about yourself..."></textarea>
-
-      <label>Approximate area</label>
-      <input id="editArea" maxlength="80"
-        placeholder="Example: Utawala, Nairobi">
-
-      <label>Interests and hobbies</label>
-      <input id="editInterests"
-        placeholder="Music, travel, photography, food...">
-
-      <p class="notice">
-        Your profile shows an approximate area only.
-        Never enter your home address or private location.
-      </p>
-
-      <button class="btn" type="submit">
-        SAVE PROFILE
-      </button>
-    </form>
-  </div>
-
-  <div class="card">
-    <h3>Account settings</h3>
-    <button class="btn secondary" onclick="resetPassword()">
-      Reset password
-    </button>
-    <button class="btn danger" onclick="deleteAccountNotice()">
-      Account deletion information
-    </button>
-  </div>
+  <div class="meetup-grid" id="meetupGrid"></div>
 </section>
 
-<!-- CONNECTIONS -->
+<section class="create-section" id="create">
+  <div class="form-container">
+    <h2 class="section-title">Create a Meetup 🚀</h2>
 
-<section id="connections" class="hidden">
-  <h2>My Connections</h2>
-
-  <div class="card">
-    <h3>Received requests</h3>
-    <div id="receivedRequests"></div>
-  </div>
-
-  <div class="card">
-    <h3>Sent requests</h3>
-    <div id="sentRequests"></div>
-  </div>
-
-  <div class="card">
-    <h3>Connected members</h3>
-    <div id="acceptedConnections"></div>
-  </div>
-</section>
-
-<!-- MESSAGES -->
-
-<section id="messages" class="hidden">
-  <h2>Messages</h2>
-
-  <div class="card">
-    <p class="muted">
-      Messaging is available only with accepted connections.
+    <p class="section-subtitle">
+      Choose a public venue, date and time. Invite people to join.
     </p>
 
-    <label>Select a connection</label>
-    <select id="chatPartner">
-      <option value="">Choose a member</option>
-    </select>
+    <form class="form-grid" id="meetupForm">
 
-    <div id="chatWindow"
-      style="height:300px;overflow-y:auto;margin:15px 0">
-      <p class="muted center">Choose a connection to start chatting.</p>
-    </div>
-
-    <form id="messageForm">
-      <textarea id="messageText" maxlength="2000"
-        placeholder="Write your message..." required></textarea>
-      <button class="btn" type="submit">SEND MESSAGE</button>
-      <button class="btn secondary" type="button"
-        onclick="loadMessages()">REFRESH</button>
-    </form>
-  </div>
-</section>
-
-<!-- MEETUPS -->
-
-<section id="meetups" class="hidden">
-  <h2>Social Meetups</h2>
-
-  <div class="card">
-    <h3>Create a Meetup</h3>
-
-    <form id="meetupForm">
-      <label>Meetup name</label>
-      <input id="meetupTitle" required maxlength="80"
-        placeholder="Coffee and conversation">
-
-      <label>Public venue</label>
-      <input id="meetupVenue" required maxlength="120"
-        placeholder="A named cafe, restaurant or public venue">
-
-      <label>General area</label>
-      <input id="meetupArea" required maxlength="80"
-        placeholder="Westlands, Nairobi">
-
-      <label>Date</label>
-      <input id="meetupDate" type="date" required>
-
-      <label>Time</label>
-      <input id="meetupTime" type="time" required>
-
-      <label>More information</label>
-      <textarea id="meetupDetails" maxlength="500"
-        placeholder="Tell members what to expect..."></textarea>
-
-      <div class="notice">
-        Meetups must be at public venues. Do not post private
-        addresses, hotel rooms or live personal locations.
-        Keep refreshments non-alcoholic.
+      <div>
+        <label>Meetup name</label>
+        <input id="eventName" required placeholder="e.g. Friday Social">
       </div>
 
-      <button class="btn" type="submit">CREATE MEETUP</button>
+      <div>
+        <label>Public venue</label>
+        <input id="eventLocation" required placeholder="e.g. A named cafe, Westlands">
+      </div>
+
+      <div>
+        <label>Date</label>
+        <input id="eventDate" type="date" required>
+      </div>
+
+      <div>
+        <label>Meeting time</label>
+        <input id="eventTime" type="time" required>
+      </div>
+
+      <div>
+        <label>Type of meetup</label>
+        <select id="eventType" required>
+          <option value="">Choose an activity</option>
+          <option>Coffee meetup</option>
+          <option>Juice and chill</option>
+          <option>Mocktail evening</option>
+          <option>Social gathering</option>
+          <option>Music and dancing</option>
+          <option>Games and conversations</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Maximum attendees</label>
+        <input id="eventCapacity" type="number" min="2" max="100" required value="10">
+      </div>
+
+      <div>
+        <label>Describe your meetup</label>
+        <textarea id="eventDescription" placeholder="What should people expect?"></textarea>
+      </div>
+
+      <button class="primary" type="submit">Publish Meetup</button>
+
     </form>
   </div>
-
-  <h3>Upcoming Meetups</h3>
-  <div id="meetupList" class="grid"></div>
 </section>
 
-</main>
+<section id="safety">
+  <h2 class="section-title">Your Safety Comes First 🛡️</h2>
+  <p class="section-subtitle">
+    Connections should be enjoyable, respectful and safe.
+  </p>
+
+  <div class="feature-grid">
+
+    <div class="feature">
+      <h3>18+ Community</h3>
+      <p>Age-restricted membership with age verification planned before public launch.</p>
+    </div>
+
+    <div class="feature">
+      <h3>Photo Profiles</h3>
+      <p>Members can upload profile pictures to help others recognize them.</p>
+    </div>
+
+    <div class="feature">
+      <h3>Private Locations</h3>
+      <p>Neighbourhoods and approximate distances only. No public exact live locations.</p>
+    </div>
+
+    <div class="feature">
+      <h3>Public Meetups</h3>
+      <p>Meet in established public venues. Tell someone you trust about your plans.</p>
+    </div>
+
+    <div class="feature">
+      <h3>Report & Block</h3>
+      <p>Members should be able to report inappropriate conduct and block unwanted contact.</p>
+    </div>
+
+    <div class="feature">
+      <h3>Respect Everyone</h3>
+      <p>Everyone deserves respectful interactions and control over their personal information.</p>
+    </div>
+
+  </div>
+</section>
 
 <footer>
   <div class="logo">SIP & SOCIAL</div>
-  <p>Meet. Connect. Socialize.</p>
-  <p>18+ community | Respect | Privacy | Friendship</p>
-  <p>© 2026 SIP & SOCIAL</p>
-  <p>
-    This is a social community platform, not a dating or
-    alcohol-purchasing service.
-  </p>
+  Meet. Connect. Socialize.<br>
+  © 2026 SIP & SOCIAL.<br>
+  Non-alcoholic social activities in this demonstration.
 </footer>
 
-<div id="status"></div>
+<!-- LOGIN AND REGISTRATION -->
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<div class="modal" id="authModal">
+  <div class="modal-content">
+    <button class="close" onclick="closeModal('authModal')">×</button>
+
+    <h2>Create Your Account</h2>
+
+    <form id="registerForm">
+      <input id="regName" placeholder="Display name" required>
+
+      <input id="regEmail" type="email" placeholder="Email address" required>
+
+      <input id="regPassword" type="password" placeholder="Create password" minlength="8" required>
+
+      <input id="regAge" type="number" placeholder="Age (18+)" min="18" max="120" required>
+
+      <input id="regCity" placeholder="City" required>
+
+      <input id="regArea" placeholder="Neighbourhood (approximate)" required>
+
+      <label class="inline-check">
+        <input type="checkbox" id="regAdult" required>
+        I confirm that I am 18 or older.
+      </label>
+
+      <label class="inline-check">
+        <input type="checkbox" id="regAgree" required>
+        I agree to the community rules and privacy policy.
+      </label>
+
+      <button type="submit" class="primary">Create Account</button>
+    </form>
+
+    <hr style="border-color:var(--border);margin:20px 0">
+
+    <h3>Already have an account?</h3>
+
+    <form id="loginForm">
+      <input id="loginEmail" type="email" placeholder="Email address" required>
+      <input id="loginPassword" type="password" placeholder="Password" required>
+      <button type="submit" class="secondary">Login</button>
+    </form>
+  </div>
+</div>
+
+<!-- PROFILE CREATION -->
+
+<div class="modal" id="editModal">
+  <div class="modal-content">
+    <button class="close" onclick="closeModal('editModal')">×</button>
+
+    <h2>Edit Your Profile</h2>
+
+    <form id="profileForm">
+
+      <input id="editName" placeholder="Display name" required>
+
+      <input id="editCity" placeholder="City" required>
+
+      <input id="editArea" placeholder="Neighbourhood" required>
+
+      <textarea id="editBio" placeholder="Tell people about yourself"></textarea>
+
+      <select id="editInterest">
+        <option>Coffee</option>
+        <option>Party</option>
+        <option>Chill</option>
+        <option>Adventure</option>
+      </select>
+
+      <label>Upload profile photos (maximum 3)</label>
+      <input id="editPhotos" type="file" accept="image/*" multiple>
+
+      <div class="photo-previews" id="photoPreviews"></div>
+
+      <button type="submit" class="primary">Save Profile</button>
+
+    </form>
+  </div>
+</div>
+
+<div id="notification"></div>
 
 <script>
 
-// ==========================================
-// 1. SUPABASE CONNECTION
-// ==========================================
+/* ==================================
+   SIP & SOCIAL DEMONSTRATION APP
+================================== */
 
-// Replace these with your actual Supabase credentials.
+const STORAGE = {
+  users:"sip_social_users",
+  current:"sip_social_current",
+  meetups:"sip_social_meetups"
+};
 
-const SUPABASE_URL = "YOUR_SUPABASE_PROJECT_URL";
-const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_PUBLIC_KEY";
+function load(key,fallback) {
+  try {
+    const value = localStorage.getItem(key);
+    return value ? JSON.parse(value) : fallback;
+  } catch {
+    return fallback;
+  }
+}
 
-const db = window.supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_ANON_KEY
-);
+function save(key,value) {
+  try {
+    localStorage.setItem(key,JSON.stringify(value));
+    return true;
+  } catch {
+    notify("Storage limit reached. Try smaller photos.");
+    return false;
+  }
+}
 
-let currentUser = null;
-let myProfile = null;
+let users = load(STORAGE.users,[]);
+let currentUser = load(STORAGE.current,null);
 
-// ==========================================
-// 2. GENERAL HELPERS
-// ==========================================
+const today = new Date().toISOString().slice(0,10);
+
+let meetups = load(STORAGE.meetups,[
+  {
+    id:"demo1",
+    name:"Coffee & Conversations",
+    location:"Public cafe, Kilimani",
+    date:"2026-12-05",
+    time:"14:00",
+    type:"Coffee meetup",
+    capacity:8,
+    description:"Good conversations and new connections.",
+    attendees:[],
+    host:"SIP & SOCIAL"
+  },
+  {
+    id:"demo2",
+    name:"Mocktail Evening",
+    location:"Public lounge, Westlands",
+    date:"2026-12-06",
+    time:"17:30",
+    type:"Mocktail evening",
+    capacity:12,
+    description:"Relax and meet new people.",
+    attendees:[],
+    host:"SIP & SOCIAL"
+  }
+]);
+
+/* NOTIFICATIONS */
 
 function notify(message) {
-  const box = document.getElementById("status");
-  box.textContent = message;
-  box.style.display = "block";
+  const box=document.getElementById("notification");
+  box.textContent=message;
+  box.style.display="block";
 
-  setTimeout(() => {
-    box.style.display = "none";
-  }, 4000);
+  clearTimeout(window.noticeTimer);
+
+  window.noticeTimer=setTimeout(()=>{
+    box.style.display="none";
+  },3500);
 }
 
-function safe(value) {
-  return String(value ?? "").replace(/[&<>"']/g, c => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#39;"
-  })[c]);
-}
-
-function formatDate(value) {
-  return new Date(value + "T00:00:00").toLocaleDateString();
-}
-
-function validAdult(date) {
-  const dob = new Date(date + "T00:00:00");
-  const today = new Date();
-
-  let age = today.getFullYear() - dob.getFullYear();
-
-  const month = today.getMonth() - dob.getMonth();
-
-  if (month < 0 ||
-      (month === 0 && today.getDate() < dob.getDate())) {
-    age--;
-  }
-
-  return age >= 18;
-}
-
-function hideAll() {
-  document.querySelectorAll("main section").forEach(s => {
-    s.classList.add("hidden");
+function goTo(id) {
+  document.getElementById(id).scrollIntoView({
+    behavior:"smooth"
   });
 }
 
-function showAuth(type) {
-  hideAll();
-  document.getElementById(type).classList.remove("hidden");
-  document.getElementById("navigation").classList.add("hidden");
+function openModal(id) {
+  document.getElementById(id).style.display="flex";
 }
 
-function openTab(tab) {
-  if (!currentUser) {
-    showAuth("login");
-    return;
-  }
-
-  hideAll();
-
-  document.getElementById(tab).classList.remove("hidden");
-
-  document.querySelectorAll("nav button[data-tab]").forEach(btn => {
-    btn.classList.toggle("active", btn.dataset.tab === tab);
-  });
-
-  if (tab === "discover") loadMembers();
-  if (tab === "profile") displayProfile();
-  if (tab === "connections") loadConnections();
-  if (tab === "messages") loadChatPartners();
-  if (tab === "meetups") loadMeetups();
+function closeModal(id) {
+  document.getElementById(id).style.display="none";
 }
 
-// ==========================================
-// 3. SIGN UP
-// ==========================================
+function escapeHTML(value) {
+  return String(value ?? "").replace(/[&<>"']/g,char=>({
+    "&":"&amp;",
+    "<":"&lt;",
+    ">":"&gt;",
+    '"':"&quot;",
+    "'":"&#39;"
+  })[char]);
+}
 
-document.getElementById("signupForm")
-.addEventListener("submit", async function(e) {
+/* ACCOUNT REGISTRATION */
 
+document.getElementById("registerForm").addEventListener("submit",async function(e) {
   e.preventDefault();
 
-  const name = document.getElementById("signupName").value.trim();
-  const email = document.getElementById("signupEmail").value.trim();
-  const dob = document.getElementById("signupDob").value;
-  const password = document.getElementById("signupPassword").value;
+  const age=Number(document.getElementById("regAge").value);
 
-  if (!validAdult(dob)) {
-    notify("Registration is only available to people aged 18 or older.");
+  if(age<18) {
+    notify("Membership is restricted to adults aged 18+.");
     return;
   }
 
-  if (!document.getElementById("agreeTerms").checked) {
-    notify("Please accept the community rules.");
+  const email=document.getElementById("regEmail").value.trim().toLowerCase();
+
+  if(users.some(user=>user.email===email)) {
+    notify("An account with this email already exists.");
     return;
   }
 
-  const { data, error } = await db.auth.signUp({
-    email,
-    password,
-    options: {
-      data: {
-        display_name: name,
-        date_of_birth: dob
-      }
-    }
-  });
+  const password=document.getElementById("regPassword").value;
 
-  if (error) {
-    notify(error.message);
+  if(password.length<8) {
+    notify("Password must contain at least 8 characters.");
     return;
   }
 
-  this.reset();
-
-  if (data.session) {
-    notify("Account created successfully!");
-    await startApp(data.session.user);
-  } else {
-    notify("Check your email to confirm your account before logging in.");
-    showAuth("login");
-  }
-});
-
-// ==========================================
-// 4. LOGIN
-// ==========================================
-
-document.getElementById("loginForm")
-.addEventListener("submit", async function(e) {
-
-  e.preventDefault();
-
-  const email = document.getElementById("loginEmail").value.trim();
-  const password = document.getElementById("loginPassword").value;
-
-  const { data, error } = await db.auth.signInWithPassword({
-    email,
-    password
-  });
-
-  if (error) {
-    notify(error.message);
-    return;
-  }
-
-  this.reset();
-
-  await startApp(data.user);
-});
-
-// ==========================================
-// 5. LOGOUT
-// ==========================================
-
-document.getElementById("logoutBtn")
-.addEventListener("click", async () => {
-
-  const { error } = await db.auth.signOut();
-
-  if (error) {
-    notify(error.message);
-    return;
-  }
-
-  currentUser = null;
-  myProfile = null;
-
-  document.getElementById("navigation").classList.add("hidden");
-
-  hideAll();
-  document.getElementById("welcome").classList.remove("hidden");
-
-  notify("You have logged out.");
-});
-
-// ==========================================
-// 6. START APPLICATION
-// ==========================================
-
-async function startApp(user) {
-
-  currentUser = user;
-
-  const { data, error } = await db
-    .from("profiles")
-    .select("*")
-    .eq("id", user.id)
-    .single();
-
-  if (error) {
-    notify("Unable to load your profile: " + error.message);
-    return;
-  }
-
-  myProfile = data;
-
-  document.getElementById("navigation").classList.remove("hidden");
-
-  document.getElementById("welcomeName").textContent =
-    "Welcome, " + myProfile.display_name + "! Your social space is ready.";
-
-  openTab("home");
-}
-
-// ==========================================
-// 7. PASSWORD RESET
-// ==========================================
-
-async function resetPassword() {
-
-  const email = currentUser?.email ||
-    document.getElementById("loginEmail").value.trim();
-
-  if (!email) {
-    notify("Enter your email address first.");
-    return;
-  }
-
-  const { error } = await db.auth.resetPasswordForEmail(email);
-
-  if (error) {
-    notify(error.message);
-  } else {
-    notify("Password reset instructions have been sent to your email.");
-  }
-}
-
-// ==========================================
-// 8. DISPLAY AND EDIT PROFILE
-// ==========================================
-
-function displayProfile() {
-
-  if (!myProfile) return;
-
-  document.getElementById("editName").value =
-    myProfile.display_name || "";
-
-  document.getElementById("editBio").value =
-    myProfile.bio || "";
-
-  document.getElementById("editArea").value =
-    myProfile.area || "";
-
-  document.getElementById("editInterests").value =
-    myProfile.interests || "";
-
-  document.getElementById("myAvatar").src =
-    myProfile.avatar_url ||
-    "https://placehold.co/150x150/271739/ffffff?text=Profile";
-}
-
-document.getElementById("profileForm")
-.addEventListener("submit", async function(e) {
-
-  e.preventDefault();
-
-  const updates = {
-    display_name: document.getElementById("editName").value.trim(),
-    bio: document.getElementById("editBio").value.trim(),
-    area: document.getElementById("editArea").value.trim(),
-    interests: document.getElementById("editInterests").value.trim(),
-    updated_at: new Date().toISOString()
+  const user={
+    id:crypto.randomUUID(),
+    name:document.getElementById("regName").value.trim(),
+    email:email,
+    password:password,
+    age:age,
+    city:document.getElementById("regCity").value.trim(),
+    area:document.getElementById("regArea").value.trim(),
+    bio:"",
+    interest:"Coffee",
+    photos:[],
+    blocked:[],
+    created:new Date().toISOString()
   };
 
-  const { data, error } = await db
-    .from("profiles")
-    .update(updates)
-    .eq("id", currentUser.id)
-    .select()
-    .single();
+  users.push(user);
 
-  if (error) {
-    notify(error.message);
+  if(!save(STORAGE.users,users)) {
+    users.pop();
     return;
   }
 
-  myProfile = data;
+  currentUser=user;
 
-  document.getElementById("welcomeName").textContent =
-    "Welcome, " + myProfile.display_name + "!";
+  save(STORAGE.current,user);
 
-  notify("Your profile has been updated.");
+  closeModal("authModal");
+  this.reset();
+
+  refresh();
+  notify("Welcome to SIP & SOCIAL!");
 });
 
-// ==========================================
-// 9. PROFILE PHOTO UPLOAD
-// ==========================================
+/* LOGIN */
 
-document.getElementById("avatarInput")
-.addEventListener("change", async function() {
+document.getElementById("loginForm").addEventListener("submit",function(e) {
+  e.preventDefault();
 
-  const file = this.files[0];
+  const email=document.getElementById("loginEmail").value.trim().toLowerCase();
+  const password=document.getElementById("loginPassword").value;
 
-  if (!file) return;
+  const user=users.find(u=>u.email===email && u.password===password);
 
-  const allowed = ["image/jpeg", "image/png", "image/webp"];
-
-  if (!allowed.includes(file.type)) {
-    notify("Please select a JPG, PNG or WEBP image.");
-    this.value = "";
+  if(!user) {
+    notify("Incorrect email or password.");
     return;
   }
 
-  if (file.size > 3 * 1024 * 1024) {
-    notify("Image must be smaller than 3MB.");
-    this.value = "";
+  if(user.age<18) {
+    notify("Membership is restricted to adults aged 18+.");
     return;
   }
 
-  const filePath =
-    currentUser.id + "/" + Date.now() + "-" +
-    file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
+  currentUser=user;
 
-  const { error: uploadError } = await db.storage
-    .from("avatars")
-    .upload(filePath, file, {
-      contentType: file.type,
-      upsert: false
-    });
+  save(STORAGE.current,user);
 
-  if (uploadError) {
-    notify(uploadError.message);
-    return;
-  }
+  closeModal("authModal");
+  this.reset();
 
-  const { data } = db.storage
-    .from("avatars")
-    .getPublicUrl(filePath);
-
-  const { data: updated, error } = await db
-    .from("profiles")
-    .update({ avatar_url: data.publicUrl })
-    .eq("id", currentUser.id)
-    .select()
-    .single();
-
-  if (error) {
-    notify(error.message);
-    return;
-  }
-
-  myProfile = updated;
-  displayProfile();
-
-  notify("Profile photo uploaded!");
+  refresh();
+  notify("Welcome back, "+user.name+"!");
 });
 
-// ==========================================
-// 10. DISCOVER MEMBERS
-// ==========================================
+/* LOGOUT */
 
-async function loadMembers() {
+function logout() {
+  currentUser=null;
+  localStorage.removeItem(STORAGE.current);
 
-  const container = document.getElementById("membersList");
-
-  container.innerHTML = "<p>Loading members...</p>";
-
-  const { data: blocked } = await db
-    .from("blocks")
-    .select("blocker_id, blocked_id");
-
-  const blockedIds = new Set();
-
-  (blocked || []).forEach(b => {
-    if (b.blocker_id === currentUser.id)
-      blockedIds.add(b.blocked_id);
-
-    if (b.blocked_id === currentUser.id)
-      blockedIds.add(b.blocker_id);
-  });
-
-  const { data, error } = await db
-    .from("profiles")
-    .select("id,display_name,bio,area,interests,avatar_url")
-    .neq("id", currentUser.id)
-    .limit(100);
-
-  if (error) {
-    container.innerHTML = safe(error.message);
-    return;
-  }
-
-  const members = (data || []).filter(member =>
-    !blockedIds.has(member.id)
-  );
-
-  renderMembers(members);
+  refresh();
+  notify("You have logged out.");
 }
 
-function renderMembers(members) {
+/* PHOTO UPLOAD */
 
-  const container = document.getElementById("membersList");
-
-  container.innerHTML = "";
-
-  if (!members.length) {
-    container.innerHTML = "<p>No members found yet.</p>";
-    return;
+async function compressPhoto(file) {
+  if(!file.type.startsWith("image/")) {
+    throw new Error("Invalid image.");
   }
 
-  members.forEach(member => {
-
-    const card = document.createElement("div");
-    card.className = "card member-card";
-
-    const photo = document.createElement("img");
-    photo.className = "member-photo";
-    photo.src = member.avatar_url ||
-      "https://placehold.co/400x300/271739/ffffff?text=Member";
-    photo.alt = "Member profile photo";
-
-    const title = document.createElement("h3");
-    title.textContent = member.display_name;
-
-    const area = document.createElement("p");
-    area.className = "muted";
-    area.textContent = member.area || "Area not provided";
-
-    const bio = document.createElement("p");
-    bio.textContent = member.bio || "No biography yet.";
-
-    const interests = document.createElement("p");
-    interests.innerHTML = (member.interests || "")
-      .split(",")
-      .filter(Boolean)
-      .map(i => `<span class="tag">${safe(i.trim())}</span>`)
-      .join("");
-
-    const connect = document.createElement("button");
-    connect.className = "btn small";
-    connect.textContent = "Connect";
-
-    connect.onclick = () => sendConnection(member.id);
-
-    const report = document.createElement("button");
-    report.className = "btn secondary small";
-    report.textContent = "Report";
-
-    report.onclick = () => reportMember(member.id);
-
-    const block = document.createElement("button");
-    block.className = "btn danger small";
-    block.textContent = "Block";
-
-    block.onclick = () => blockMember(member.id);
-
-    card.append(photo, title, area, bio, interests, connect, report, block);
-
-    container.appendChild(card);
-  });
-}
-
-document.getElementById("searchMembers")
-.addEventListener("input", async function() {
-
-  const query = this.value.toLowerCase().trim();
-
-  const { data } = await db
-    .from("profiles")
-    .select("id,display_name,bio,area,interests,avatar_url")
-    .neq("id", currentUser.id)
-    .limit(100);
-
-  if (!data) return;
-
-  const results = data.filter(member =>
-    [
-      member.display_name,
-      member.bio,
-      member.area,
-      member.interests
-    ].some(value => (value || "").toLowerCase().includes(query))
-  );
-
-  renderMembers(results);
-});
-
-// ==========================================
-// 11. SEND CONNECTION REQUEST
-// ==========================================
-
-async function sendConnection(memberId) {
-
-  const { data: existing, error: lookupError } = await db
-    .from("connections")
-    .select("id,status")
-    .or(
-      `and(sender_id.eq.${currentUser.id},receiver_id.eq.${memberId}),and(sender_id.eq.${memberId},receiver_id.eq.${currentUser.id})`
-    );
-
-  if (lookupError) {
-    notify(lookupError.message);
-    return;
+  if(file.size>8*1024*1024) {
+    throw new Error("Choose photos smaller than 8 MB.");
   }
 
-  if (existing?.length) {
-    notify("A connection request or connection already exists.");
-    return;
-  }
+  return new Promise((resolve,reject)=>{
+    const reader=new FileReader();
 
-  const { error } = await db
-    .from("connections")
-    .insert({
-      sender_id: currentUser.id,
-      receiver_id: memberId,
-      status: "pending"
-    });
+    reader.onload=()=>{
+      const img=new Image();
 
-  if (error) {
-    notify(error.message);
-  } else {
-    notify("Connection request sent!");
-  }
-}
+      img.onload=()=>{
+        const canvas=document.createElement("canvas");
 
-// ==========================================
-// 12. LOAD CONNECTIONS
-// ==========================================
+        const max=900;
+        const scale=Math.min(1,max/Math.max(img.width,img.height));
 
-async function loadConnections() {
+        canvas.width=Math.round(img.width*scale);
+        canvas.height=Math.round(img.height*scale);
 
-  const { data, error } = await db
-    .from("connections")
-    .select("*")
-    .or(
-      `sender_id.eq.${currentUser.id},receiver_id.eq.${currentUser.id}`
-    );
+        const ctx=canvas.getContext("2d");
 
-  if (error) {
-    notify(error.message);
-    return;
-  }
+        ctx.drawImage(img,0,0,canvas.width,canvas.height);
 
-  const received = [];
-  const sent = [];
-  const accepted = [];
-
-  for (const connection of data || []) {
-
-    const otherId = connection.sender_id === currentUser.id
-      ? connection.receiver_id
-      : connection.sender_id;
-
-    const { data: person } = await db
-      .from("profiles")
-      .select("id,display_name")
-      .eq("id", otherId)
-      .single();
-
-    if (!person) continue;
-
-    const item = { connection, person };
-
-    if (connection.status === "accepted") {
-      accepted.push(item);
-    } else if (connection.status === "pending") {
-      if (connection.receiver_id === currentUser.id)
-        received.push(item);
-      else
-        sent.push(item);
-    }
-  }
-
-  renderConnectionGroup("receivedRequests", received, "received");
-  renderConnectionGroup("sentRequests", sent, "sent");
-  renderConnectionGroup("acceptedConnections", accepted, "accepted");
-}
-
-function renderConnectionGroup(id, items, type) {
-
-  const container = document.getElementById(id);
-
-  container.innerHTML = "";
-
-  if (!items.length) {
-    container.innerHTML = '<p class="muted">Nothing here yet.</p>';
-    return;
-  }
-
-  items.forEach(({ connection, person }) => {
-
-    const div = document.createElement("div");
-    div.className = "card";
-
-    const name = document.createElement("strong");
-    name.textContent = person.display_name;
-
-    div.appendChild(name);
-
-    if (type === "received") {
-
-      const accept = document.createElement("button");
-      accept.className = "btn small";
-      accept.textContent = "Accept";
-
-      accept.onclick = () => respondRequest(connection.id, "accepted");
-
-      const decline = document.createElement("button");
-      decline.className = "btn danger small";
-      decline.textContent = "Decline";
-
-      decline.onclick = () => respondRequest(connection.id, "declined");
-
-      div.append(accept, decline);
-
-    } else if (type === "sent") {
-
-      const status = document.createElement("p");
-      status.className = "muted";
-      status.textContent = "Request pending";
-
-      div.appendChild(status);
-
-    } else {
-
-      const chat = document.createElement("button");
-      chat.className = "btn small";
-      chat.textContent = "Message";
-
-      chat.onclick = () => {
-        openTab("messages");
-        document.getElementById("chatPartner").value = person.id;
-        loadMessages();
+        resolve(canvas.toDataURL("image/jpeg",0.75));
       };
 
-      div.appendChild(chat);
+      img.onerror=reject;
+      img.src=reader.result;
+    };
+
+    reader.onerror=reject;
+    reader.readAsDataURL(file);
+  });
+}
+
+/* EDIT PROFILE */
+
+function openProfileEditor() {
+  if(!currentUser) {
+    openModal("authModal");
+    return;
+  }
+
+  document.getElementById("editName").value=currentUser.name;
+  document.getElementById("editCity").value=currentUser.city;
+  document.getElementById("editArea").value=currentUser.area;
+  document.getElementById("editBio").value=currentUser.bio||"";
+  document.getElementById("editInterest").value=currentUser.interest||"Coffee";
+
+  renderPreviews();
+
+  openModal("editModal");
+}
+
+function renderPreviews() {
+  const container=document.getElementById("photoPreviews");
+
+  container.innerHTML="";
+
+  (currentUser.photos||[]).forEach(photo=>{
+    const img=document.createElement("img");
+    img.src=photo;
+    img.className="preview-image";
+    container.appendChild(img);
+  });
+}
+
+document.getElementById("profileForm").addEventListener("submit",async function(e) {
+  e.preventDefault();
+
+  if(!currentUser) return;
+
+  const files=Array.from(document.getElementById("editPhotos").files);
+
+  if((currentUser.photos.length+files.length)>3) {
+    notify("You can upload a maximum of 3 photos.");
+    return;
+  }
+
+  let newPhotos=[];
+
+  try {
+    for(const file of files) {
+      newPhotos.push(await compressPhoto(file));
     }
-
-    container.appendChild(div);
-  });
-}
-
-// ==========================================
-// 13. ACCEPT OR DECLINE REQUEST
-// ==========================================
-
-async function respondRequest(id, status) {
-
-  const { error } = await db
-    .from("connections")
-    .update({ status })
-    .eq("id", id);
-
-  if (error) {
-    notify(error.message);
-  } else {
-    notify("Request updated.");
-    loadConnections();
-  }
-}
-
-// ==========================================
-// 14. LOAD CHAT PARTNERS
-// ==========================================
-
-async function loadChatPartners() {
-
-  const select = document.getElementById("chatPartner");
-
-  select.innerHTML = '<option value="">Choose a member</option>';
-
-  const { data, error } = await db
-    .from("connections")
-    .select("*")
-    .eq("status", "accepted")
-    .or(
-      `sender_id.eq.${currentUser.id},receiver_id.eq.${currentUser.id}`
-    );
-
-  if (error) return;
-
-  for (const c of data || []) {
-
-    const id = c.sender_id === currentUser.id
-      ? c.receiver_id
-      : c.sender_id;
-
-    const { data: person } = await db
-      .from("profiles")
-      .select("display_name")
-      .eq("id", id)
-      .single();
-
-    if (!person) continue;
-
-    const option = document.createElement("option");
-    option.value = id;
-    option.textContent = person.display_name;
-
-    select.appendChild(option);
-  }
-}
-
-document.getElementById("chatPartner")
-.addEventListener("change", loadMessages);
-
-// ==========================================
-// 15. LOAD CHAT MESSAGES
-// ==========================================
-
-async function loadMessages() {
-
-  const partner = document.getElementById("chatPartner").value;
-  const windowBox = document.getElementById("chatWindow");
-
-  if (!partner) {
-    windowBox.innerHTML = "<p>Select a connection.</p>";
+  } catch(error) {
+    notify(error.message||"Could not upload photos.");
     return;
   }
 
-  const { data, error } = await db
-    .from("messages")
-    .select("*")
-    .or(
-      `and(sender_id.eq.${currentUser.id},receiver_id.eq.${partner}),and(sender_id.eq.${partner},receiver_id.eq.${currentUser.id})`
-    )
-    .order("created_at", { ascending: true })
-    .limit(100);
-
-  if (error) {
-    windowBox.textContent = error.message;
-    return;
-  }
-
-  windowBox.innerHTML = "";
-
-  (data || []).forEach(message => {
-
-    const div = document.createElement("div");
-
-    div.className = "message " +
-      (message.sender_id === currentUser.id ? "mine" : "theirs");
-
-    const content = document.createElement("p");
-    content.textContent = message.content;
-
-    const time = document.createElement("small");
-    time.textContent = new Date(message.created_at).toLocaleString();
-
-    div.append(content, time);
-    windowBox.appendChild(div);
-  });
-
-  windowBox.scrollTop = windowBox.scrollHeight;
-}
-
-// ==========================================
-// 16. SEND MESSAGE
-// ==========================================
-
-document.getElementById("messageForm")
-.addEventListener("submit", async function(e) {
-
-  e.preventDefault();
-
-  const partner = document.getElementById("chatPartner").value;
-  const content = document.getElementById("messageText").value.trim();
-
-  if (!partner || !content) {
-    notify("Choose a connection and write a message.");
-    return;
-  }
-
-  const { error } = await db
-    .from("messages")
-    .insert({
-      sender_id: currentUser.id,
-      receiver_id: partner,
-      content
-    });
-
-  if (error) {
-    notify(error.message);
-    return;
-  }
-
-  document.getElementById("messageText").value = "";
-
-  loadMessages();
-});
-
-// ==========================================
-// 17. CREATE MEETUP
-// ==========================================
-
-document.getElementById("meetupForm")
-.addEventListener("submit", async function(e) {
-
-  e.preventDefault();
-
-  const date = document.getElementById("meetupDate").value;
-
-  if (!date || date < new Date().toISOString().slice(0, 10)) {
-    notify("Choose a future meetup date.");
-    return;
-  }
-
-  const meetup = {
-    creator_id: currentUser.id,
-    title: document.getElementById("meetupTitle").value.trim(),
-    venue: document.getElementById("meetupVenue").value.trim(),
-    area: document.getElementById("meetupArea").value.trim(),
-    meetup_date: date,
-    meetup_time: document.getElementById("meetupTime").value,
-    details: document.getElementById("meetupDetails").value.trim()
+  const updated={
+    ...currentUser,
+    name:document.getElementById("editName").value.trim(),
+    city:document.getElementById("editCity").value.trim(),
+    area:document.getElementById("editArea").value.trim(),
+    bio:document.getElementById("editBio").value.trim(),
+    interest:document.getElementById("editInterest").value,
+    photos:[...(currentUser.photos||[]),...newPhotos]
   };
 
-  const { error } = await db
-    .from("meetups")
-    .insert(meetup);
+  const oldUsers=users;
 
-  if (error) {
-    notify(error.message);
+  users=users.map(u=>u.id===updated.id?updated:u);
+
+  if(!save(STORAGE.users,users)) {
+    users=oldUsers;
+    return;
+  }
+
+  currentUser=updated;
+  save(STORAGE.current,currentUser);
+
+  closeModal("editModal");
+  this.reset();
+
+  refresh();
+  notify("Your profile has been updated!");
+});
+
+/* PROFILE DISPLAY */
+
+function renderMyProfile() {
+  const area=document.getElementById("myProfile");
+
+  if(!currentUser) {
+    area.innerHTML="";
+    return;
+  }
+
+  const photo=currentUser.photos?.[0]||"https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600";
+
+  area.innerHTML=`
+    <img class="profile-image" src="${photo}">
+    <div class="card-content">
+      <h3>${escapeHTML(currentUser.name)}, ${currentUser.age}</h3>
+      <p>${escapeHTML(currentUser.bio)}</p>
+      <p>📍 ${escapeHTML(currentUser.area)}, ${escapeHTML(currentUser.city)}</p>
+      <span class="tag">${escapeHTML(currentUser.interest)}</span>
+      <p>${currentUser.photos?.length||0} profile photos uploaded</p>
+    </div>
+  `;
+}
+
+/* SAMPLE DISCOVERY PROFILES */
+
+const samplePeople=[
+  {
+    id:"sample1",
+    name:"Alex",
+    age:24,
+    city:"Nairobi",
+    area:"Westlands",
+    distance:"1.2 km away",
+    interest:"Coffee",
+    bio:"Coffee lover, music and good conversations.",
+    photo:"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600"
+  },
+  {
+    id:"sample2",
+    name:"Maya",
+    age:23,
+    city:"Nairobi",
+    area:"Kilimani",
+    distance:"2.5 km away",
+    interest:"Party",
+    bio:"Love discovering new places and meeting people.",
+    photo:"https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600"
+  },
+  {
+    id:"sample3",
+    name:"Daniel",
+    age:26,
+    city:"Nairobi",
+    area:"Karen",
+    distance:"3.1 km away",
+    interest:"Adventure",
+    bio:"Always ready for a new experience.",
+    photo:"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600"
+  },
+  {
+    id:"sample4",
+    name:"Sophia",
+    age:22,
+    city:"Nairobi",
+    area:"Lavington",
+    distance:"4 km away",
+    interest:"Chill",
+    bio:"Mocktails, movies and relaxed evenings.",
+    photo:"https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600"
+  }
+];
+
+function getPeople() {
+  const registered=users
+    .filter(u=>u.id!==currentUser?.id)
+    .filter(u=>!currentUser?.blocked?.includes(u.id))
+    .filter(u=>u.city.toLowerCase()===currentUser?.city?.toLowerCase())
+    .map(u=>({
+      ...u,
+      distance:"Distance unavailable",
+      photo:u.photos?.[0]||""
+    }));
+
+  const samples=samplePeople
+    .filter(p=>!currentUser?.blocked?.includes(p.id))
+    .filter(p=>!currentUser || p.city.toLowerCase()===currentUser.city.toLowerCase());
+
+  return [...registered,...samples];
+}
+
+function renderPeople(list=getPeople()) {
+  const grid=document.getElementById("peopleGrid");
+
+  grid.innerHTML="";
+
+  if(!list.length) {
+    grid.innerHTML='<div class="empty">No profiles found. Try another filter.</div>';
+    return;
+  }
+
+  list.forEach(person=>{
+    const card=document.createElement("div");
+    card.className="card";
+
+    const image=document.createElement("img");
+    image.className="profile-image";
+    image.alt="Member profile photo";
+    image.src=person.photo||"https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600";
+
+    const content=document.createElement("div");
+    content.className="card-content";
+
+    const title=document.createElement("h3");
+    title.textContent=person.name+", "+person.age;
+
+    const bio=document.createElement("p");
+    bio.textContent=person.bio||"Getting to know new people.";
+
+    const location=document.createElement("div");
+    location.className="distance";
+    location.textContent="📍 "+(person.area||"Nearby area")+", "+person.city+" • "+(person.distance||"Distance unavailable");
+
+    const tag=document.createElement("span");
+    tag.className="tag";
+    tag.textContent=person.interest||"Social";
+
+    const actions=document.createElement("div");
+    actions.className="card-actions";
+
+    const connect=document.createElement("button");
+    connect.className="primary";
+    connect.textContent="Connect";
+    connect.onclick=()=>requireAccount("Sign in to connect with members.");
+
+    const report=document.createElement("button");
+    report.className="secondary";
+    report.textContent="Report";
+    report.onclick=()=>reportMember(person.id);
+
+    actions.append(connect,report);
+
+    content.append(title,bio,location,tag,actions);
+    card.append(image,content);
+
+    grid.appendChild(card);
+  });
+}
+
+function filterPeople(category,button) {
+  document.querySelectorAll(".category").forEach(btn=>{
+    btn.classList.remove("active");
+  });
+
+  button.classList.add("active");
+
+  let list=getPeople();
+
+  if(category!=="All") {
+    list=list.filter(person=>person.interest===category);
+  }
+
+  renderPeople(list);
+}
+
+/* BLOCK AND REPORT */
+
+function reportMember(id) {
+  if(!currentUser) {
+    requireAccount("Login to report a member.");
+    return;
+  }
+
+  const reason=prompt("Briefly describe the reason for reporting this profile:");
+
+  if(!reason?.trim()) return;
+
+  notify("Report recorded in this demonstration. A live moderation system is required for review.");
+}
+
+function requireAccount(message) {
+  if(!currentUser) {
+    notify(message);
+    openModal("authModal");
+    return false;
+  }
+
+  return true;
+}
+
+/* MEETUPS */
+
+function renderMeetups() {
+  const grid=document.getElementById("meetupGrid");
+
+  grid.innerHTML="";
+
+  const upcoming=meetups.filter(event=>{
+    return event.date>=today;
+  });
+
+  if(!upcoming.length) {
+    grid.innerHTML='<div class="empty">No upcoming meetups yet. Create the first one!</div>';
+    return;
+  }
+
+  upcoming.forEach(event=>{
+    const card=document.createElement("div");
+    card.className="card meetup-card";
+
+    const title=document.createElement("h3");
+    title.textContent=event.name;
+
+    const info=document.createElement("div");
+    info.className="meetup-info";
+
+    info.textContent=
+      "📍 "+event.location+
+      "\n📅 "+event.date+
+      "\n⏰ "+event.time+
+      "\n🥤 "+event.type+
+      "\n👥 "+(event.attendees?.length||0)+" / "+event.capacity+" attending"+
+      "\n👤 Hosted by: "+event.host;
+
+    const description=document.createElement("p");
+    description.textContent=event.description||"Come and socialize.";
+
+    const button=document.createElement("button");
+    button.className="primary";
+    button.textContent=event.attendees?.includes(currentUser?.id)?"Cancel RSVP":"I'm Interested";
+
+    button.onclick=()=>rsvp(event.id);
+
+    card.append(title,info,description,button);
+    grid.appendChild(card);
+  });
+}
+
+function rsvp(id) {
+  if(!requireAccount("Login to RSVP to a meetup.")) return;
+
+  const event=meetups.find(e=>e.id===id);
+
+  if(!event) return;
+
+  event.attendees=event.attendees||[];
+
+  if(event.attendees.includes(currentUser.id)) {
+    event.attendees=event.attendees.filter(id=>id!==currentUser.id);
+    notify("Your RSVP has been cancelled.");
+  } else {
+    if(event.attendees.length>=event.capacity) {
+      notify("This meetup is full.");
+      return;
+    }
+
+    event.attendees.push(currentUser.id);
+    notify("You're interested in this meetup!");
+  }
+
+  save(STORAGE.meetups,meetups);
+  renderMeetups();
+}
+
+/* CREATE MEETUP */
+
+document.getElementById("meetupForm").addEventListener("submit",function(e) {
+  e.preventDefault();
+
+  if(!requireAccount("Create an account to publish a meetup.")) return;
+
+  const date=document.getElementById("eventDate").value;
+  const time=document.getElementById("eventTime").value;
+
+  if(date<today) {
+    notify("Choose a future date.");
+    return;
+  }
+
+  if(date===today && time<=new Date().toTimeString().slice(0,5)) {
+    notify("Choose a future meeting time.");
+    return;
+  }
+
+  const capacity=Number(document.getElementById("eventCapacity").value);
+
+  if(capacity<2 || capacity>100) {
+    notify("Choose a capacity between 2 and 100.");
+    return;
+  }
+
+  const event={
+    id:crypto.randomUUID(),
+    name:document.getElementById("eventName").value.trim(),
+    location:document.getElementById("eventLocation").value.trim(),
+    date:date,
+    time:time,
+    type:document.getElementById("eventType").value,
+    capacity:capacity,
+    description:document.getElementById("eventDescription").value.trim(),
+    attendees:[currentUser.id],
+    host:currentUser.name
+  };
+
+  meetups.unshift(event);
+
+  if(!save(STORAGE.meetups,meetups)) {
+    meetups.shift();
     return;
   }
 
   this.reset();
 
-  notify("Your meetup has been created!");
+  renderMeetups();
 
-  loadMeetups();
+  notify("Your meetup has been published!");
 });
 
-// ==========================================
-// 18. LOAD MEETUPS
-// ==========================================
+/* ACCOUNT INTERFACE */
 
-async function loadMeetups() {
+function updateAccountArea() {
+  const area=document.getElementById("accountArea");
+  const profileArea=document.getElementById("profileArea");
 
-  const container = document.getElementById("meetupList");
+  if(currentUser) {
+    area.innerHTML=`
+      <div class="user-bar">
+        <span>${escapeHTML(currentUser.name)}</span>
+        <button class="secondary" onclick="goTo('profileArea')">My Account</button>
+      </div>
+    `;
 
-  container.innerHTML = "<p>Loading meetups...</p>";
-
-  const { data, error } = await db
-    .from("meetups")
-    .select("*")
-    .gte("meetup_date", new Date().toISOString().slice(0, 10))
-    .order("meetup_date", { ascending: true })
-    .limit(50);
-
-  if (error) {
-    container.textContent = error.message;
-    return;
-  }
-
-  container.innerHTML = "";
-
-  if (!data?.length) {
-    container.innerHTML = "<p>No upcoming meetups yet.</p>";
-    return;
-  }
-
-  for (const meetup of data) {
-
-    const card = document.createElement("div");
-    card.className = "card";
-
-    const title = document.createElement("h3");
-    title.textContent = meetup.title;
-
-    const venue = document.createElement("p");
-    venue.textContent = "Venue: " + meetup.venue;
-
-    const area = document.createElement("p");
-    area.textContent = "Area: " + meetup.area;
-
-    const date = document.createElement("p");
-    date.textContent = "Date: " + formatDate(meetup.meetup_date);
-
-    const time = document.createElement("p");
-    time.textContent = "Time: " + meetup.meetup_time;
-
-    const details = document.createElement("p");
-    details.textContent = meetup.details || "";
-
-    const join = document.createElement("button");
-    join.className = "btn small";
-    join.textContent = "Join Meetup";
-
-    join.onclick = () => joinMeetup(meetup.id);
-
-    const count = document.createElement("p");
-    count.className = "muted";
-    count.textContent = "Public social gathering";
-
-    card.append(title, venue, area, date, time, details, join, count);
-
-    if (meetup.creator_id === currentUser.id) {
-
-      const deleteBtn = document.createElement("button");
-      deleteBtn.className = "btn danger small";
-      deleteBtn.textContent = "Delete Meetup";
-
-      deleteBtn.onclick = () => deleteMeetup(meetup.id);
-
-      card.appendChild(deleteBtn);
-    }
-
-    container.appendChild(card);
-  }
-}
-
-// ==========================================
-// 19. JOIN MEETUP
-// ==========================================
-
-async function joinMeetup(meetupId) {
-
-  const { error } = await db
-    .from("meetup_attendees")
-    .insert({
-      meetup_id: meetupId,
-      user_id: currentUser.id
-    });
-
-  if (error) {
-    notify(error.code === "23505"
-      ? "You have already joined this meetup."
-      : error.message);
+    profileArea.style.display="block";
   } else {
-    notify("You have joined the meetup!");
+    area.innerHTML=`
+      <button class="primary" onclick="openModal('authModal')">
+        Join / Login
+      </button>
+    `;
+
+    profileArea.style.display="none";
   }
 }
 
-// ==========================================
-// 20. DELETE MEETUP
-// ==========================================
+/* INITIALIZE */
 
-async function deleteMeetup(id) {
-
-  if (!confirm("Delete this meetup?")) return;
-
-  const { error } = await db
-    .from("meetups")
-    .delete()
-    .eq("id", id)
-    .eq("creator_id", currentUser.id);
-
-  if (error) {
-    notify(error.message);
-  } else {
-    notify("Meetup deleted.");
-    loadMeetups();
-  }
+function refresh() {
+  updateAccountArea();
+  renderMyProfile();
+  renderPeople();
+  renderMeetups();
 }
 
-// ==========================================
-// 21. BLOCK A MEMBER
-// ==========================================
+refresh();
 
-async function blockMember(id) {
+/* DATE RESTRICTIONS */
 
-  if (!confirm("Block this member?")) return;
-
-  const { error } = await db
-    .from("blocks")
-    .insert({
-      blocker_id: currentUser.id,
-      blocked_id: id
-    });
-
-  if (error) {
-    notify(error.message);
-    return;
-  }
-
-  // Remove any existing connections.
-  await db
-    .from("connections")
-    .delete()
-    .or(
-      `and(sender_id.eq.${currentUser.id},receiver_id.eq.${id}),and(sender_id.eq.${id},receiver_id.eq.${currentUser.id})`
-    );
-
-  notify("Member blocked.");
-  loadMembers();
-}
-
-// ==========================================
-// 22. REPORT A MEMBER
-// ==========================================
-
-async function reportMember(id) {
-
-  const reason = prompt(
-    "Briefly explain why you are reporting this member:"
-  );
-
-  if (!reason || !reason.trim()) return;
-
-  const { error } = await db
-    .from("reports")
-    .insert({
-      reporter_id: currentUser.id,
-      reported_id: id,
-      reason: reason.trim().slice(0, 1000)
-    });
-
-  if (error) {
-    notify(error.message);
-  } else {
-    notify("Report submitted for review.");
-  }
-}
-
-// ==========================================
-// 23. ACCOUNT DELETION INFORMATION
-// ==========================================
-
-function deleteAccountNotice() {
-
-  alert(
-    "To permanently delete your account, contact SIP & SOCIAL support. " +
-    "A secure server-side account deletion service must be configured " +
-    "before permanent deletion can be offered."
-  );
-}
-
-// ==========================================
-// 24. NAVIGATION
-// ==========================================
-
-document.querySelectorAll("nav button[data-tab]")
-.forEach(button => {
-  button.addEventListener("click", () => {
-    openTab(button.dataset.tab);
-  });
-});
-
-// ==========================================
-// 25. RESTORE EXISTING SESSION
-// ==========================================
-
-async function initialize() {
-
-  const { data, error } = await db.auth.getSession();
-
-  if (error) {
-    notify(error.message);
-    return;
-  }
-
-  if (data.session) {
-    await startApp(data.session.user);
-  } else {
-    showAuth("welcome");
-  }
-}
-
-db.auth.onAuthStateChange((event, session) => {
-
-  if (event === "SIGNED_OUT") {
-    currentUser = null;
-    myProfile = null;
-    document.getElementById("navigation").classList.add("hidden");
-    hideAll();
-    document.getElementById("welcome").classList.remove("hidden");
-  }
-});
-
-initialize();
+document.getElementById("eventDate").min=today;
 
 </script>
 
