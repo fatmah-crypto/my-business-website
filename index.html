@@ -2,1245 +2,725 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Dr Suleiman | Love & Relationship Specialist in Nairobi</title>
-  <meta name="description" content="Contact Dr Suleiman in Nairobi, Kenya, for personal consultations, relationship guidance, marriage and family support.">
-  <meta name="theme-color" content="#176b43">
-
-  <style>
-    :root {
-      --green: #176b43;
-      --green-dark: #104b30;
-      --green-light: #eaf5ed;
-      --red: #c8102e;
-      --red-hover: #a60d25;
-      --gold: #d4af37;
-      --gold-light: #f8edc9;
-      --white: #ffffff;
-      --cream: #fffaf0;
-      --black: #191919;
-      --text: #333333;
-      --muted: #666666;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background: var(--white);
-      line-height: 1.7;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    img {
-      display: block;
-      width: 100%;
-    }
-
-    button, input, textarea {
-      font: inherit;
-    }
-
-    .container {
-      width: min(1120px, 90%);
-      margin: auto;
-    }
-
-    .topbar {
-      background: var(--black);
-      color: white;
-      padding: 9px 5%;
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      flex-wrap: wrap;
-      font-size: 13px;
-    }
-
-    .topbar strong {
-      color: var(--gold);
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: white;
-      box-shadow: 0 3px 15px #00000012;
-    }
-
-    nav {
-      min-height: 78px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .logo {
-      color: var(--green);
-      font-size: 24px;
-      font-weight: 900;
-      line-height: 1.2;
-    }
-
-    .logo span {
-      color: var(--red);
-    }
-
-    .logo small {
-      display: block;
-      color: #856919;
-      font-size: 10px;
-      letter-spacing: 1.5px;
-      margin-top: 5px;
-    }
-
-    .nav-links {
-      display: flex;
-      list-style: none;
-      align-items: center;
-      gap: 22px;
-    }
-
-    .nav-links a {
-      color: var(--black);
-      font-size: 14px;
-      font-weight: bold;
-    }
-
-    .nav-links a:hover {
-      color: var(--red);
-    }
-
-    .menu-button {
-      display: none;
-      border: 0;
-      border-radius: 5px;
-      padding: 8px 12px;
-      background: var(--green);
-      color: white;
-      cursor: pointer;
-      font-size: 22px;
-    }
-
-    .language-button {
-      padding: 9px 13px;
-      border: 1px solid var(--green);
-      border-radius: 25px;
-      background: white;
-      color: var(--green);
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    /* HERO: EMERALD GREEN, NEVER BURGUNDY */
-
-    .hero {
-      min-height: 620px;
-      display: flex;
-      align-items: center;
-      color: white;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(16,75,48,.97) 0%,
-          rgba(23,107,67,.91) 52%,
-          rgba(23,107,67,.56) 100%
-        ),
-        url("https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1800&q=85")
-        center/cover no-repeat;
-      border-bottom: 6px solid var(--gold);
-    }
-
-    .hero-content {
-      padding: 85px 0;
-      max-width: 800px;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      color: var(--black);
-      background: var(--gold);
-      border-radius: 4px;
-      padding: 7px 14px;
-      font-weight: bold;
-      font-size: 12px;
-      letter-spacing: 1.3px;
-      margin-bottom: 22px;
-    }
-
-    .hero h1 {
-      font-size: clamp(40px, 6vw, 70px);
-      line-height: 1.08;
-      margin-bottom: 22px;
-    }
-
-    .hero h1 span {
-      color: #ffe18a;
-    }
-
-    .hero p {
-      font-size: 18px;
-      max-width: 650px;
-      color: #f2fff6;
-      margin-bottom: 30px;
-    }
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 13px;
-    }
-
-    .btn {
-      display: inline-block;
-      border: 0;
-      border-radius: 5px;
-      padding: 13px 23px;
-      font-weight: bold;
-      text-align: center;
-      cursor: pointer;
-      transition: .2s;
-    }
-
-    .btn-red {
-      background: var(--red);
-      color: white;
-    }
-
-    .btn-red:hover {
-      background: var(--red-hover);
-      transform: translateY(-2px);
-    }
-
-    .btn-gold {
-      background: var(--gold);
-      color: var(--black);
-    }
-
-    .btn-gold:hover {
-      background: #f0ce58;
-    }
-
-    section {
-      padding: 82px 0;
-      scroll-margin-top: 85px;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 42px;
-    }
-
-    .section-title .label {
-      color: var(--red);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    .section-title h2 {
-      color: var(--green-dark);
-      font-size: clamp(30px, 4vw, 43px);
-      line-height: 1.2;
-      margin: 9px 0 13px;
-    }
-
-    .section-title p {
-      color: var(--muted);
-      max-width: 700px;
-      margin: auto;
-    }
-
-    /* ABOUT */
-
-    .about {
-      background: white;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: center;
-    }
-
-    .about-photo {
-      height: 450px;
-      overflow: hidden;
-      border-radius: 12px;
-      border-bottom: 7px solid var(--gold);
-      background: var(--green-light);
-    }
-
-    .about-photo img {
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .about-copy h2 {
-      color: var(--green-dark);
-      font-size: 36px;
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
-
-    .about-copy h2 span {
-      color: var(--red);
-    }
-
-    .about-copy p {
-      margin-bottom: 16px;
-    }
-
-    .checklist {
-      list-style: none;
-      margin: 20px 0;
-    }
-
-    .checklist li {
-      margin: 10px 0;
-    }
-
-    .checklist li::before {
-      content: "✓";
-      color: var(--green);
-      font-weight: 900;
-      margin-right: 10px;
-    }
-
-    /* SERVICES */
-
-    .services {
-      background: var(--cream);
-    }
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .service-card {
-      background: white;
-      border-radius: 10px;
-      padding: 28px;
-      border-top: 5px solid var(--green);
-      box-shadow: 0 5px 22px #0000000c;
-      transition: .2s;
-    }
-
-    .service-card:nth-child(even) {
-      border-top-color: var(--red);
-    }
-
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 28px #00000015;
-    }
-
-    .service-icon {
-      width: 53px;
-      height: 53px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: var(--gold-light);
-      color: var(--green-dark);
-      font-size: 25px;
-      margin-bottom: 17px;
-    }
-
-    .service-card h3 {
-      color: var(--green-dark);
-      margin-bottom: 10px;
-      font-size: 20px;
-      line-height: 1.3;
-    }
-
-    .service-card p {
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    /* FEATURE */
-
-    .feature {
-      background: var(--green-dark);
-      color: white;
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 45px;
-    }
-
-    .feature-photo {
-      height: 360px;
-      border-radius: 10px;
-      overflow: hidden;
-      border: 3px solid var(--gold);
-    }
-
-    .feature-photo img {
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .feature-copy .label {
-      color: #ffe18a;
-      font-weight: bold;
-      letter-spacing: 2px;
-      font-size: 12px;
-    }
-
-    .feature-copy h2 {
-      font-size: clamp(30px, 4vw, 44px);
-      line-height: 1.2;
-      margin: 12px 0 18px;
-    }
-
-    .feature-copy p {
-      color: #e9f3ec;
-      margin-bottom: 25px;
-    }
-
-    /* TESTIMONIALS */
-
-    .testimonials {
-      background: white;
-    }
-
-    .testimonial-note {
-      text-align: center;
-      color: var(--muted);
-      font-size: 13px;
-      margin-top: 22px;
-    }
-
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .testimonial-card {
-      padding: 25px;
-      background: var(--cream);
-      border-left: 4px solid var(--gold);
-      border-radius: 7px;
-    }
-
-    .testimonial-card h3 {
-      color: var(--green-dark);
-      margin-top: 15px;
-      font-size: 17px;
-    }
-
-    .testimonial-card p {
-      color: #555;
-      font-style: italic;
-    }
-
-    /* SWAHILI */
-
-    .swahili {
-      background: var(--green-light);
-      border-top: 4px solid var(--green);
-    }
-
-    .swahili-box {
-      max-width: 850px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .swahili-box h2 {
-      color: var(--green-dark);
-      font-size: 34px;
-      margin-bottom: 15px;
-    }
-
-    .swahili-box p {
-      margin-bottom: 17px;
-    }
-
-    .swahili-extra {
-      display: none;
-      margin-top: 25px;
-      padding: 25px;
-      background: white;
-      border-radius: 9px;
-      text-align: left;
-      border-left: 5px solid var(--gold);
-    }
-
-    .swahili-extra.show {
-      display: block;
-    }
-
-    /* CONTACT */
-
-    .contact {
-      background: white;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-    }
-
-    .contact-info {
-      background: var(--green-dark);
-      color: white;
-      border-radius: 10px;
-      padding: 35px;
-    }
-
-    .contact-info h3 {
-      font-size: 30px;
-      margin-bottom: 12px;
-    }
-
-    .contact-info > p {
-      color: #e5f2e9;
-      margin-bottom: 22px;
-    }
-
-    .contact-item {
-      padding: 13px;
-      margin: 12px 0;
-      background: #ffffff12;
-      border-left: 3px solid var(--gold);
-      overflow-wrap: anywhere;
-    }
-
-    .contact-item strong {
-      display: block;
-      color: #ffe18a;
-      font-size: 12px;
-      letter-spacing: 1px;
-    }
-
-    .contact-form {
-      padding: 30px;
-      background: var(--cream);
-      border-radius: 10px;
-    }
-
-    .contact-form h3 {
-      color: var(--green-dark);
-      font-size: 27px;
-      margin-bottom: 18px;
-    }
-
-    .contact-form label {
-      display: block;
-      font-size: 14px;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      border: 1px solid #d5d5d5;
-      background: white;
-      border-radius: 5px;
-      padding: 12px;
-      margin-bottom: 15px;
-    }
-
-    .contact-form textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      outline: 2px solid var(--gold);
-      border-color: var(--green);
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: var(--black);
-      color: white;
-      padding: 45px 0 20px;
-      border-top: 5px solid var(--gold);
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 30px;
-    }
-
-    footer h3 {
-      color: var(--gold);
-      margin-bottom: 12px;
-    }
-
-    footer p, footer li {
-      color: #dddddd;
-      font-size: 14px;
-    }
-
-    footer ul {
-      list-style: none;
-    }
-
-    footer li {
-      margin: 7px 0;
-    }
-
-    footer a {
-      color: #eeeeee;
-    }
-
-    footer a:hover {
-      color: var(--gold);
-    }
-
-    .copyright {
-      border-top: 1px solid #444;
-      margin-top: 30px;
-      padding-top: 18px;
-      text-align: center;
-      color: #bbbbbb;
-      font-size: 13px;
-    }
-
-    .whatsapp {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 1500;
-      background: #20c765;
-      color: white;
-      padding: 13px 18px;
-      border-radius: 40px;
-      font-weight: bold;
-      box-shadow: 0 4px 16px #00000030;
-    }
-
-    .whatsapp:hover {
-      background: #128c48;
-    }
-
-    @media (max-width: 900px) {
-      .menu-button {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 78px;
-        left: 0;
-        right: 0;
-        padding: 22px 5%;
-        background: white;
-        box-shadow: 0 8px 15px #00000012;
-        align-items: stretch;
-        flex-direction: column;
-        gap: 18px;
-      }
-
-      .nav-links.open {
-        display: flex;
-      }
-
-      .about-grid,
-      .feature-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .service-grid,
-      .testimonial-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .feature-photo {
-        height: 300px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .topbar {
-        justify-content: center;
-        text-align: center;
-      }
-
-      .topbar span {
-        width: 100%;
-      }
-
-      nav {
-        min-height: 72px;
-      }
-
-      .logo {
-        font-size: 20px;
-      }
-
-      .logo small {
-        font-size: 8px;
-        letter-spacing: 1px;
-      }
-
-      .nav-links {
-        top: 72px;
-      }
-
-      .hero {
-        min-height: 560px;
-      }
-
-      .hero-content {
-        padding: 65px 0;
-      }
-
-      .hero h1 {
-        font-size: 42px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      section {
-        padding: 60px 0;
-      }
-
-      .service-grid,
-      .testimonial-grid,
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .about-photo {
-        height: 300px;
-      }
-
-      .about-copy h2 {
-        font-size: 30px;
-      }
-
-      .contact-info,
-      .contact-form {
-        padding: 24px;
-      }
-
-      .buttons .btn {
-        width: 100%;
-      }
-
-      .whatsapp {
-        right: 12px;
-        bottom: 12px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090612">
+<title>SIP & SOCIAL | Meet. Connect. Socialize.</title>
+
+<style>
+:root {
+  --bg: #090612;
+  --panel: #151020;
+  --purple: #9b4dff;
+  --neon: #d65cff;
+  --white: #ffffff;
+  --muted: #aaa0b9;
+  --border: #30213f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--white);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 7%;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: rgba(9,6,18,.96);
+  z-index: 10;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: bold;
+  color: var(--neon);
+  letter-spacing: 2px;
+}
+
+.logo span {
+  color: white;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: var(--neon);
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  border-radius: 9px;
+  padding: 12px 20px;
+  font-weight: bold;
+}
+
+.primary {
+  background: linear-gradient(90deg, #8e35ff, #d34fff);
+  color: white;
+}
+
+.secondary {
+  background: #28183b;
+  color: white;
+  border: 1px solid var(--purple);
+}
+
+.hero {
+  min-height: 500px;
+  padding: 100px 8%;
+  background:
+    linear-gradient(90deg, rgba(9,6,18,.96), rgba(20,8,35,.65)),
+    url("https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1600")
+    center/cover;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.hero h1 {
+  font-size: clamp(40px, 7vw, 70px);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: var(--neon);
+}
+
+.hero p {
+  color: #d4c9e0;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  font-size: 17px;
+}
+
+section {
+  padding: 65px 7%;
+}
+
+.section-title {
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  color: var(--muted);
+  margin-bottom: 30px;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.category {
+  padding: 13px 22px;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  background: var(--panel);
+  color: white;
+  cursor: pointer;
+}
+
+.category.active,
+.category:hover {
+  background: var(--purple);
+}
+
+.people-grid,
+.meetup-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--neon);
+}
+
+.profile-image {
+  height: 260px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 18px;
+}
+
+.card h3 {
+  margin-bottom: 9px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.distance {
+  color: #ce83ff;
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+.card button {
+  width: 100%;
+  margin-top: 7px;
+}
+
+.tag {
+  display: inline-block;
+  background: #302044;
+  color: #d9a6ff;
+  border-radius: 20px;
+  padding: 6px 10px;
+  font-size: 11px;
+  margin: 3px;
+}
+
+.meetup-card {
+  padding: 22px;
+}
+
+.meetup-card h3 {
+  color: var(--neon);
+}
+
+.meetup-info {
+  margin: 15px 0;
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: 14px;
+}
+
+.meetup-card button {
+  width: 100%;
+}
+
+.create-section {
+  background: linear-gradient(135deg, #170d28, #26103c);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+form {
+  max-width: 600px;
+  display: grid;
+  gap: 15px;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #100b1a;
+  color: white;
+  font-size: 14px;
+}
+
+input[type="file"] {
+  background: #20142e;
+}
+
+label {
+  font-size: 13px;
+  color: #d9cbe7;
+}
+
+footer {
+  text-align: center;
+  padding: 35px;
+  color: var(--muted);
+  line-height: 2;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  background: rgba(0,0,0,.85);
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.modal-content {
+  background: #171020;
+  border: 1px solid var(--purple);
+  border-radius: 15px;
+  padding: 28px;
+  width: 100%;
+  max-width: 450px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  color: var(--neon);
+}
+
+.modal-content input,
+.modal-content textarea {
+  margin-bottom: 13px;
+}
+
+.close {
+  float: right;
+  background: transparent;
+  color: white;
+  font-size: 23px;
+  padding: 0;
+}
+
+#notification {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #28183b;
+  padding: 14px 22px;
+  border-radius: 10px;
+  display: none;
+  z-index: 50;
+  border: 1px solid var(--purple);
+  max-width: 90%;
+}
+
+@media(max-width:700px) {
+  header {
+    padding: 17px 5%;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .hero {
+    padding: 75px 7%;
+  }
+
+  section {
+    padding: 48px 5%;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <div class="topbar">
-    <span><strong>DR SULEIMAN</strong> · Nairobi, Kenya</span>
-    <span>Call: 0112709495 · Availability: 24 hours</span>
+<header>
+  <div class="logo">SIP <span>&</span> SOCIAL</div>
+  <nav>
+    <a href="#discover">Discover</a>
+    <a href="#meetups">Meetups</a>
+    <a href="#create">Create Meetup</a>
+  </nav>
+  <button class="primary" onclick="openModal('loginModal')">Join Us</button>
+</header>
+
+<main>
+
+<div class="hero">
+  <div class="hero-content">
+    <h1>Good Drinks.<br>Great People.<br><span>Better Connections.</span></h1>
+    <p>
+      Tired of going out alone? Discover people around you,
+      make new friends and find your next social experience.
+      Your people are just one connection away.
+    </p>
+    <button class="primary" onclick="document.getElementById('discover').scrollIntoView({behavior:'smooth'})">
+      Discover People
+    </button>
+    <button class="secondary" onclick="document.getElementById('meetups').scrollIntoView({behavior:'smooth'})">
+      Explore Meetups
+    </button>
+  </div>
+</div>
+
+<section id="discover">
+  <h2 class="section-title">Discover Your People ✨</h2>
+  <p class="section-subtitle">Find people who share your interests and social vibe.</p>
+
+  <div class="categories">
+    <button class="category active" onclick="filterPeople('All',this)">Everyone</button>
+    <button class="category" onclick="filterPeople('Coffee',this)">Coffee dates</button>
+    <button class="category" onclick="filterPeople('Party',this)">Party people</button>
+    <button class="category" onclick="filterPeople('Chill',this)">Chill vibes</button>
+    <button class="category" onclick="filterPeople('Adventure',this)">Adventure</button>
   </div>
 
-  <header>
-    <nav class="container">
-      <a class="logo" href="#home">
-        DR <span>SULEIMAN</span>
-        <small>LOVE & RELATIONSHIP SPECIALIST</small>
-      </a>
+  <br>
 
-      <button
-        class="menu-button"
-        id="menuButton"
-        aria-label="Open navigation"
-        aria-expanded="false"
-        aria-controls="navLinks">☰</button>
+  <div class="people-grid" id="peopleGrid"></div>
+</section>
 
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><button class="language-button" id="languageButton">Kiswahili</button></li>
-      </ul>
-    </nav>
-  </header>
+<section id="meetups">
+  <h2 class="section-title">Upcoming Meetups 🍹</h2>
+  <p class="section-subtitle">Find an event. Meet new people. Make memories.</p>
 
-  <main>
+  <div class="meetup-grid" id="meetupGrid"></div>
+</section>
 
-    <section class="hero" id="home">
-      <div class="container">
-        <div class="hero-content">
-          <span class="eyebrow">NAIROBI · KENYA · OPEN 24 HOURS</span>
+<section class="create-section" id="create">
+  <h2 class="section-title">Create Your Own Meetup 🚀</h2>
+  <p class="section-subtitle">Choose a place, set a time and invite people to join you.</p>
 
-          <h1>
-            Guidance for <span>Love, Relationships</span> & Life
-          </h1>
+  <form id="meetupForm">
+    <input id="eventName" placeholder="Meetup name" required>
+    <input id="eventLocation" placeholder="Public venue / location" required>
+    <input id="eventDate" type="date" required>
+    <input id="eventTime" type="time" required>
+    <select id="eventType" required>
+      <option value="">Choose your meetup type</option>
+      <option>Coffee meetup</option>
+      <option>Juice and chill</option>
+      <option>Mocktail evening</option>
+      <option>Social gathering</option>
+      <option>Music and dancing</option>
+    </select>
+    <input id="eventCapacity" type="number" min="2" max="100" placeholder="Maximum number of people" required>
+    <textarea id="eventDescription" placeholder="Tell people about your meetup"></textarea>
+    <button class="primary" type="submit">Publish Meetup</button>
+  </form>
+</section>
 
-          <p>
-            Welcome to Dr Suleiman's website. Explore personal
-            consultations, relationship guidance, marriage support
-            and family guidance in a respectful setting.
-          </p>
-
-          <div class="buttons">
-            <a class="btn btn-red" href="#contact">Book a Consultation</a>
-            <a class="btn btn-gold"
-               href="https://wa.me/254112709495"
-               target="_blank"
-               rel="noopener noreferrer">WhatsApp Dr Suleiman</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="about" id="about">
-      <div class="container">
-        <div class="about-grid">
-          <div class="about-photo">
-            <img
-              src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=1000&q=85"
-              alt="Green natural landscape in warm sunlight"
-              loading="lazy">
-          </div>
-
-          <div class="about-copy">
-            <div class="section-title" style="text-align:left;margin-bottom:20px">
-              <div class="label">About Dr Suleiman</div>
-            </div>
-
-            <h2>Personal Guidance, <span>Rooted in Tradition</span></h2>
-
-            <p>
-              Dr Suleiman is based in Nairobi, Kenya, and offers
-              consultations focused on love, relationships and
-              personal concerns.
-            </p>
-
-            <p>
-              Consultations provide an opportunity to discuss your
-              concerns respectfully and explore possible next steps.
-            </p>
-
-            <ul class="checklist">
-              <li>Love and relationship consultations</li>
-              <li>Marriage and family guidance</li>
-              <li>Reconciliation and communication support</li>
-              <li>Personal consultations</li>
-            </ul>
-
-            <a href="#contact" class="btn btn-red">Contact Us</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="services" id="services">
-      <div class="container">
-        <div class="section-title">
-          <div class="label">How We Can Help</div>
-          <h2>Our Services</h2>
-          <p>
-            Explore the consultation options available for your
-            individual relationship and family concerns.
-          </p>
-        </div>
-
-        <div class="service-grid">
-
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">♡</div>
-            <h3>Love & Relationship Consultations</h3>
-            <p>
-              Discuss relationship concerns, communication and
-              challenges with personalized guidance.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">◇</div>
-            <h3>Marriage & Family Guidance</h3>
-            <p>
-              Guidance for people navigating marriage, family
-              relationships and everyday disagreements.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">♡</div>
-            <h3>Reconciliation Guidance</h3>
-            <p>
-              Explore respectful communication and possible ways
-              to address relationship conflict.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">✦</div>
-            <h3>Love & Relationship Advice</h3>
-            <p>
-              Talk through relationship questions and consider
-              choices that suit your circumstances.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">♡</div>
-            <h3>Emotional & Relationship Support</h3>
-            <p>
-              A respectful opportunity to discuss personal concerns
-              and think through your next steps.
-            </p>
-          </article>
-
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">✧</div>
-            <h3>Personal Consultations</h3>
-            <p>
-              Individual discussions tailored to your questions,
-              priorities and personal circumstances.
-            </p>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="feature">
-      <div class="container">
-        <div class="feature-grid">
-          <div class="feature-photo">
-            <img
-              src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1100&q=85"
-              alt="Sunlight passing through a green forest"
-              loading="lazy">
-          </div>
-
-          <div class="feature-copy">
-            <div class="label">PERSONAL ATTENTION · RESPECT · CARE</div>
-            <h2>Your Concerns Deserve to Be Heard</h2>
-            <p>
-              Have a question or want to arrange a consultation?
-              Get in touch to discuss your needs and available options.
-            </p>
-            <a href="#contact" class="btn btn-red">Get in Touch</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="testimonials" id="testimonials">
-      <div class="container">
-        <div class="section-title">
-          <div class="label">Client Feedback</div>
-          <h2>Testimonials</h2>
-          <p>
-            This section can display feedback shared by clients
-            who have agreed to have their comments published.
-          </p>
-        </div>
-
-        <div class="testimonial-grid">
-          <article class="testimonial-card">
-            <p>
-              Client feedback about the consultation and their
-              experience can be displayed here.
-            </p>
-            <h3>Client testimonial</h3>
-          </article>
-
-          <article class="testimonial-card">
-            <p>
-              Add an authentic review here after receiving permission
-              from the person who wrote it.
-            </p>
-            <h3>Client testimonial</h3>
-          </article>
-
-          <article class="testimonial-card">
-            <p>
-              Share genuine feedback about the service, without
-              promising particular results.
-            </p>
-            <h3>Client testimonial</h3>
-          </article>
-        </div>
-
-        <p class="testimonial-note">
-          Replace these placeholders with genuine, permission-based
-          client reviews before publishing.
-        </p>
-      </div>
-    </section>
-
-    <section class="swahili" id="kiswahili">
-      <div class="container">
-        <div class="swahili-box">
-          <div class="section-title">
-            <div class="label">Karibu</div>
-            <h2>Huduma kwa Kiswahili</h2>
-          </div>
-
-          <p>
-            Daktari Suleiman anapatikana Nairobi, Kenya, kwa
-            mashauriano kuhusu mapenzi, mahusiano, ndoa na familia.
-          </p>
-
-          <p>
-            Tunakukaribisha kueleza maswali na changamoto zako
-            katika mazingira ya heshima na usikilizaji.
-          </p>
-
-          <button class="btn btn-red" id="swahiliButton">
-            Soma Maelezo Zaidi
-          </button>
-
-          <div class="swahili-extra" id="swahiliExtra">
-            <h3>Huduma Zetu</h3>
-            <p>
-              <strong>Ushauri wa mapenzi na mahusiano:</strong>
-              Mashauriano kuhusu mawasiliano na changamoto za mahusiano.
-            </p>
-            <p>
-              <strong>Ushauri wa ndoa na familia:</strong>
-              Mazungumzo kuhusu masuala ya familia na ndoa.
-            </p>
-            <p>
-              <strong>Mawasiliano:</strong>
-              Piga simu au tutumie WhatsApp kwa nambari
-              <strong>0112709495</strong>.
-            </p>
-            <a href="#contact" class="btn btn-red">Wasiliana Nasi</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <div class="container">
-        <div class="section-title">
-          <div class="label">Get in Touch</div>
-          <h2>Book a Consultation</h2>
-          <p>
-            Contact Dr Suleiman to ask about consultations and
-            arrange a suitable time.
-          </p>
-        </div>
-
-        <div class="contact-grid">
-          <div class="contact-info">
-            <h3>Contact Dr Suleiman</h3>
-            <p>
-              Reach out by phone or WhatsApp for enquiries
-              and consultation arrangements.
-            </p>
-
-            <div class="contact-item">
-              <strong>PHONE</strong>
-              <a href="tel:+254112709495" style="color:white">
-                0112709495
-              </a>
-            </div>
-
-            <div class="contact-item">
-              <strong>WHATSAPP</strong>
-              <a href="https://wa.me/254112709495"
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 style="color:white">
-                Message Dr Suleiman
-              </a>
-            </div>
-
-            <div class="contact-item">
-              <strong>LOCATION</strong>
-              Nairobi, Kenya
-            </div>
-
-            <div class="contact-item">
-              <strong>AVAILABILITY</strong>
-              Advertised as open 24 hours
-            </div>
-          </div>
-
-          <div class="contact-form">
-            <h3>Send an Enquiry</h3>
-
-            <form id="whatsappForm">
-              <label for="visitorName">Your name</label>
-              <input id="visitorName" name="name"
-                     type="text" autocomplete="name" required>
-
-              <label for="visitorPhone">Your phone number</label>
-              <input id="visitorPhone" name="phone"
-                     type="tel" autocomplete="tel" required>
-
-              <label for="visitorMessage">How can we help?</label>
-              <textarea id="visitorMessage" name="message"
-                        required></textarea>
-
-              <button class="btn btn-red" type="submit"
-                      style="width:100%">
-                Continue on WhatsApp
-              </button>
-
-              <p style="font-size:12px;color:#666;margin-top:12px">
-                Your message will open in WhatsApp for you to review
-                and send. It is not submitted automatically.
-              </p>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <h3>Dr Suleiman</h3>
-          <p>
-            Love and relationship consultations in Nairobi, Kenya.
-            Contact us to discuss available services.
-          </p>
-        </div>
-
-        <div>
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h3>Contact</h3>
-          <ul>
-            <li><a href="tel:+254112709495">0112709495</a></li>
-            <li>Nairobi, Kenya</li>
-            <li><a href="https://wa.me/254112709495"
-                   target="_blank"
-                   rel="noopener noreferrer">WhatsApp</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="copyright">
-        © <span id="year"></span> Dr Suleiman. All rights reserved.
-      </div>
+<section>
+  <h2 class="section-title">Your Safety Matters 🛡️</h2>
+  <p class="section-subtitle">
+    SIP & SOCIAL is built around genuine connections and safer social experiences.
+  </p>
+  <div class="people-grid">
+    <div class="card card-content">
+      <h3>Verified profiles</h3>
+      <p>We plan to introduce identity and age verification.</p>
     </div>
-  </footer>
+    <div class="card card-content">
+      <h3>Privacy first</h3>
+      <p>Only approximate distances are shown. Exact live locations are never publicly displayed.</p>
+    </div>
+    <div class="card card-content">
+      <h3>Public meetups</h3>
+      <p>Meet at public venues and share your plans with someone you trust.</p>
+    </div>
+  </div>
+</section>
 
-  <a class="whatsapp"
-     href="https://wa.me/254112709495"
-     target="_blank"
-     rel="noopener noreferrer"
-     aria-label="Contact Dr Suleiman on WhatsApp">
-    WhatsApp
-  </a>
+</main>
 
-  <script>
-    const menuButton = document.getElementById("menuButton");
-    const navLinks = document.getElementById("navLinks");
+<footer>
+  <h2 class="logo">SIP & SOCIAL</h2>
+  Meet. Connect. Socialize.<br>
+  © 2026 SIP & SOCIAL. All rights reserved.<br>
+  Adults 18+ only. Drink responsibly.
+</footer>
 
-    menuButton.addEventListener("click", function () {
-      const isOpen = navLinks.classList.toggle("open");
-      menuButton.setAttribute("aria-expanded", String(isOpen));
-      menuButton.textContent = isOpen ? "✕" : "☰";
+<div class="modal" id="loginModal">
+  <div class="modal-content">
+    <button class="close" onclick="closeModal('loginModal')">×</button>
+    <h2>Create Your Profile</h2>
+    <form id="profileForm">
+      <input id="profileName" placeholder="Your display name" required>
+      <input id="profileAge" type="number" min="18" max="120" placeholder="Your age (18+)" required>
+      <input id="profileCity" placeholder="Your city" required>
+      <input id="profilePhoto" type="file" accept="image/*" required>
+      <textarea id="profileBio" placeholder="Tell us about yourself"></textarea>
+      <select id="profileInterest">
+        <option>Coffee</option>
+        <option>Party</option>
+        <option>Chill</option>
+        <option>Adventure</option>
+      </select>
+      <label>
+        <input type="checkbox" id="terms" required style="width:auto">
+        I confirm that I am 18 or older.
+      </label>
+      <button class="primary" type="submit">Create Profile</button>
+    </form>
+  </div>
+</div>
+
+<div id="notification"></div>
+
+<script>
+const samplePeople = [
+  {
+    name:"Alex",
+    age:24,
+    city:"Nairobi",
+    distance:"1.2 km away",
+    interest:"Coffee",
+    bio:"Coffee lover, music and good conversations.",
+    photo:"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600"
+  },
+  {
+    name:"Maya",
+    age:23,
+    city:"Nairobi",
+    distance:"2.5 km away",
+    interest:"Party",
+    bio:"Love discovering new places and meeting people.",
+    photo:"https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600"
+  },
+  {
+    name:"Daniel",
+    age:26,
+    city:"Nairobi",
+    distance:"3.1 km away",
+    interest:"Adventure",
+    bio:"Always ready for a new experience.",
+    photo:"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600"
+  },
+  {
+    name:"Sophia",
+    age:22,
+    city:"Nairobi",
+    distance:"4 km away",
+    interest:"Chill",
+    bio:"Mocktails, movies and relaxed evenings.",
+    photo:"https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600"
+  }
+];
+
+let people = [...samplePeople];
+
+let meetups = [
+  {
+    name:"Friday Social Night",
+    location:"Westlands, Nairobi",
+    date:"2026-11-20",
+    time:"18:00",
+    type:"Social gathering",
+    capacity:15,
+    description:"Meet new people and enjoy a relaxed evening."
+  },
+  {
+    name:"Coffee & Conversations",
+    location:"Kilimani, Nairobi",
+    date:"2026-11-21",
+    time:"14:00",
+    type:"Coffee meetup",
+    capacity:8,
+    description:"Good coffee and meaningful conversations."
+  },
+  {
+    name:"Mocktail Evening",
+    location:"Karen, Nairobi",
+    date:"2026-11-22",
+    time:"17:30",
+    type:"Mocktail evening",
+    capacity:12,
+    description:"Relax, socialize and make new connections."
+  }
+];
+
+function showNotification(message) {
+  const box = document.getElementById("notification");
+  box.textContent = message;
+  box.style.display = "block";
+  setTimeout(() => box.style.display = "none", 3000);
+}
+
+function openModal(id) {
+  document.getElementById(id).style.display = "flex";
+}
+
+function closeModal(id) {
+  document.getElementById(id).style.display = "none";
+}
+
+function renderPeople(list=people) {
+  const grid = document.getElementById("peopleGrid");
+  grid.innerHTML = "";
+
+  list.forEach(person => {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    const img = document.createElement("img");
+    img.className = "profile-image";
+    img.src = person.photo;
+    img.alt = "Profile photo";
+    img.onerror = () => img.style.display = "none";
+
+    const content = document.createElement("div");
+    content.className = "card-content";
+
+    const heading = document.createElement("h3");
+    heading.textContent = person.name + ", " + person.age;
+
+    const bio = document.createElement("p");
+    bio.textContent = person.bio;
+
+    const distance = document.createElement("div");
+    distance.className = "distance";
+    distance.textContent = "📍 " + person.distance + " • " + person.city;
+
+    const tag = document.createElement("span");
+    tag.className = "tag";
+    tag.textContent = person.interest;
+
+    const button = document.createElement("button");
+    button.className = "primary";
+    button.textContent = "Connect";
+    button.onclick = () => showNotification("Connection request feature requires an account.");
+
+    content.append(heading,bio,distance,tag,button);
+    card.append(img,content);
+    grid.appendChild(card);
+  });
+}
+
+function filterPeople(category,button) {
+  document.querySelectorAll(".category").forEach(btn => btn.classList.remove("active"));
+  button.classList.add("active");
+
+  const filtered = category === "All"
+    ? people
+    : people.filter(p => p.interest === category);
+
+  renderPeople(filtered);
+}
+
+function renderMeetups() {
+  const grid = document.getElementById("meetupGrid");
+  grid.innerHTML = "";
+
+  meetups.forEach((event,index) => {
+    const card = document.createElement("div");
+    card.className = "card meetup-card";
+
+    const title = document.createElement("h3");
+    title.textContent = event.name;
+
+    const info = document.createElement("div");
+    info.className = "meetup-info";
+    info.textContent =
+      "📍 " + event.location +
+      "\n📅 " + event.date +
+      "\n⏰ " + event.time +
+      "\n🥤 " + event.type +
+      "\n👥 Capacity: " + event.capacity;
+
+    const description = document.createElement("p");
+    description.textContent = event.description;
+
+    const button = document.createElement("button");
+    button.className = "primary";
+    button.textContent = "I'm Interested";
+    button.onclick = () => showNotification("Sign in to RSVP to this meetup.");
+
+    card.append(title,info,description,button);
+    grid.appendChild(card);
+  });
+}
+
+document.getElementById("profileForm").addEventListener("submit",function(e) {
+  e.preventDefault();
+
+  const age = Number(document.getElementById("profileAge").value);
+
+  if(age < 18) {
+    showNotification("SIP & SOCIAL is restricted to adults aged 18+.");
+    return;
+  }
+
+  const file = document.getElementById("profilePhoto").files[0];
+
+  if(!file || !file.type.startsWith("image/")) {
+    showNotification("Please upload a valid photo.");
+    return;
+  }
+
+  const reader = new FileReader();
+
+  reader.onload = function() {
+    people.unshift({
+      name:document.getElementById("profileName").value,
+      age:age,
+      city:document.getElementById("profileCity").value,
+      distance:"Distance unavailable",
+      interest:document.getElementById("profileInterest").value,
+      bio:document.getElementById("profileBio").value,
+      photo:reader.result
     });
 
-    navLinks.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        navLinks.classList.remove("open");
-        menuButton.setAttribute("aria-expanded", "false");
-        menuButton.textContent = "☰";
-      });
-    });
+    renderPeople();
+    closeModal("loginModal");
+    showNotification("Profile added to this browser!");
+    document.getElementById("profileForm").reset();
+  };
 
-    function toggleSwahili() {
-      const extra = document.getElementById("swahiliExtra");
-      const isOpen = extra.classList.toggle("show");
+  reader.readAsDataURL(file);
+});
 
-      document.getElementById("swahiliButton").textContent =
-        isOpen ? "Ficha Maelezo" : "Soma Maelezo Zaidi";
+document.getElementById("meetupForm").addEventListener("submit",function(e) {
+  e.preventDefault();
 
-      if (isOpen) {
-        extra.scrollIntoView({ behavior: "smooth", block: "nearest" });
-      }
-    }
+  const date = document.getElementById("eventDate").value;
 
-    document.getElementById("swahiliButton")
-      .addEventListener("click", toggleSwahili);
+  if(date < new Date().toISOString().split("T")[0]) {
+    showNotification("Choose a future meetup date.");
+    return;
+  }
 
-    document.getElementById("languageButton")
-      .addEventListener("click", function () {
-        document.getElementById("kiswahili").scrollIntoView({
-          behavior: "smooth"
-        });
-        toggleSwahili();
-      });
+  meetups.unshift({
+    name:document.getElementById("eventName").value,
+    location:document.getElementById("eventLocation").value,
+    date:date,
+    time:document.getElementById("eventTime").value,
+    type:document.getElementById("eventType").value,
+    capacity:Number(document.getElementById("eventCapacity").value),
+    description:document.getElementById("eventDescription").value
+  });
 
-    document.getElementById("whatsappForm")
-      .addEventListener("submit", function (event) {
-        event.preventDefault();
+  renderMeetups();
+  showNotification("Your meetup has been added!");
+  this.reset();
+});
 
-        const name = document.getElementById("visitorName").value.trim();
-        const phone = document.getElementById("visitorPhone").value.trim();
-        const message = document.getElementById("visitorMessage").value.trim();
-
-        if (!name || !phone || !message) {
-          alert("Please complete all fields.");
-          return;
-        }
-
-        const text =
-          "Hello Dr Suleiman. I would like to make an enquiry.\n\n" +
-          "Name: " + name + "\n" +
-          "Phone: " + phone + "\n" +
-          "Message: " + message;
-
-        const url =
-          "https://wa.me/254112709495?text=" +
-          encodeURIComponent(text);
-
-        window.open(url, "_blank", "noopener,noreferrer");
-      });
-
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-  </script>
+renderPeople();
+renderMeetups();
+</script>
 
 </body>
 </html>
