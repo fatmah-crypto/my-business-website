@@ -1,0 +1,726 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090612">
+<title>SIP & SOCIAL | Meet. Connect. Socialize.</title>
+
+<style>
+:root {
+  --bg: #090612;
+  --panel: #151020;
+  --purple: #9b4dff;
+  --neon: #d65cff;
+  --white: #ffffff;
+  --muted: #aaa0b9;
+  --border: #30213f;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--white);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 7%;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: rgba(9,6,18,.96);
+  z-index: 10;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: bold;
+  color: var(--neon);
+  letter-spacing: 2px;
+}
+
+.logo span {
+  color: white;
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: var(--neon);
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  border-radius: 9px;
+  padding: 12px 20px;
+  font-weight: bold;
+}
+
+.primary {
+  background: linear-gradient(90deg, #8e35ff, #d34fff);
+  color: white;
+}
+
+.secondary {
+  background: #28183b;
+  color: white;
+  border: 1px solid var(--purple);
+}
+
+.hero {
+  min-height: 500px;
+  padding: 100px 8%;
+  background:
+    linear-gradient(90deg, rgba(9,6,18,.96), rgba(20,8,35,.65)),
+    url("https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1600")
+    center/cover;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.hero h1 {
+  font-size: clamp(40px, 7vw, 70px);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero h1 span {
+  color: var(--neon);
+}
+
+.hero p {
+  color: #d4c9e0;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  font-size: 17px;
+}
+
+section {
+  padding: 65px 7%;
+}
+
+.section-title {
+  font-size: 30px;
+  margin-bottom: 12px;
+}
+
+.section-subtitle {
+  color: var(--muted);
+  margin-bottom: 30px;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.category {
+  padding: 13px 22px;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  background: var(--panel);
+  color: white;
+  cursor: pointer;
+}
+
+.category.active,
+.category:hover {
+  background: var(--purple);
+}
+
+.people-grid,
+.meetup-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--neon);
+}
+
+.profile-image {
+  height: 260px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 18px;
+}
+
+.card h3 {
+  margin-bottom: 9px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.distance {
+  color: #ce83ff;
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+
+.card button {
+  width: 100%;
+  margin-top: 7px;
+}
+
+.tag {
+  display: inline-block;
+  background: #302044;
+  color: #d9a6ff;
+  border-radius: 20px;
+  padding: 6px 10px;
+  font-size: 11px;
+  margin: 3px;
+}
+
+.meetup-card {
+  padding: 22px;
+}
+
+.meetup-card h3 {
+  color: var(--neon);
+}
+
+.meetup-info {
+  margin: 15px 0;
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: 14px;
+}
+
+.meetup-card button {
+  width: 100%;
+}
+
+.create-section {
+  background: linear-gradient(135deg, #170d28, #26103c);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+form {
+  max-width: 600px;
+  display: grid;
+  gap: 15px;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: #100b1a;
+  color: white;
+  font-size: 14px;
+}
+
+input[type="file"] {
+  background: #20142e;
+}
+
+label {
+  font-size: 13px;
+  color: #d9cbe7;
+}
+
+footer {
+  text-align: center;
+  padding: 35px;
+  color: var(--muted);
+  line-height: 2;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  background: rgba(0,0,0,.85);
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+
+.modal-content {
+  background: #171020;
+  border: 1px solid var(--purple);
+  border-radius: 15px;
+  padding: 28px;
+  width: 100%;
+  max-width: 450px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-content h2 {
+  margin-bottom: 20px;
+  color: var(--neon);
+}
+
+.modal-content input,
+.modal-content textarea {
+  margin-bottom: 13px;
+}
+
+.close {
+  float: right;
+  background: transparent;
+  color: white;
+  font-size: 23px;
+  padding: 0;
+}
+
+#notification {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #28183b;
+  padding: 14px 22px;
+  border-radius: 10px;
+  display: none;
+  z-index: 50;
+  border: 1px solid var(--purple);
+  max-width: 90%;
+}
+
+@media(max-width:700px) {
+  header {
+    padding: 17px 5%;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .hero {
+    padding: 75px 7%;
+  }
+
+  section {
+    padding: 48px 5%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">SIP <span>&</span> SOCIAL</div>
+  <nav>
+    <a href="#discover">Discover</a>
+    <a href="#meetups">Meetups</a>
+    <a href="#create">Create Meetup</a>
+  </nav>
+  <button class="primary" onclick="openModal('loginModal')">Join Us</button>
+</header>
+
+<main>
+
+<div class="hero">
+  <div class="hero-content">
+    <h1>Good Drinks.<br>Great People.<br><span>Better Connections.</span></h1>
+    <p>
+      Tired of going out alone? Discover people around you,
+      make new friends and find your next social experience.
+      Your people are just one connection away.
+    </p>
+    <button class="primary" onclick="document.getElementById('discover').scrollIntoView({behavior:'smooth'})">
+      Discover People
+    </button>
+    <button class="secondary" onclick="document.getElementById('meetups').scrollIntoView({behavior:'smooth'})">
+      Explore Meetups
+    </button>
+  </div>
+</div>
+
+<section id="discover">
+  <h2 class="section-title">Discover Your People ✨</h2>
+  <p class="section-subtitle">Find people who share your interests and social vibe.</p>
+
+  <div class="categories">
+    <button class="category active" onclick="filterPeople('All',this)">Everyone</button>
+    <button class="category" onclick="filterPeople('Coffee',this)">Coffee dates</button>
+    <button class="category" onclick="filterPeople('Party',this)">Party people</button>
+    <button class="category" onclick="filterPeople('Chill',this)">Chill vibes</button>
+    <button class="category" onclick="filterPeople('Adventure',this)">Adventure</button>
+  </div>
+
+  <br>
+
+  <div class="people-grid" id="peopleGrid"></div>
+</section>
+
+<section id="meetups">
+  <h2 class="section-title">Upcoming Meetups 🍹</h2>
+  <p class="section-subtitle">Find an event. Meet new people. Make memories.</p>
+
+  <div class="meetup-grid" id="meetupGrid"></div>
+</section>
+
+<section class="create-section" id="create">
+  <h2 class="section-title">Create Your Own Meetup 🚀</h2>
+  <p class="section-subtitle">Choose a place, set a time and invite people to join you.</p>
+
+  <form id="meetupForm">
+    <input id="eventName" placeholder="Meetup name" required>
+    <input id="eventLocation" placeholder="Public venue / location" required>
+    <input id="eventDate" type="date" required>
+    <input id="eventTime" type="time" required>
+    <select id="eventType" required>
+      <option value="">Choose your meetup type</option>
+      <option>Coffee meetup</option>
+      <option>Juice and chill</option>
+      <option>Mocktail evening</option>
+      <option>Social gathering</option>
+      <option>Music and dancing</option>
+    </select>
+    <input id="eventCapacity" type="number" min="2" max="100" placeholder="Maximum number of people" required>
+    <textarea id="eventDescription" placeholder="Tell people about your meetup"></textarea>
+    <button class="primary" type="submit">Publish Meetup</button>
+  </form>
+</section>
+
+<section>
+  <h2 class="section-title">Your Safety Matters 🛡️</h2>
+  <p class="section-subtitle">
+    SIP & SOCIAL is built around genuine connections and safer social experiences.
+  </p>
+  <div class="people-grid">
+    <div class="card card-content">
+      <h3>Verified profiles</h3>
+      <p>We plan to introduce identity and age verification.</p>
+    </div>
+    <div class="card card-content">
+      <h3>Privacy first</h3>
+      <p>Only approximate distances are shown. Exact live locations are never publicly displayed.</p>
+    </div>
+    <div class="card card-content">
+      <h3>Public meetups</h3>
+      <p>Meet at public venues and share your plans with someone you trust.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <h2 class="logo">SIP & SOCIAL</h2>
+  Meet. Connect. Socialize.<br>
+  © 2026 SIP & SOCIAL. All rights reserved.<br>
+  Adults 18+ only. Drink responsibly.
+</footer>
+
+<div class="modal" id="loginModal">
+  <div class="modal-content">
+    <button class="close" onclick="closeModal('loginModal')">×</button>
+    <h2>Create Your Profile</h2>
+    <form id="profileForm">
+      <input id="profileName" placeholder="Your display name" required>
+      <input id="profileAge" type="number" min="18" max="120" placeholder="Your age (18+)" required>
+      <input id="profileCity" placeholder="Your city" required>
+      <input id="profilePhoto" type="file" accept="image/*" required>
+      <textarea id="profileBio" placeholder="Tell us about yourself"></textarea>
+      <select id="profileInterest">
+        <option>Coffee</option>
+        <option>Party</option>
+        <option>Chill</option>
+        <option>Adventure</option>
+      </select>
+      <label>
+        <input type="checkbox" id="terms" required style="width:auto">
+        I confirm that I am 18 or older.
+      </label>
+      <button class="primary" type="submit">Create Profile</button>
+    </form>
+  </div>
+</div>
+
+<div id="notification"></div>
+
+<script>
+const samplePeople = [
+  {
+    name:"Alex",
+    age:24,
+    city:"Nairobi",
+    distance:"1.2 km away",
+    interest:"Coffee",
+    bio:"Coffee lover, music and good conversations.",
+    photo:"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600"
+  },
+  {
+    name:"Maya",
+    age:23,
+    city:"Nairobi",
+    distance:"2.5 km away",
+    interest:"Party",
+    bio:"Love discovering new places and meeting people.",
+    photo:"https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600"
+  },
+  {
+    name:"Daniel",
+    age:26,
+    city:"Nairobi",
+    distance:"3.1 km away",
+    interest:"Adventure",
+    bio:"Always ready for a new experience.",
+    photo:"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600"
+  },
+  {
+    name:"Sophia",
+    age:22,
+    city:"Nairobi",
+    distance:"4 km away",
+    interest:"Chill",
+    bio:"Mocktails, movies and relaxed evenings.",
+    photo:"https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600"
+  }
+];
+
+let people = [...samplePeople];
+
+let meetups = [
+  {
+    name:"Friday Social Night",
+    location:"Westlands, Nairobi",
+    date:"2026-11-20",
+    time:"18:00",
+    type:"Social gathering",
+    capacity:15,
+    description:"Meet new people and enjoy a relaxed evening."
+  },
+  {
+    name:"Coffee & Conversations",
+    location:"Kilimani, Nairobi",
+    date:"2026-11-21",
+    time:"14:00",
+    type:"Coffee meetup",
+    capacity:8,
+    description:"Good coffee and meaningful conversations."
+  },
+  {
+    name:"Mocktail Evening",
+    location:"Karen, Nairobi",
+    date:"2026-11-22",
+    time:"17:30",
+    type:"Mocktail evening",
+    capacity:12,
+    description:"Relax, socialize and make new connections."
+  }
+];
+
+function showNotification(message) {
+  const box = document.getElementById("notification");
+  box.textContent = message;
+  box.style.display = "block";
+  setTimeout(() => box.style.display = "none", 3000);
+}
+
+function openModal(id) {
+  document.getElementById(id).style.display = "flex";
+}
+
+function closeModal(id) {
+  document.getElementById(id).style.display = "none";
+}
+
+function renderPeople(list=people) {
+  const grid = document.getElementById("peopleGrid");
+  grid.innerHTML = "";
+
+  list.forEach(person => {
+    const card = document.createElement("div");
+    card.className = "card";
+
+    const img = document.createElement("img");
+    img.className = "profile-image";
+    img.src = person.photo;
+    img.alt = "Profile photo";
+    img.onerror = () => img.style.display = "none";
+
+    const content = document.createElement("div");
+    content.className = "card-content";
+
+    const heading = document.createElement("h3");
+    heading.textContent = person.name + ", " + person.age;
+
+    const bio = document.createElement("p");
+    bio.textContent = person.bio;
+
+    const distance = document.createElement("div");
+    distance.className = "distance";
+    distance.textContent = "📍 " + person.distance + " • " + person.city;
+
+    const tag = document.createElement("span");
+    tag.className = "tag";
+    tag.textContent = person.interest;
+
+    const button = document.createElement("button");
+    button.className = "primary";
+    button.textContent = "Connect";
+    button.onclick = () => showNotification("Connection request feature requires an account.");
+
+    content.append(heading,bio,distance,tag,button);
+    card.append(img,content);
+    grid.appendChild(card);
+  });
+}
+
+function filterPeople(category,button) {
+  document.querySelectorAll(".category").forEach(btn => btn.classList.remove("active"));
+  button.classList.add("active");
+
+  const filtered = category === "All"
+    ? people
+    : people.filter(p => p.interest === category);
+
+  renderPeople(filtered);
+}
+
+function renderMeetups() {
+  const grid = document.getElementById("meetupGrid");
+  grid.innerHTML = "";
+
+  meetups.forEach((event,index) => {
+    const card = document.createElement("div");
+    card.className = "card meetup-card";
+
+    const title = document.createElement("h3");
+    title.textContent = event.name;
+
+    const info = document.createElement("div");
+    info.className = "meetup-info";
+    info.textContent =
+      "📍 " + event.location +
+      "\n📅 " + event.date +
+      "\n⏰ " + event.time +
+      "\n🥤 " + event.type +
+      "\n👥 Capacity: " + event.capacity;
+
+    const description = document.createElement("p");
+    description.textContent = event.description;
+
+    const button = document.createElement("button");
+    button.className = "primary";
+    button.textContent = "I'm Interested";
+    button.onclick = () => showNotification("Sign in to RSVP to this meetup.");
+
+    card.append(title,info,description,button);
+    grid.appendChild(card);
+  });
+}
+
+document.getElementById("profileForm").addEventListener("submit",function(e) {
+  e.preventDefault();
+
+  const age = Number(document.getElementById("profileAge").value);
+
+  if(age < 18) {
+    showNotification("SIP & SOCIAL is restricted to adults aged 18+.");
+    return;
+  }
+
+  const file = document.getElementById("profilePhoto").files[0];
+
+  if(!file || !file.type.startsWith("image/")) {
+    showNotification("Please upload a valid photo.");
+    return;
+  }
+
+  const reader = new FileReader();
+
+  reader.onload = function() {
+    people.unshift({
+      name:document.getElementById("profileName").value,
+      age:age,
+      city:document.getElementById("profileCity").value,
+      distance:"Distance unavailable",
+      interest:document.getElementById("profileInterest").value,
+      bio:document.getElementById("profileBio").value,
+      photo:reader.result
+    });
+
+    renderPeople();
+    closeModal("loginModal");
+    showNotification("Profile added to this browser!");
+    document.getElementById("profileForm").reset();
+  };
+
+  reader.readAsDataURL(file);
+});
+
+document.getElementById("meetupForm").addEventListener("submit",function(e) {
+  e.preventDefault();
+
+  const date = document.getElementById("eventDate").value;
+
+  if(date < new Date().toISOString().split("T")[0]) {
+    showNotification("Choose a future meetup date.");
+    return;
+  }
+
+  meetups.unshift({
+    name:document.getElementById("eventName").value,
+    location:document.getElementById("eventLocation").value,
+    date:date,
+    time:document.getElementById("eventTime").value,
+    type:document.getElementById("eventType").value,
+    capacity:Number(document.getElementById("eventCapacity").value),
+    description:document.getElementById("eventDescription").value
+  });
+
+  renderMeetups();
+  showNotification("Your meetup has been added!");
+  this.reset();
+});
+
+renderPeople();
+renderMeetups();
+</script>
+
+</body>
+</html>
