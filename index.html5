@@ -1,0 +1,1784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10091b">
+
+<title>SIP & SOCIAL | Meet. Connect. Socialize.</title>
+
+<style>
+:root {
+  --bg: #10091b;
+  --panel: #1c122b;
+  --panel2: #271739;
+  --purple: #8b35dc;
+  --neon: #c66bff;
+  --white: #ffffff;
+  --muted: #b8a9c9;
+  --border: #49305e;
+  --danger: #ef5555;
+  --success: #48d6a0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--white);
+  line-height: 1.6;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+header {
+  background: #170e23;
+  padding: 17px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  color: var(--neon);
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.logo span {
+  color: white;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+nav button {
+  background: transparent;
+  border: 0;
+  color: white;
+  padding: 9px 12px;
+  border-radius: 7px;
+}
+
+nav button:hover, nav button.active {
+  background: var(--purple);
+}
+
+main {
+  max-width: 1150px;
+  padding: 25px 18px;
+  margin: auto;
+}
+
+section {
+  margin-bottom: 25px;
+}
+
+.hero {
+  min-height: 330px;
+  padding: 55px 25px;
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at top right, #7624ae, transparent 45%),
+    linear-gradient(135deg, #241036, #10091b);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero h1 {
+  font-size: clamp(35px, 7vw, 65px);
+  line-height: 1.1;
+  margin-bottom: 15px;
+}
+
+.hero h1 span {
+  color: var(--neon);
+}
+
+.hero p {
+  color: var(--muted);
+  max-width: 550px;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 17px;
+}
+
+.card h2, .card h3 {
+  margin-bottom: 13px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 17px;
+}
+
+input, textarea, select {
+  width: 100%;
+  background: #10091b;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  margin: 7px 0 14px;
+  color: white;
+  outline: none;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--neon);
+}
+
+textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+label {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.btn {
+  background: var(--purple);
+  color: white;
+  border: none;
+  padding: 11px 17px;
+  border-radius: 8px;
+  font-weight: bold;
+  margin: 4px 3px 4px 0;
+}
+
+.btn:hover {
+  background: #a44bea;
+}
+
+.btn.secondary {
+  background: #352344;
+  border: 1px solid var(--border);
+}
+
+.btn.danger {
+  background: #8c2929;
+}
+
+.btn.small {
+  padding: 7px 11px;
+  font-size: 13px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.purple {
+  color: var(--neon);
+}
+
+.hidden {
+  display: none !important;
+}
+
+.center {
+  text-align: center;
+}
+
+.auth-box {
+  max-width: 470px;
+  margin: 30px auto;
+}
+
+.profile-photo {
+  width: 105px;
+  height: 105px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--neon);
+  background: var(--panel2);
+}
+
+.member-photo {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 10px;
+  background: var(--panel2);
+}
+
+.member-card {
+  overflow: hidden;
+}
+
+.member-card h3 {
+  margin-top: 12px;
+}
+
+.tag {
+  display: inline-block;
+  background: #39204f;
+  color: #e3c2ff;
+  border-radius: 20px;
+  padding: 5px 10px;
+  margin: 3px;
+  font-size: 12px;
+}
+
+.notice {
+  background: #281b35;
+  border-left: 4px solid var(--neon);
+  padding: 13px;
+  border-radius: 5px;
+  margin: 12px 0;
+  color: var(--muted);
+}
+
+.message {
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 10px;
+  background: var(--panel2);
+  overflow-wrap: anywhere;
+}
+
+.message.mine {
+  background: #59318a;
+  margin-left: 15%;
+}
+
+.message.theirs {
+  margin-right: 15%;
+}
+
+.message small {
+  display: block;
+  color: #d4c2e5;
+  font-size: 11px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 17px 0;
+}
+
+footer {
+  padding: 35px 15px;
+  text-align: center;
+  color: var(--muted);
+  background: #170e23;
+  margin-top: 40px;
+}
+
+#status {
+  position: fixed;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  max-width: 500px;
+  margin: auto;
+  z-index: 50;
+  background: #39204f;
+  padding: 13px;
+  border-radius: 9px;
+  text-align: center;
+  display: none;
+}
+
+@media(max-width:650px) {
+  header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  nav button {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .hero {
+    min-height: 280px;
+    padding: 30px 20px;
+  }
+
+  main {
+    padding: 15px 12px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">SIP <span>& SOCIAL</span></div>
+
+  <nav id="navigation" class="hidden">
+    <button data-tab="home" class="active">Home</button>
+    <button data-tab="discover">Discover</button>
+    <button data-tab="profile">My Profile</button>
+    <button data-tab="connections">Connections</button>
+    <button data-tab="messages">Messages</button>
+    <button data-tab="meetups">Meetups</button>
+    <button id="logoutBtn">Logout</button>
+  </nav>
+</header>
+
+<main>
+
+<!-- WELCOME PAGE -->
+
+<section id="welcome">
+  <div class="hero">
+    <h1>Meet.<br><span>Connect.</span><br>Socialize.</h1>
+    <p>
+      Welcome to SIP & SOCIAL. Discover new people,
+      share interests, build friendships and enjoy
+      social experiences together.
+    </p>
+
+    <div>
+      <button class="btn" onclick="showAuth('signup')">
+        Create Account
+      </button>
+
+      <button class="btn secondary" onclick="showAuth('login')">
+        Log In
+      </button>
+    </div>
+  </div>
+
+  <div class="grid" style="margin-top:25px">
+    <div class="card">
+      <h3 class="purple">Meet New People</h3>
+      <p class="muted">Discover members and find people with similar interests.</p>
+    </div>
+
+    <div class="card">
+      <h3 class="purple">Make Connections</h3>
+      <p class="muted">Send connection requests and start conversations.</p>
+    </div>
+
+    <div class="card">
+      <h3 class="purple">Plan Meetups</h3>
+      <p class="muted">Find public venues and arrange social gatherings.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SIGN UP -->
+
+<section id="signup" class="auth-box hidden">
+  <div class="card">
+    <h2>Create Your Account</h2>
+    <p class="muted">Join the SIP & SOCIAL community.</p>
+
+    <form id="signupForm">
+      <label>Display name</label>
+      <input id="signupName" required minlength="2" maxlength="40"
+        placeholder="Your name">
+
+      <label>Email address</label>
+      <input id="signupEmail" type="email" required
+        placeholder="you@example.com">
+
+      <label>Date of birth</label>
+      <input id="signupDob" type="date" required>
+
+      <label>Password</label>
+      <input id="signupPassword" type="password"
+        minlength="8" required placeholder="At least 8 characters">
+
+      <label class="muted">
+        <input type="checkbox" id="agreeTerms" required
+          style="width:auto">
+        I confirm that I am 18 or older and agree to the community rules.
+      </label>
+
+      <button class="btn" type="submit" style="width:100%">
+        CREATE ACCOUNT
+      </button>
+    </form>
+
+    <p class="muted center">
+      Already registered?
+      <a href="#" onclick="showAuth('login')" class="purple">Log in</a>
+    </p>
+  </div>
+</section>
+
+<!-- LOGIN -->
+
+<section id="login" class="auth-box hidden">
+  <div class="card">
+    <h2>Welcome Back</h2>
+    <p class="muted">Log in to your account.</p>
+
+    <form id="loginForm">
+      <label>Email</label>
+      <input id="loginEmail" type="email" required>
+
+      <label>Password</label>
+      <input id="loginPassword" type="password" required>
+
+      <button class="btn" type="submit" style="width:100%">
+        LOG IN
+      </button>
+    </form>
+
+    <p class="center">
+      <a href="#" onclick="resetPassword()" class="purple">
+        Forgot password?
+      </a>
+    </p>
+
+    <p class="center muted">
+      New here?
+      <a href="#" onclick="showAuth('signup')" class="purple">
+        Create an account
+      </a>
+    </p>
+  </div>
+</section>
+
+<!-- HOME DASHBOARD -->
+
+<section id="home" class="hidden">
+  <div class="hero">
+    <h1>Welcome to <span>SIP & SOCIAL</span></h1>
+    <p id="welcomeName">Your social space starts here.</p>
+    <button class="btn" onclick="openTab('discover')">
+      Discover Members
+    </button>
+  </div>
+
+  <div class="grid" style="margin-top:20px">
+    <div class="card">
+      <h3>Find people</h3>
+      <p class="muted">Discover members around your preferred area.</p>
+      <button class="btn small" onclick="openTab('discover')">
+        Explore
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>Your connections</h3>
+      <p class="muted">Manage your friendship requests.</p>
+      <button class="btn small" onclick="openTab('connections')">
+        View Connections
+      </button>
+    </div>
+
+    <div class="card">
+      <h3>Upcoming meetups</h3>
+      <p class="muted">See social events and gatherings.</p>
+      <button class="btn small" onclick="openTab('meetups')">
+        Explore Meetups
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- DISCOVER MEMBERS -->
+
+<section id="discover" class="hidden">
+  <h2>Discover People</h2>
+  <p class="muted">Find people by interests and approximate area.</p>
+
+  <input id="searchMembers"
+    placeholder="Search names, interests or areas...">
+
+  <div id="membersList" class="grid"></div>
+</section>
+
+<!-- PROFILE -->
+
+<section id="profile" class="hidden">
+  <div class="card">
+    <h2>My Profile</h2>
+
+    <div class="center">
+      <img id="myAvatar" class="profile-photo"
+        alt="Your profile picture"
+        src="https://placehold.co/150x150/271739/ffffff?text=Profile">
+
+      <p>
+        <label for="avatarInput" class="purple">
+          Upload profile picture
+        </label>
+      </p>
+
+      <input id="avatarInput" type="file"
+        accept="image/jpeg,image/png,image/webp">
+    </div>
+
+    <form id="profileForm">
+      <label>Display name</label>
+      <input id="editName" required maxlength="40">
+
+      <label>About me</label>
+      <textarea id="editBio" maxlength="300"
+        placeholder="Tell people about yourself..."></textarea>
+
+      <label>Approximate area</label>
+      <input id="editArea" maxlength="80"
+        placeholder="Example: Utawala, Nairobi">
+
+      <label>Interests and hobbies</label>
+      <input id="editInterests"
+        placeholder="Music, travel, photography, food...">
+
+      <p class="notice">
+        Your profile shows an approximate area only.
+        Never enter your home address or private location.
+      </p>
+
+      <button class="btn" type="submit">
+        SAVE PROFILE
+      </button>
+    </form>
+  </div>
+
+  <div class="card">
+    <h3>Account settings</h3>
+    <button class="btn secondary" onclick="resetPassword()">
+      Reset password
+    </button>
+    <button class="btn danger" onclick="deleteAccountNotice()">
+      Account deletion information
+    </button>
+  </div>
+</section>
+
+<!-- CONNECTIONS -->
+
+<section id="connections" class="hidden">
+  <h2>My Connections</h2>
+
+  <div class="card">
+    <h3>Received requests</h3>
+    <div id="receivedRequests"></div>
+  </div>
+
+  <div class="card">
+    <h3>Sent requests</h3>
+    <div id="sentRequests"></div>
+  </div>
+
+  <div class="card">
+    <h3>Connected members</h3>
+    <div id="acceptedConnections"></div>
+  </div>
+</section>
+
+<!-- MESSAGES -->
+
+<section id="messages" class="hidden">
+  <h2>Messages</h2>
+
+  <div class="card">
+    <p class="muted">
+      Messaging is available only with accepted connections.
+    </p>
+
+    <label>Select a connection</label>
+    <select id="chatPartner">
+      <option value="">Choose a member</option>
+    </select>
+
+    <div id="chatWindow"
+      style="height:300px;overflow-y:auto;margin:15px 0">
+      <p class="muted center">Choose a connection to start chatting.</p>
+    </div>
+
+    <form id="messageForm">
+      <textarea id="messageText" maxlength="2000"
+        placeholder="Write your message..." required></textarea>
+      <button class="btn" type="submit">SEND MESSAGE</button>
+      <button class="btn secondary" type="button"
+        onclick="loadMessages()">REFRESH</button>
+    </form>
+  </div>
+</section>
+
+<!-- MEETUPS -->
+
+<section id="meetups" class="hidden">
+  <h2>Social Meetups</h2>
+
+  <div class="card">
+    <h3>Create a Meetup</h3>
+
+    <form id="meetupForm">
+      <label>Meetup name</label>
+      <input id="meetupTitle" required maxlength="80"
+        placeholder="Coffee and conversation">
+
+      <label>Public venue</label>
+      <input id="meetupVenue" required maxlength="120"
+        placeholder="A named cafe, restaurant or public venue">
+
+      <label>General area</label>
+      <input id="meetupArea" required maxlength="80"
+        placeholder="Westlands, Nairobi">
+
+      <label>Date</label>
+      <input id="meetupDate" type="date" required>
+
+      <label>Time</label>
+      <input id="meetupTime" type="time" required>
+
+      <label>More information</label>
+      <textarea id="meetupDetails" maxlength="500"
+        placeholder="Tell members what to expect..."></textarea>
+
+      <div class="notice">
+        Meetups must be at public venues. Do not post private
+        addresses, hotel rooms or live personal locations.
+        Keep refreshments non-alcoholic.
+      </div>
+
+      <button class="btn" type="submit">CREATE MEETUP</button>
+    </form>
+  </div>
+
+  <h3>Upcoming Meetups</h3>
+  <div id="meetupList" class="grid"></div>
+</section>
+
+</main>
+
+<footer>
+  <div class="logo">SIP & SOCIAL</div>
+  <p>Meet. Connect. Socialize.</p>
+  <p>18+ community | Respect | Privacy | Friendship</p>
+  <p>© 2026 SIP & SOCIAL</p>
+  <p>
+    This is a social community platform, not a dating or
+    alcohol-purchasing service.
+  </p>
+</footer>
+
+<div id="status"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+// ==========================================
+// 1. SUPABASE CONNECTION
+// ==========================================
+
+// Replace these with your actual Supabase credentials.
+
+const SUPABASE_URL = "YOUR_SUPABASE_PROJECT_URL";
+const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_PUBLIC_KEY";
+
+const db = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_ANON_KEY
+);
+
+let currentUser = null;
+let myProfile = null;
+
+// ==========================================
+// 2. GENERAL HELPERS
+// ==========================================
+
+function notify(message) {
+  const box = document.getElementById("status");
+  box.textContent = message;
+  box.style.display = "block";
+
+  setTimeout(() => {
+    box.style.display = "none";
+  }, 4000);
+}
+
+function safe(value) {
+  return String(value ?? "").replace(/[&<>"']/g, c => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  })[c]);
+}
+
+function formatDate(value) {
+  return new Date(value + "T00:00:00").toLocaleDateString();
+}
+
+function validAdult(date) {
+  const dob = new Date(date + "T00:00:00");
+  const today = new Date();
+
+  let age = today.getFullYear() - dob.getFullYear();
+
+  const month = today.getMonth() - dob.getMonth();
+
+  if (month < 0 ||
+      (month === 0 && today.getDate() < dob.getDate())) {
+    age--;
+  }
+
+  return age >= 18;
+}
+
+function hideAll() {
+  document.querySelectorAll("main section").forEach(s => {
+    s.classList.add("hidden");
+  });
+}
+
+function showAuth(type) {
+  hideAll();
+  document.getElementById(type).classList.remove("hidden");
+  document.getElementById("navigation").classList.add("hidden");
+}
+
+function openTab(tab) {
+  if (!currentUser) {
+    showAuth("login");
+    return;
+  }
+
+  hideAll();
+
+  document.getElementById(tab).classList.remove("hidden");
+
+  document.querySelectorAll("nav button[data-tab]").forEach(btn => {
+    btn.classList.toggle("active", btn.dataset.tab === tab);
+  });
+
+  if (tab === "discover") loadMembers();
+  if (tab === "profile") displayProfile();
+  if (tab === "connections") loadConnections();
+  if (tab === "messages") loadChatPartners();
+  if (tab === "meetups") loadMeetups();
+}
+
+// ==========================================
+// 3. SIGN UP
+// ==========================================
+
+document.getElementById("signupForm")
+.addEventListener("submit", async function(e) {
+
+  e.preventDefault();
+
+  const name = document.getElementById("signupName").value.trim();
+  const email = document.getElementById("signupEmail").value.trim();
+  const dob = document.getElementById("signupDob").value;
+  const password = document.getElementById("signupPassword").value;
+
+  if (!validAdult(dob)) {
+    notify("Registration is only available to people aged 18 or older.");
+    return;
+  }
+
+  if (!document.getElementById("agreeTerms").checked) {
+    notify("Please accept the community rules.");
+    return;
+  }
+
+  const { data, error } = await db.auth.signUp({
+    email,
+    password,
+    options: {
+      data: {
+        display_name: name,
+        date_of_birth: dob
+      }
+    }
+  });
+
+  if (error) {
+    notify(error.message);
+    return;
+  }
+
+  this.reset();
+
+  if (data.session) {
+    notify("Account created successfully!");
+    await startApp(data.session.user);
+  } else {
+    notify("Check your email to confirm your account before logging in.");
+    showAuth("login");
+  }
+});
+
+// ==========================================
+// 4. LOGIN
+// ==========================================
+
+document.getElementById("loginForm")
+.addEventListener("submit", async function(e) {
+
+  e.preventDefault();
+
+  const email = document.getElementById("loginEmail").value.trim();
+  const password = document.getElementById("loginPassword").value;
+
+  const { data, error } = await db.auth.signInWithPassword({
+    email,
+    password
+  });
+
+  if (error) {
+    notify(error.message);
+    return;
+  }
+
+  this.reset();
+
+  await startApp(data.user);
+});
+
+// ==========================================
+// 5. LOGOUT
+// ==========================================
+
+document.getElementById("logoutBtn")
+.addEventListener("click", async () => {
+
+  const { error } = await db.auth.signOut();
+
+  if (error) {
+    notify(error.message);
+    return;
+  }
+
+  currentUser = null;
+  myProfile = null;
+
+  document.getElementById("navigation").classList.add("hidden");
+
+  hideAll();
+  document.getElementById("welcome").classList.remove("hidden");
+
+  notify("You have logged out.");
+});
+
+// ==========================================
+// 6. START APPLICATION
+// ==========================================
+
+async function startApp(user) {
+
+  currentUser = user;
+
+  const { data, error } = await db
+    .from("profiles")
+    .select("*")
+    .eq("id", user.id)
+    .single();
+
+  if (error) {
+    notify("Unable to load your profile: " + error.message);
+    return;
+  }
+
+  myProfile = data;
+
+  document.getElementById("navigation").classList.remove("hidden");
+
+  document.getElementById("welcomeName").textContent =
+    "Welcome, " + myProfile.display_name + "! Your social space is ready.";
+
+  openTab("home");
+}
+
+// ==========================================
+// 7. PASSWORD RESET
+// ==========================================
+
+async function resetPassword() {
+
+  const email = currentUser?.email ||
+    document.getElementById("loginEmail").value.trim();
+
+  if (!email) {
+    notify("Enter your email address first.");
+    return;
+  }
+
+  const { error } = await db.auth.resetPasswordForEmail(email);
+
+  if (error) {
+    notify(error.message);
+  } else {
+    notify("Password reset instructions have been sent to your email.");
+  }
+}
+
+// ==========================================
+// 8. DISPLAY AND EDIT PROFILE
+// ==========================================
+
+function displayProfile() {
+
+  if (!myProfile) return;
+
+  document.getElementById("editName").value =
+    myProfile.display_name || "";
+
+  document.getElementById("editBio").value =
+    myProfile.bio || "";
+
+  document.getElementById("editArea").value =
+    myProfile.area || "";
+
+  document.getElementById("editInterests").value =
+    myProfile.interests || "";
+
+  document.getElementById("myAvatar").src =
+    myProfile.avatar_url ||
+    "https://placehold.co/150x150/271739/ffffff?text=Profile";
+}
+
+document.getElementById("profileForm")
+.addEventListener("submit", async function(e) {
+
+  e.preventDefault();
+
+  const updates = {
+    display_name: document.getElementById("editName").value.trim(),
+    bio: document.getElementById("editBio").value.trim(),
+    area: document.getElementById("editArea").value.trim(),
+    interests: document.getElementById("editInterests").value.trim(),
+    updated_at: new Date().toISOString()
+  };
+
+  const { data, error } = await db
+    .from("profiles")
+    .update(updates)
+    .eq("id", currentUser.id)
+    .select()
+    .single();
+
+  if (error) {
+    notify(error.message);
+    return;
+  }
+
+  myProfile = data;
+
+  document.getElementById("welcomeName").textContent =
+    "Welcome, " + myProfile.display_name + "!";
+
+  notify("Your profile has been updated.");
+});
+
+// ==========================================
+// 9. PROFILE PHOTO UPLOAD
+// ==========================================
+
+document.getElementById("avatarInput")
+.addEventListener("change", async function() {
+
+  const file = this.files[0];
+
+  if (!file) return;
+
+  const allowed = ["image/jpeg", "image/png", "image/webp"];
+
+  if (!allowed.includes(file.type)) {
+    notify("Please select a JPG, PNG or WEBP image.");
+    this.value = "";
+    return;
+  }
+
+  if (file.size > 3 * 1024 * 1024) {
+    notify("Image must be smaller than 3MB.");
+    this.value = "";
+    return;
+  }
+
+  const filePath =
+    currentUser.id + "/" + Date.now() + "-" +
+    file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
+
+  const { error: uploadError } = await db.storage
+    .from("avatars")
+    .upload(filePath, file, {
+      contentType: file.type,
+      upsert: false
+    });
+
+  if (uploadError) {
+    notify(uploadError.message);
+    return;
+  }
+
+  const { data } = db.storage
+    .from("avatars")
+    .getPublicUrl(filePath);
+
+  const { data: updated, error } = await db
+    .from("profiles")
+    .update({ avatar_url: data.publicUrl })
+    .eq("id", currentUser.id)
+    .select()
+    .single();
+
+  if (error) {
+    notify(error.message);
+    return;
+  }
+
+  myProfile = updated;
+  displayProfile();
+
+  notify("Profile photo uploaded!");
+});
+
+// ==========================================
+// 10. DISCOVER MEMBERS
+// ==========================================
+
+async function loadMembers() {
+
+  const container = document.getElementById("membersList");
+
+  container.innerHTML = "<p>Loading members...</p>";
+
+  const { data: blocked } = await db
+    .from("blocks")
+    .select("blocker_id, blocked_id");
+
+  const blockedIds = new Set();
+
+  (blocked || []).forEach(b => {
+    if (b.blocker_id === currentUser.id)
+      blockedIds.add(b.blocked_id);
+
+    if (b.blocked_id === currentUser.id)
+      blockedIds.add(b.blocker_id);
+  });
+
+  const { data, error } = await db
+    .from("profiles")
+    .select("id,display_name,bio,area,interests,avatar_url")
+    .neq("id", currentUser.id)
+    .limit(100);
+
+  if (error) {
+    container.innerHTML = safe(error.message);
+    return;
+  }
+
+  const members = (data || []).filter(member =>
+    !blockedIds.has(member.id)
+  );
+
+  renderMembers(members);
+}
+
+function renderMembers(members) {
+
+  const container = document.getElementById("membersList");
+
+  container.innerHTML = "";
+
+  if (!members.length) {
+    container.innerHTML = "<p>No members found yet.</p>";
+    return;
+  }
+
+  members.forEach(member => {
+
+    const card = document.createElement("div");
+    card.className = "card member-card";
+
+    const photo = document.createElement("img");
+    photo.className = "member-photo";
+    photo.src = member.avatar_url ||
+      "https://placehold.co/400x300/271739/ffffff?text=Member";
+    photo.alt = "Member profile photo";
+
+    const title = document.createElement("h3");
+    title.textContent = member.display_name;
+
+    const area = document.createElement("p");
+    area.className = "muted";
+    area.textContent = member.area || "Area not provided";
+
+    const bio = document.createElement("p");
+    bio.textContent = member.bio || "No biography yet.";
+
+    const interests = document.createElement("p");
+    interests.innerHTML = (member.interests || "")
+      .split(",")
+      .filter(Boolean)
+      .map(i => `<span class="tag">${safe(i.trim())}</span>`)
+      .join("");
+
+    const connect = document.createElement("button");
+    connect.className = "btn small";
+    connect.textContent = "Connect";
+
+    connect.onclick = () => sendConnection(member.id);
+
+    const report = document.createElement("button");
+    report.className = "btn secondary small";
+    report.textContent = "Report";
+
+    report.onclick = () => reportMember(member.id);
+
+    const block = document.createElement("button");
+    block.className = "btn danger small";
+    block.textContent = "Block";
+
+    block.onclick = () => blockMember(member.id);
+
+    card.append(photo, title, area, bio, interests, connect, report, block);
+
+    container.appendChild(card);
+  });
+}
+
+document.getElementById("searchMembers")
+.addEventListener("input", async function() {
+
+  const query = this.value.toLowerCase().trim();
+
+  const { data } = await db
+    .from("profiles")
+    .select("id,display_name,bio,area,interests,avatar_url")
+    .neq("id", currentUser.id)
+    .limit(100);
+
+  if (!data) return;
+
+  const results = data.filter(member =>
+    [
+      member.display_name,
+      member.bio,
+      member.area,
+      member.interests
+    ].some(value => (value || "").toLowerCase().includes(query))
+  );
+
+  renderMembers(results);
+});
+
+// ==========================================
+// 11. SEND CONNECTION REQUEST
+// ==========================================
+
+async function sendConnection(memberId) {
+
+  const { data: existing, error: lookupError } = await db
+    .from("connections")
+    .select("id,status")
+    .or(
+      `and(sender_id.eq.${currentUser.id},receiver_id.eq.${memberId}),and(sender_id.eq.${memberId},receiver_id.eq.${currentUser.id})`
+    );
+
+  if (lookupError) {
+    notify(lookupError.message);
+    return;
+  }
+
+  if (existing?.length) {
+    notify("A connection request or connection already exists.");
+    return;
+  }
+
+  const { error } = await db
+    .from("connections")
+    .insert({
+      sender_id: currentUser.id,
+      receiver_id: memberId,
+      status: "pending"
+    });
+
+  if (error) {
+    notify(error.message);
+  } else {
+    notify("Connection request sent!");
+  }
+}
+
+// ==========================================
+// 12. LOAD CONNECTIONS
+// ==========================================
+
+async function loadConnections() {
+
+  const { data, error } = await db
+    .from("connections")
+    .select("*")
+    .or(
+      `sender_id.eq.${currentUser.id},receiver_id.eq.${currentUser.id}`
+    );
+
+  if (error) {
+    notify(error.message);
+    return;
+  }
+
+  const received = [];
+  const sent = [];
+  const accepted = [];
+
+  for (const connection of data || []) {
+
+    const otherId = connection.sender_id === currentUser.id
+      ? connection.receiver_id
+      : connection.sender_id;
+
+    const { data: person } = await db
+      .from("profiles")
+      .select("id,display_name")
+      .eq("id", otherId)
+      .single();
+
+    if (!person) continue;
+
+    const item = { connection, person };
+
+    if (connection.status === "accepted") {
+      accepted.push(item);
+    } else if (connection.status === "pending") {
+      if (connection.receiver_id === currentUser.id)
+        received.push(item);
+      else
+        sent.push(item);
+    }
+  }
+
+  renderConnectionGroup("receivedRequests", received, "received");
+  renderConnectionGroup("sentRequests", sent, "sent");
+  renderConnectionGroup("acceptedConnections", accepted, "accepted");
+}
+
+function renderConnectionGroup(id, items, type) {
+
+  const container = document.getElementById(id);
+
+  container.innerHTML = "";
+
+  if (!items.length) {
+    container.innerHTML = '<p class="muted">Nothing here yet.</p>';
+    return;
+  }
+
+  items.forEach(({ connection, person }) => {
+
+    const div = document.createElement("div");
+    div.className = "card";
+
+    const name = document.createElement("strong");
+    name.textContent = person.display_name;
+
+    div.appendChild(name);
+
+    if (type === "received") {
+
+      const accept = document.createElement("button");
+      accept.className = "btn small";
+      accept.textContent = "Accept";
+
+      accept.onclick = () => respondRequest(connection.id, "accepted");
+
+      const decline = document.createElement("button");
+      decline.className = "btn danger small";
+      decline.textContent = "Decline";
+
+      decline.onclick = () => respondRequest(connection.id, "declined");
+
+      div.append(accept, decline);
+
+    } else if (type === "sent") {
+
+      const status = document.createElement("p");
+      status.className = "muted";
+      status.textContent = "Request pending";
+
+      div.appendChild(status);
+
+    } else {
+
+      const chat = document.createElement("button");
+      chat.className = "btn small";
+      chat.textContent = "Message";
+
+      chat.onclick = () => {
+        openTab("messages");
+        document.getElementById("chatPartner").value = person.id;
+        loadMessages();
+      };
+
+      div.appendChild(chat);
+    }
+
+    container.appendChild(div);
+  });
+}
+
+// ==========================================
+// 13. ACCEPT OR DECLINE REQUEST
+// ==========================================
+
+async function respondRequest(id, status) {
+
+  const { error } = await db
+    .from("connections")
+    .update({ status })
+    .eq("id", id);
+
+  if (error) {
+    notify(error.message);
+  } else {
+    notify("Request updated.");
+    loadConnections();
+  }
+}
+
+// ==========================================
+// 14. LOAD CHAT PARTNERS
+// ==========================================
+
+async function loadChatPartners() {
+
+  const select = document.getElementById("chatPartner");
+
+  select.innerHTML = '<option value="">Choose a member</option>';
+
+  const { data, error } = await db
+    .from("connections")
+    .select("*")
+    .eq("status", "accepted")
+    .or(
+      `sender_id.eq.${currentUser.id},receiver_id.eq.${currentUser.id}`
+    );
+
+  if (error) return;
+
+  for (const c of data || []) {
+
+    const id = c.sender_id === currentUser.id
+      ? c.receiver_id
+      : c.sender_id;
+
+    const { data: person } = await db
+      .from("profiles")
+      .select("display_name")
+      .eq("id", id)
+      .single();
+
+    if (!person) continue;
+
+    const option = document.createElement("option");
+    option.value = id;
+    option.textContent = person.display_name;
+
+    select.appendChild(option);
+  }
+}
+
+document.getElementById("chatPartner")
+.addEventListener("change", loadMessages);
+
+// ==========================================
+// 15. LOAD CHAT MESSAGES
+// ==========================================
+
+async function loadMessages() {
+
+  const partner = document.getElementById("chatPartner").value;
+  const windowBox = document.getElementById("chatWindow");
+
+  if (!partner) {
+    windowBox.innerHTML = "<p>Select a connection.</p>";
+    return;
+  }
+
+  const { data, error } = await db
+    .from("messages")
+    .select("*")
+    .or(
+      `and(sender_id.eq.${currentUser.id},receiver_id.eq.${partner}),and(sender_id.eq.${partner},receiver_id.eq.${currentUser.id})`
+    )
+    .order("created_at", { ascending: true })
+    .limit(100);
+
+  if (error) {
+    windowBox.textContent = error.message;
+    return;
+  }
+
+  windowBox.innerHTML = "";
+
+  (data || []).forEach(message => {
+
+    const div = document.createElement("div");
+
+    div.className = "message " +
+      (message.sender_id === currentUser.id ? "mine" : "theirs");
+
+    const content = document.createElement("p");
+    content.textContent = message.content;
+
+    const time = document.createElement("small");
+    time.textContent = new Date(message.created_at).toLocaleString();
+
+    div.append(content, time);
+    windowBox.appendChild(div);
+  });
+
+  windowBox.scrollTop = windowBox.scrollHeight;
+}
+
+// ==========================================
+// 16. SEND MESSAGE
+// ==========================================
+
+document.getElementById("messageForm")
+.addEventListener("submit", async function(e) {
+
+  e.preventDefault();
+
+  const partner = document.getElementById("chatPartner").value;
+  const content = document.getElementById("messageText").value.trim();
+
+  if (!partner || !content) {
+    notify("Choose a connection and write a message.");
+    return;
+  }
+
+  const { error } = await db
+    .from("messages")
+    .insert({
+      sender_id: currentUser.id,
+      receiver_id: partner,
+      content
+    });
+
+  if (error) {
+    notify(error.message);
+    return;
+  }
+
+  document.getElementById("messageText").value = "";
+
+  loadMessages();
+});
+
+// ==========================================
+// 17. CREATE MEETUP
+// ==========================================
+
+document.getElementById("meetupForm")
+.addEventListener("submit", async function(e) {
+
+  e.preventDefault();
+
+  const date = document.getElementById("meetupDate").value;
+
+  if (!date || date < new Date().toISOString().slice(0, 10)) {
+    notify("Choose a future meetup date.");
+    return;
+  }
+
+  const meetup = {
+    creator_id: currentUser.id,
+    title: document.getElementById("meetupTitle").value.trim(),
+    venue: document.getElementById("meetupVenue").value.trim(),
+    area: document.getElementById("meetupArea").value.trim(),
+    meetup_date: date,
+    meetup_time: document.getElementById("meetupTime").value,
+    details: document.getElementById("meetupDetails").value.trim()
+  };
+
+  const { error } = await db
+    .from("meetups")
+    .insert(meetup);
+
+  if (error) {
+    notify(error.message);
+    return;
+  }
+
+  this.reset();
+
+  notify("Your meetup has been created!");
+
+  loadMeetups();
+});
+
+// ==========================================
+// 18. LOAD MEETUPS
+// ==========================================
+
+async function loadMeetups() {
+
+  const container = document.getElementById("meetupList");
+
+  container.innerHTML = "<p>Loading meetups...</p>";
+
+  const { data, error } = await db
+    .from("meetups")
+    .select("*")
+    .gte("meetup_date", new Date().toISOString().slice(0, 10))
+    .order("meetup_date", { ascending: true })
+    .limit(50);
+
+  if (error) {
+    container.textContent = error.message;
+    return;
+  }
+
+  container.innerHTML = "";
+
+  if (!data?.length) {
+    container.innerHTML = "<p>No upcoming meetups yet.</p>";
+    return;
+  }
+
+  for (const meetup of data) {
+
+    const card = document.createElement("div");
+    card.className = "card";
+
+    const title = document.createElement("h3");
+    title.textContent = meetup.title;
+
+    const venue = document.createElement("p");
+    venue.textContent = "Venue: " + meetup.venue;
+
+    const area = document.createElement("p");
+    area.textContent = "Area: " + meetup.area;
+
+    const date = document.createElement("p");
+    date.textContent = "Date: " + formatDate(meetup.meetup_date);
+
+    const time = document.createElement("p");
+    time.textContent = "Time: " + meetup.meetup_time;
+
+    const details = document.createElement("p");
+    details.textContent = meetup.details || "";
+
+    const join = document.createElement("button");
+    join.className = "btn small";
+    join.textContent = "Join Meetup";
+
+    join.onclick = () => joinMeetup(meetup.id);
+
+    const count = document.createElement("p");
+    count.className = "muted";
+    count.textContent = "Public social gathering";
+
+    card.append(title, venue, area, date, time, details, join, count);
+
+    if (meetup.creator_id === currentUser.id) {
+
+      const deleteBtn = document.createElement("button");
+      deleteBtn.className = "btn danger small";
+      deleteBtn.textContent = "Delete Meetup";
+
+      deleteBtn.onclick = () => deleteMeetup(meetup.id);
+
+      card.appendChild(deleteBtn);
+    }
+
+    container.appendChild(card);
+  }
+}
+
+// ==========================================
+// 19. JOIN MEETUP
+// ==========================================
+
+async function joinMeetup(meetupId) {
+
+  const { error } = await db
+    .from("meetup_attendees")
+    .insert({
+      meetup_id: meetupId,
+      user_id: currentUser.id
+    });
+
+  if (error) {
+    notify(error.code === "23505"
+      ? "You have already joined this meetup."
+      : error.message);
+  } else {
+    notify("You have joined the meetup!");
+  }
+}
+
+// ==========================================
+// 20. DELETE MEETUP
+// ==========================================
+
+async function deleteMeetup(id) {
+
+  if (!confirm("Delete this meetup?")) return;
+
+  const { error } = await db
+    .from("meetups")
+    .delete()
+    .eq("id", id)
+    .eq("creator_id", currentUser.id);
+
+  if (error) {
+    notify(error.message);
+  } else {
+    notify("Meetup deleted.");
+    loadMeetups();
+  }
+}
+
+// ==========================================
+// 21. BLOCK A MEMBER
+// ==========================================
+
+async function blockMember(id) {
+
+  if (!confirm("Block this member?")) return;
+
+  const { error } = await db
+    .from("blocks")
+    .insert({
+      blocker_id: currentUser.id,
+      blocked_id: id
+    });
+
+  if (error) {
+    notify(error.message);
+    return;
+  }
+
+  // Remove any existing connections.
+  await db
+    .from("connections")
+    .delete()
+    .or(
+      `and(sender_id.eq.${currentUser.id},receiver_id.eq.${id}),and(sender_id.eq.${id},receiver_id.eq.${currentUser.id})`
+    );
+
+  notify("Member blocked.");
+  loadMembers();
+}
+
+// ==========================================
+// 22. REPORT A MEMBER
+// ==========================================
+
+async function reportMember(id) {
+
+  const reason = prompt(
+    "Briefly explain why you are reporting this member:"
+  );
+
+  if (!reason || !reason.trim()) return;
+
+  const { error } = await db
+    .from("reports")
+    .insert({
+      reporter_id: currentUser.id,
+      reported_id: id,
+      reason: reason.trim().slice(0, 1000)
+    });
+
+  if (error) {
+    notify(error.message);
+  } else {
+    notify("Report submitted for review.");
+  }
+}
+
+// ==========================================
+// 23. ACCOUNT DELETION INFORMATION
+// ==========================================
+
+function deleteAccountNotice() {
+
+  alert(
+    "To permanently delete your account, contact SIP & SOCIAL support. " +
+    "A secure server-side account deletion service must be configured " +
+    "before permanent deletion can be offered."
+  );
+}
+
+// ==========================================
+// 24. NAVIGATION
+// ==========================================
+
+document.querySelectorAll("nav button[data-tab]")
+.forEach(button => {
+  button.addEventListener("click", () => {
+    openTab(button.dataset.tab);
+  });
+});
+
+// ==========================================
+// 25. RESTORE EXISTING SESSION
+// ==========================================
+
+async function initialize() {
+
+  const { data, error } = await db.auth.getSession();
+
+  if (error) {
+    notify(error.message);
+    return;
+  }
+
+  if (data.session) {
+    await startApp(data.session.user);
+  } else {
+    showAuth("welcome");
+  }
+}
+
+db.auth.onAuthStateChange((event, session) => {
+
+  if (event === "SIGNED_OUT") {
+    currentUser = null;
+    myProfile = null;
+    document.getElementById("navigation").classList.add("hidden");
+    hideAll();
+    document.getElementById("welcome").classList.remove("hidden");
+  }
+});
+
+initialize();
+
+</script>
+
+</body>
+</html>
